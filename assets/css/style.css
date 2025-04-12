@@ -1,0 +1,264 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: #f5f7fa;
+    color: #333;
+    line-height: 1.6;
+    /* padding-top: 70px; */
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 100;
+  }
+  
+  .logo {
+    font-family: 'Pacifico', cursive;
+    font-size: 2rem;
+    color: #6778fd;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1rem;
+    transition: background 0.3s ease, color 0.3s ease;
+    padding: 6px 12px;
+    border-radius: 20px;
+  }
+  
+  .nav-links a:hover,
+  .nav-links a.bubble:hover {
+    background: #e6f7ff;
+    color: #6778fd;
+  }
+  
+  .hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 20px;
+    flex-wrap: wrap;
+    background: linear-gradient(135deg, #9fc4ca 0%, #e6f7ff 100%);
+  }
+  
+  .hero-content {
+    flex: 1;
+    max-width: 600px;
+    padding: 20px;
+  }
+  
+  .hero-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .hero-content .highlight {
+    color: #6778fd;
+  }
+  
+  .hero-content p {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    color: #555;
+  }
+  
+  .btn {
+    text-decoration: none;
+    background: #6778fd;
+    color: #fff;
+    padding: 12px 25px;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+  }
+  
+  .btn:hover {
+    background: #5560d5;
+  }
+  
+  .hero-collage {
+    flex: 1;
+    max-width: 500px;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    position: relative;
+  }
+  
+  .collage-item {
+    overflow: hidden;
+  }
+  
+  .collage-item img {
+    width: 100%;
+    height: 210px;
+    display: block;
+    border: 5px solid #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .collage-item img:hover {
+    transform: scale(1.05);
+  }
+  
+  .collage-item-large {
+    grid-column: span 2;
+    grid-row: span 1;
+  }
+  
+  .highlights {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 40px 20px;
+    background: #fff;
+  }
+  
+  .highlight-card {
+    background: #f9f9f9;
+    border: 1px solid #e2e2e2;
+    border-radius: 10px;
+    width: 30%;
+    margin: 10px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+  
+  .highlight-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .highlight-card i {
+    font-size: 2.5rem;
+    color: #6778fd;
+    margin-bottom: 10px;
+  }
+  
+  .highlight-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .highlight-card p {
+    margin-bottom: 15px;
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  .highlight-card a {
+    text-decoration: none;
+    color: #fff;
+    background: #6778fd;
+    padding: 8px 20px;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+  }
+  
+  .highlight-card a:hover {
+    background: #5560d5;
+  }
+  
+  footer {
+    background: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .footer-container {
+    max-width: 1100px;
+    margin: auto;
+  }
+  
+  .social-icons {
+    margin-bottom: 10px;
+  }
+  
+  .social-icons a {
+    color: #fff;
+    margin: 0 10px;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+  }
+  
+  .social-icons a:hover {
+    color: #6778fd;
+  }
+  
+  @media (max-width: 992px) {
+    .hero {
+      flex-direction: column;
+      text-align: center;
+    }
+    .hero-content,
+    .hero-collage {
+      max-width: 100%;
+      padding: 20px;
+    }
+    .hero-content h1 {
+      font-size: 2.2rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    body {
+        padding-top: 70px;
+      }
+
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+    }
+    .nav-links {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+    .highlights {
+      flex-direction: column;
+      align-items: center;
+    }
+    .highlight-card {
+      width: 80%;
+      margin: 10px 0;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .hero-content h1 {
+      font-size: 1.8rem;
+    }
+    .hero-content p {
+      font-size: 1rem;
+    }
+    .logo {
+      font-size: 1.5rem;
+    }
+    .nav-links a {
+      font-size: 0.9rem;
+    }
+  }
+  
