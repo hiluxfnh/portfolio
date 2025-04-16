@@ -1,0 +1,223 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: #f5f7fa;
+    color: #333;
+  }
+  
+  .navbar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: relative;
+    z-index: 100;
+  }
+  
+  .logo {
+    font-family: 'Pacifico', cursive;
+    font-size: 2rem;
+    color: #6778fd;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+  }
+  
+/* Base link styling */
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1rem;
+    transition: background 0.3s ease, color 0.3s ease;
+    padding: 6px 12px;
+    border-radius: 20px;
+  }
+  
+  .nav-links a:hover {
+    background: #e6f7ff;
+    color: #6778fd;
+  }
+  /* Awards Header */
+  .awards-header {
+    text-align: center;
+    padding: 60px 20px 30px;
+    background: linear-gradient(135deg, #b1cfff, #d8e9ff);
+  }
+  .awards-header h1 {
+    font-size: 3rem;
+    color: #3d52a0;
+    font-family: 'Pacifico', cursive;
+  }
+  .awards-header p {
+    font-size: 1.1rem;
+    margin-top: 10px;
+    color: #555;
+  }
+  .download-cv {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 25px;
+    background: #6778fd;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+  }
+  .download-cv:hover {
+    background: #5560d5;
+  }
+  
+  /* Award Slider */
+  .award-slider {
+    padding: 20px 0;
+    background: #fff;
+    overflow: hidden;
+    position: relative;
+  }
+  .slider {
+    display: flex;
+    animation: slide 15s infinite linear;
+  }
+  .slide {
+    min-width: 300px;
+    margin: 0 10px;
+  }
+  .slide img {
+    width: 100%;
+    max-height: 200px;
+    border-radius: 10px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  }
+  
+  /* Pause auto-slide on hover */
+  .slider-container:hover .slider {
+    animation-play-state: paused;
+  }
+  
+  /* Keyframes for slider */
+  @keyframes slide {
+    0% { transform: translateX(0); }
+    70% { transform: translateX(-50%); }
+    100% { transform: translateX(15%); }
+  }
+  
+  /* Awards Grid */
+  .awards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    padding: 50px 30px;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  /* Award Card */
+  .award-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 25px 20px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-top: 5px solid #6778fd;
+  }
+  .award-card i {
+    font-size: 2.5rem;
+    color: #6778fd;
+    margin-bottom: 15px;
+  }
+  .award-card h2 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  .award-card p {
+    font-size: 0.95rem;
+    color: #666;
+  }
+  .award-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+  }
+  
+  /* Color-coded borders */
+  .global         { border-top-color: #3d9be9; }
+  .tech           { border-top-color: #8e44ad; }
+  .university     { border-top-color: #f39c12; }
+  .international  { border-top-color: #16a085; }
+  .academic       { border-top-color: #e67e22; }
+  .climate        { border-top-color: #2ecc71; }
+  .speaker        { border-top-color: #d35400; }
+  .fellowship     { border-top-color: #c0392b; }
+  .bank           { border-top-color: #2980b9; }
+  .research       { border-top-color: #7f8c8d; }
+  
+  /* Floating Trophy Animation */
+  .floating-trophy {
+    position: fixed;
+    top: 10%;
+    left: -50px;
+    font-size: 4rem;
+    color: #f39c12;
+    opacity: 0.5;
+    animation: floatTrophy 10s infinite alternate ease-in-out;
+    z-index: 50;
+  }
+  @keyframes floatTrophy {
+    from {
+      transform: translateX(0) translateY(0);
+    }
+    to {
+      transform: translateX(80vw) translateY(50vh);
+    }
+  }
+  
+/* Responsive Navbar for Smaller Screens */
+@media (max-width: 768px) {
+    .navbar {
+      flex-direction: column;
+      align-items: center;
+    }
+    .nav-links {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .nav-links a {
+      text-align: center;
+      font-size: 0.9rem;
+      padding: 8px 10px;
+    }
+  }
+  @media (max-width: 480px) {
+    .nav-links a {
+        font-size: 0.85rem;
+        padding: 6px 8px;
+      }
+    .awards-header h1 {
+      font-size: 2.2rem;
+    }
+    .awards-header p {
+      font-size: 1rem;
+    }
+    .award-card h2 {
+      font-size: 1.1rem;
+    }
+    .award-card p {
+      font-size: 0.9rem;
+    }
+  }
+  

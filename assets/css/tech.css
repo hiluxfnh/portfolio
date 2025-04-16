@@ -1,0 +1,409 @@
+/* Reset & Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: #f5f7fa;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  /* Navbar */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: relative;
+    z-index: 100;
+  }
+  .logo {
+    font-family: 'Pacifico', cursive;
+    font-size: 2rem;
+    color: #6778fd;
+  }
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+  }
+  .nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1rem;
+    transition: background 0.3s ease, color 0.3s ease;
+    padding: 6px 12px;
+    border-radius: 20px;
+  }
+  .nav-links a:hover {
+    background: #e6f7ff;
+    color: #6778fd;
+  }
+  
+  /* Tech Hero Section */
+  .tech-hero {
+    background: linear-gradient(135deg, #9fc4ca 0%, #e6f7ff 100%);
+    padding: 80px 20px;
+    text-align: center;
+  }
+  .tech-banner h1 {
+    font-size: 3rem;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  .tech-banner p {
+    font-size: 1.2rem;
+    color: #555;
+    max-width: 800px;
+    margin: auto;
+  }
+  
+  /* Tech Skills Section */
+.tech-skills {
+    padding: 40px 20px;
+    background: #fff;
+    text-align: center;
+  }
+  
+  .skills-bubbles {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+  
+  .skill-bubble {
+    background: #6778fd;
+    color: #fff;
+    font-size: 1rem;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex: 1 1 auto;
+    max-width: fit-content;
+    white-space: nowrap;
+  }
+  
+  .skill-bubble:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  }
+  
+  @media (max-width: 768px) {
+    .skill-bubble {
+      font-size: 0.9rem;
+      padding: 8px 16px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .skill-bubble {
+      font-size: 0.85rem;
+      padding: 6px 12px;
+    }
+  }
+
+  /* Tech Projects Section */
+  .tech-projects {
+    padding: 60px 20px;
+    background: #fff;
+  }
+  .section-title {
+    font-size: 2.5rem;
+    color: #6778fd;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  .projects-container {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: space-around;
+  }
+  .project-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* Existing styling properties */
+    background: #f9f9f9;
+    border: 1px solid #e2e2e2;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 100%;
+    max-width: 350px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+    position: relative;
+    padding-bottom: 15px; /* extra padding for consistent spacing at the bottom */
+  }
+
+  .project-card .open-modal {
+    margin-top: auto; /* Pushes the button to the bottom */
+    width: calc(100% - 30px);
+  }
+  .project-card:hover {
+    transform: translateY(-5px);
+  }
+  .project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  .project-card h2 {
+    font-size: 1.5rem;
+    color: #6778fd;
+    margin: 15px;
+  }
+  .project-card p {
+    font-size: 1rem;
+    color: #555;
+    margin: 0 15px 15px;
+  }
+  .open-modal {
+    background: #6778fd;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    width: calc(100% - 30px);
+    margin: 0 15px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  .open-modal:hover {
+    background: #5560d5;
+  }
+  /* Hide modal-data in DOM */
+  .modal-data {
+    display: none;
+  }
+  
+  /* Modal Styles (for both project & certification details) */
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    background-color: rgba(0,0,0,0.8);
+    padding: 40px;
+  }
+  
+  .modal-content {
+    background: #fff;
+    margin: auto;
+    border-radius: 10px;
+    max-width: 800px;
+    width: 90%;
+    position: relative;
+    animation: fadeIn 0.5s;
+    padding: 30px;
+  }
+  
+  .modal-content h2 {
+    font-size: 2rem;
+    color: #6778fd;
+    margin-bottom: 20px;
+  }
+  
+  .modal-content p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 15px;
+  }
+  
+  .modal-content ul {
+    list-style: disc inside;
+    padding-left: 20px;
+  }
+  
+  .modal-content ul li {
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+    color: #333;
+  }
+  
+  .close {
+    color: #aaa;
+    font-size: 2rem;
+    font-weight: bold;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  
+  .close:hover {
+    color: #000;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }  
+  
+  /* Tech Certifications Section */
+.tech-certifications {
+    padding: 60px 20px;
+    background: #f5f7fa;
+    text-align: center;
+  }
+  .cert-grid {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 20px;
+  }
+  .cert-thumb {
+    background: #fff;
+    border: 1px solid #e2e2e2;
+    border-radius: 10px;
+    text-align: center;
+    padding: 15px;
+    transition: transform 0.3s ease;
+  }
+  .cert-thumb:hover {
+    transform: translateY(-5px);
+  }
+  .cert-thumb img {
+    width: 100%;
+    height: auto;
+    max-height: 450px;
+    object-fit: contain;
+    margin-bottom: 10px;
+  }
+  @media (max-width: 768px) {
+    .cert-thumb img {
+      max-height: 270px;
+    }
+  }
+  .cert-thumb p {
+    font-size: 0.95rem;
+    color: #333;
+  }
+  .open-cert-modal {
+    background: #6778fd;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    width: 220px;
+    margin: 30px auto 0;
+    display: block;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  .open-cert-modal:hover {
+    background: #5560d5;
+  }
+  
+  
+  /* Tech Badges Section */
+  .tech-badges {
+    padding: 60px 20px;
+    background: #fff;
+    text-align: center;
+  }
+  .badges-container {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+
+  .view-more-badges {
+    display: inline-block;
+    background-color: #6778fd;
+    color: #fff;
+    padding: 10px 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .view-more-badges:hover {
+    background-color: #5560d5;
+  }
+  
+  
+  /* Footer */
+  footer {
+    background: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+  .footer-container {
+    max-width: 1100px;
+    margin: auto;
+  }
+  .social-icons {
+    margin-bottom: 10px;
+  }
+  .social-icons a {
+    color: #fff;
+    margin: 0 10px;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+  }
+  .social-icons a:hover {
+    color: #6778fd;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .nav-links {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+    .projects-container {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    body {
+        padding-top: 70px;
+      }
+  }
+  @media (max-width: 480px) {
+    .tech-banner h1 {
+      font-size: 2.5rem;
+    }
+    .tech-banner p {
+      font-size: 1rem;
+    }
+    .logo {
+      font-size: 1.5rem;
+    }
+    .nav-links a {
+      font-size: 0.9rem;
+    }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
