@@ -1,0 +1,210 @@
+/* Reset & Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: #f5f7fa;
+    color: #333;
+  }
+  
+  /* Navbar */
+  .navbar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: relative;
+    z-index: 100;
+  }
+  .logo {
+    font-family: 'Pacifico', cursive;
+    font-size: 2rem;
+    color: #6778fd;
+  }
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+  }
+  .nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1rem;
+    padding: 6px 12px;
+    border-radius: 20px;
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+  .nav-links a:hover,
+  .nav-links a.active {
+    background: #e6f7ff;
+    color: #6778fd;
+  }
+  
+  /* Page Header */
+  .impact-header {
+    text-align: center;
+    padding: 60px 20px 30px;
+    background: linear-gradient(135deg, #9fc4ca, #e6f7ff);
+  }
+  .impact-header h1 {
+    font-family: 'Pacifico', cursive;
+    font-size: 3rem;
+    color: #3d52a0;
+    margin-bottom: 10px;
+  }
+  .impact-header p {
+    font-size: 1.1rem;
+    color: #555;
+  }
+  
+  /* Main Content Container */
+  .impact-content {
+    max-width: 1200px;
+    margin: auto;
+    padding: 40px 20px;
+  }
+  
+  /* Section Title */
+  .section-title {
+    font-size: 2.5rem;
+    color: #6778fd;
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+    display: inline-block;
+  }
+  .section-title::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: #6778fd;
+    margin: 10px auto 0;
+    border-radius: 2px;
+  }
+  
+  /* Accordion */
+  .accordion {
+    max-width: 800px;
+    margin: auto 0 60px;
+  }
+  .accordion-item + .accordion-item {
+    margin-top: 10px;
+  }
+  .accordion-header {
+    width: 100%;
+    background: #fff;
+    padding: 18px 20px;
+    font-size: 1.1rem;
+    text-align: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    transition: background 0.3s ease;
+  }
+  .accordion-header:hover {
+    background: #f0f4ff;
+  }
+  .accordion-header i {
+    transition: transform 0.3s ease;
+  }
+  .accordion-header i.rotated {
+    transform: rotate(180deg);
+  }
+  .accordion-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+    padding-left: 20px;
+  }
+  .accordion-body p {
+    padding: 15px 0;
+    color: #555;
+    line-height: 1.6;
+  }
+  
+  /* Card Grid */
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    /* margin-top: 30px; */
+  }
+  
+  /* Impact Cards */
+  .impact-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 30px 25px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .impact-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  }
+  .impact-card i {
+    font-size: 2.8rem;
+    color: #6778fd;
+    /* margin-bottom: 15px; */
+  }
+  .impact-card h3 {
+    font-size: 1.4rem;
+    color: #333;
+    margin-bottom: 15px;
+  }
+  .impact-card ul {
+    list-style: disc inside;
+    color: #555;
+  }
+  .impact-card ul li {
+    margin-bottom: 10px;
+    line-height: 1.5;
+  }
+  
+  /* Alternate Section Background */
+  .alt-bg {
+    background: #fff;
+    padding: 40px 20px;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .nav-links {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+    .accordion-body {
+      padding-left: 10px;
+    }
+    .impact-card {
+      padding: 20px;
+    }
+  }
+  @media (max-width: 480px) {
+    .impact-header h1 {
+      font-size: 2.2rem;
+    }
+    .impact-header p {
+      font-size: 1rem;
+    }
+    .section-title {
+      font-size: 2rem;
+    }
+    .impact-card h3 {
+      font-size: 1.2rem;
+    }
+  }
+  

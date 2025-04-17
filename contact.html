@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Contact | Hilux Fokou Ngoumo – Get in touch for inquiries, collaborations, or support." />
+  <title>Contact | Hilux Fokou Ngoumo</title>
+  <link rel="icon" href="assets/img/icon.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Pacifico&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/contact.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">Hilux</div>
+    <ul class="nav-links">
+      <li><a href="index.html" class="bubble">Home</a></li>
+      <li><a href="about.html" class="bubble">About</a></li>
+      <li><a href="research.html" class="bubble">Research</a></li>
+      <li><a href="tech.html" class="bubble">Tech</a></li>
+      <li><a href="social-impact.html" class="bubble">Impact</a></li>
+      <li><a href="gallery.html" class="bubble">Gallery</a></li>
+      <li><a href="contact.html" class="active bubble">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Header -->
+  <header class="contact-header">
+    <h1>Get in Touch with Hilux</h1>
+    <p>Whether you have a question, collaboration idea, or just want to say hello—I'm here to help!</p>
+  </header>
+
+  <!-- Main Contact Hub -->
+  <main class="contact-main">
+
+    <section class="contact-hub">
+      <!-- Left: Form & Channels -->
+      <div class="hub-left" data-aos="fade-up">
+        <form id="contactForm"   action="https://formspree.io/f/xwpljdpv"
+        method="POST">
+          <label for="purpose">I'm reaching out about:</label>
+          <select id="purpose" name="purpose">
+            <option value="general">General Inquiry</option>
+            <option value="research">Research Collaboration</option>
+            <option value="social">Social Impact Work</option>
+            <option value="tech">Tech/AI & Cybersecurity</option>
+          </select>
+
+          <label for="name">Name</label>
+          <input id="name" name="name" required>
+
+          <label for="email">Email</label>
+          <input id="email" type="email" name="email" required>
+
+          <div id="dynamicFields"></div>
+
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="4" required></textarea>
+
+          <button type="submit" class="btn-primary">Send Message</button>
+        </form>
+
+      </div>
+      <div class="alt-channels" data-aos="fade-up" data-aos-delay="100">
+        <a href="mailto:hiluxfokou33@gmail.com"><i class="fas fa-envelope"></i> Email Me</a>
+        <a href="#" id="chatbotToggle"><i class="fas fa-comment-dots"></i> Chat with Bot</a>
+      </div>
+      </div>
+    </section>
+
+  </main>
+ <!-- Footer -->
+ <footer>
+    <div class="footer-container">
+        <div class="social-icons">
+            <a href="https://www.linkedin.com/in/fokou" target="_blank">
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://github.com/hiluxfnh" target="_blank">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="https://twitter.com/FOKOUHilux1" target="_blank">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="mailto:hiluxfokou33@gmail.com">
+              <i class="fas fa-envelope"></i>
+            </a>
+          </div>
+          
+      <p>&copy; 2025 Fokou Ngoumo Hilux. All Rights Reserved.</p>
+    </div>
+  </footer>
+  <script src="assets/js/contact.js"></script>
+</body>
+</html>
