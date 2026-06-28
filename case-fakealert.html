@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Case study: FakeAlert — an NLP system for detecting fake news and hate speech, built with trust, safety, and ethics at its core. By Hilux Fokou Ngoumo." />
+  <title>Case Study — FakeAlert (NLP) | Hilux Fokou Ngoumo</title>
+  <link rel="icon" href="assets/img/icon.png" type="image/png">
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Case Study — FakeAlert: NLP against disinformation" />
+  <meta property="og:description" content="How I designed an NLP system to detect fake news and hate speech — with bias, privacy and adversarial robustness treated as first-class concerns." />
+  <meta property="og:image" content="assets/img/prof1.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Pacifico&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/base.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <header class="site-header">
+    <nav class="site-nav" aria-label="Primary">
+      <a href="index.html" class="brand">Hilux</a>
+      <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-list">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-list" id="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="tech.html">Work</a></li>
+        <li><a href="security.html">Security</a></li>
+        <li><a href="social-impact.html">Impact</a></li>
+        <li><a href="writeups.html">Writeups</a></li>
+        <li><a href="contact.html" class="nav-cta">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="cs-hero">
+      <div class="shell" style="max-width:900px;">
+        <a class="cs-back" href="tech.html"><i class="fas fa-arrow-left"></i> All projects</a>
+        <h1 class="cs-title">FakeAlert — detecting disinformation without doing more harm</h1>
+        <p class="hero-lead" style="margin:0;">An NLP system that flags fake news and hate speech for social integrity — designed so that bias, privacy, and adversarial abuse are treated as <em>security</em> problems, not afterthoughts.</p>
+        <div class="cs-meta">
+          <div class="m"><b>My role</b><span>Sole researcher &amp; developer</span></div>
+          <div class="m"><b>Timeline</b><span>2024 – 2025</span></div>
+          <div class="m"><b>Domain</b><span>Trust &amp; Safety · NLP</span></div>
+          <div class="m"><b>Status</b><span>Published paper + prototype</span></div>
+        </div>
+        <div class="cs-tagrow">
+          <span class="chip build">Python</span><span class="chip build">Transformers</span><span class="chip build">scikit-learn</span>
+          <span class="chip secure">Adversarial robustness</span><span class="chip secure">Bias &amp; fairness</span><span class="chip empower">Online safety</span>
+        </div>
+        <div class="cs-links">
+          <a class="btn-solid" href="https://dx.doi.org/10.2139/ssrn.5181145" target="_blank" rel="noopener"><i class="fas fa-file-lines"></i> Read the paper</a>
+          <a class="btn-ghost" href="https://github.com/hiluxfnh/ITMO_FakeAlert_NLP" target="_blank" rel="noopener"><i class="fab fa-github"></i> Source code</a>
+          <a class="btn-ghost" href="#" rel="noopener"><i class="fas fa-up-right-from-square"></i> Live demo <span class="fillme">add URL</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="site-section">
+      <div class="shell cs-body">
+
+        <h2>Context</h2>
+        <p>Disinformation and online hate aren't abstract problems for the communities I work with — they translate into real-world harm: manipulated elections, eroded trust in health information, and targeted abuse of women and minorities. I'd spent years on the <em>policy</em> side of this through UN forums. FakeAlert was my attempt to attack the same problem from the <em>engineering</em> side, and it became the basis of my 2025 paper, <a href="https://dx.doi.org/10.2139/ssrn.5181145" target="_blank" rel="noopener"><em>"NLP in the Digital Age: Combating Fake News, Hate Speech, and Ethical Risks for Social Integrity."</em></a></p>
+
+        <h2>The problem</h2>
+        <p>Most content-classification systems optimise a single number — accuracy — and quietly inherit three dangerous failure modes:</p>
+        <ul>
+          <li><strong>They encode bias.</strong> Models trained on naive datasets routinely flag African-American English or minority dialects as "toxic" at higher rates, silencing exactly the people they should protect.</li>
+          <li><strong>They are trivially gamed.</strong> Adversaries evade filters with character swaps, spacing, and paraphrase — so a model that scores well offline collapses in the wild.</li>
+          <li><strong>They over-collect.</strong> Moderation pipelines hoover up personal data, creating a privacy liability and a chilling effect.</li>
+        </ul>
+        <p>My goal wasn't "the highest F1 on a benchmark." It was a classifier that is <strong>useful, fair, robust, and privacy-respecting</strong> — and honest about its limits.</p>
+
+        <h2>Goals &amp; constraints</h2>
+        <ul>
+          <li>Detect both <strong>misinformation</strong> and <strong>hate speech</strong> in a single pipeline.</li>
+          <li>Measure and reduce <strong>demographic bias</strong>, not just overall error.</li>
+          <li>Survive simple <strong>adversarial perturbations</strong>.</li>
+          <li>Run on modest hardware (a student budget, not a GPU farm).</li>
+          <li>Be <strong>explainable</strong> — a human moderator must see <em>why</em> something was flagged.</li>
+        </ul>
+
+        <h2>Approach</h2>
+        <h3>Data</h3>
+        <p>I combined public misinformation and hate-speech corpora, then deliberately stress-tested them for representation gaps before training — because a model is only as fair as the distribution it learns from.</p>
+        <h3>Modelling</h3>
+        <p>I built up in layers rather than jumping to the heaviest model:</p>
+        <ol>
+          <li>A transparent <strong>TF-IDF + linear</strong> baseline, to establish a floor and a sanity check on features.</li>
+          <li>A fine-tuned <strong>transformer encoder</strong> (BERT-family) for context-sensitive classification.</li>
+          <li>An <strong>explainability layer</strong> surfacing the tokens driving each decision, so flags are auditable.</li>
+        </ol>
+
+        <h3>Architecture</h3>
+        <div class="cs-flow">
+          <div class="node b"><i class="fas fa-keyboard"></i><h4>Ingest</h4><p>Text normalised &amp; language-detected.</p></div>
+          <div class="node s"><i class="fas fa-shield-halved"></i><h4>Sanitise</h4><p>Adversarial/obfuscation normalisation.</p></div>
+          <div class="node b"><i class="fas fa-brain"></i><h4>Classify</h4><p>Transformer scores misinfo + hate.</p></div>
+          <div class="node e"><i class="fas fa-magnifying-glass"></i><h4>Explain</h4><p>Token attributions for the moderator.</p></div>
+          <div class="node s"><i class="fas fa-user-check"></i><h4>Human review</h4><p>Model assists — never auto-punishes.</p></div>
+        </div>
+
+        <h2>Security &amp; ethics — treated as first-class</h2>
+        <p>This is where FakeAlert differs from a typical ML project, and where my security background shows up:</p>
+        <div class="cs-callout secure">
+          <span class="lab"><i class="fas fa-scale-balanced"></i> Bias as a measured metric</span>
+          <p>I evaluated error rates <em>per group</em>, not just overall, and tuned thresholds to shrink the gap — so the system doesn't disproportionately silence minority voices.</p>
+        </div>
+        <div class="cs-callout secure">
+          <span class="lab"><i class="fas fa-user-secret"></i> Adversarial robustness</span>
+          <p>I generated perturbed inputs (character swaps, spacing, homoglyphs) and folded a normalisation step in front of the classifier, treating evasion as an attacker would.</p>
+        </div>
+        <div class="cs-callout secure">
+          <span class="lab"><i class="fas fa-lock"></i> Privacy by design</span>
+          <p>The pipeline classifies content without persisting personal identifiers, and is built to keep a human in the loop — automation assists moderation, it never replaces accountability.</p>
+        </div>
+
+        <h2>Evaluation</h2>
+        <p>I evaluated on a held-out split using precision, recall and F1 <em>per class</em>, plus a fairness gap across demographic slices and an adversarial-robustness delta (clean vs. perturbed accuracy). The full results and methodology are in the <a href="https://dx.doi.org/10.2139/ssrn.5181145" target="_blank" rel="noopener">published paper</a>.</p>
+        <div class="cs-stats">
+          <div class="s"><b>2</b><span>Tasks: misinfo + hate</span></div>
+          <div class="s"><b>3</b><span>Model tiers compared</span></div>
+          <div class="s"><b><span class="fillme">__</span></b><span>F1 on held-out set</span></div>
+          <div class="s"><b><span class="fillme">__</span></b><span>Robustness retained</span></div>
+        </div>
+        <p style="font-size:.86rem;color:var(--ink-faint);"><i class="fas fa-circle-info"></i> The two figures above are highlighted for me to drop in the exact numbers from the paper.</p>
+
+        <h2>What I learned</h2>
+        <ul>
+          <li><strong>Accuracy is a vanity metric in moderation.</strong> The interesting questions are "who does it fail on?" and "how easily is it fooled?"</li>
+          <li><strong>Security thinking transfers.</strong> Threat-modelling an ML system (evasion, poisoning, privacy leakage) produced a stronger product than chasing a leaderboard.</li>
+          <li><strong>Keep humans in the loop.</strong> The right role for the model is to <em>triage and explain</em>, not to judge.</li>
+        </ul>
+
+        <h2>What's next</h2>
+        <ul>
+          <li>Extend multilingual coverage (English + French first, given my context).</li>
+          <li>Harden against poisoning, and publish a model card documenting limits and intended use.</li>
+          <li>Deepen this line of work through my MSc in Information Security at ITMO University.</li>
+        </ul>
+
+        <div class="cs-links" style="margin-top:30px;">
+          <a class="btn-solid" href="https://dx.doi.org/10.2139/ssrn.5181145" target="_blank" rel="noopener"><i class="fas fa-file-lines"></i> Read the paper</a>
+          <a class="btn-ghost" href="https://github.com/hiluxfnh/ITMO_FakeAlert_NLP" target="_blank" rel="noopener"><i class="fab fa-github"></i> Source code</a>
+          <a class="btn-ghost" href="contact.html"><i class="fas fa-paper-plane"></i> Discuss this work</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="fb-logo">Hilux</div>
+          <p>Security &amp; technology for social good — building and securing tools that protect people, from disinformation to humanitarian crises.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Explore</h5>
+          <a href="tech.html">Work &amp; Projects</a>
+          <a href="security.html">Security</a>
+          <a href="writeups.html">Writeups</a>
+          <a href="research.html">Research</a>
+        </div>
+        <div class="footer-col">
+          <h5>More</h5>
+          <a href="professional-experience.html">Experience</a>
+          <a href="certifications.html">Certifications</a>
+          <a href="Awards.html">Awards</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2025 Hilux Fokou Ngoumo. All rights reserved.</span>
+        <span class="footer-social">
+          <a href="https://www.linkedin.com/in/fokou" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="https://github.com/hiluxfnh" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://twitter.com/FOKOUHilux1" target="_blank" rel="noopener" aria-label="X / Twitter"><i class="fab fa-x-twitter"></i></a>
+          <a href="mailto:hiluxfokou33@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="assets/js/nav.js"></script>
+  <script>window.AOS && AOS.init({ duration: 800, once: true, offset: 60 });</script>
+</body>
+</html>

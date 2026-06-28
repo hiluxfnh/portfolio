@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Technical writeups by Hilux Fokou Ngoumo on security, NLP, and building technology that protects people — threat-modelling ML, usable security, and securing humanitarian data." />
+  <title>Writeups | Hilux Fokou Ngoumo</title>
+  <link rel="icon" href="assets/img/icon.png" type="image/png">
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Writeups — Hilux Fokou Ngoumo" />
+  <meta property="og:description" content="Technical writing on security, NLP and building technology that protects people." />
+  <meta property="og:image" content="assets/img/prof1.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Pacifico&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/base.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <header class="site-header">
+    <nav class="site-nav" aria-label="Primary">
+      <a href="index.html" class="brand">Hilux</a>
+      <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-list">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-list" id="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="tech.html">Work</a></li>
+        <li><a href="security.html">Security</a></li>
+        <li><a href="social-impact.html">Impact</a></li>
+        <li><a href="writeups.html">Writeups</a></li>
+        <li><a href="contact.html" class="nav-cta">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="cs-hero">
+      <div class="shell" style="max-width:900px;">
+        <span class="hero-eyebrow"><span class="dot"></span> Notes from building</span>
+        <h1 class="cs-title">Writeups</h1>
+        <p class="hero-lead" style="margin:0;">Short, practical pieces on the thing I keep coming back to: how do you build technology that genuinely protects the people using it? Security, NLP, and lessons from shipping.</p>
+      </div>
+    </section>
+
+    <!-- Index -->
+    <section class="site-section">
+      <div class="shell">
+        <div class="wu-grid">
+          <a class="wu-card b" href="case-fakealert.html" style="text-decoration:none;">
+            <div class="band"></div>
+            <div class="body">
+              <span class="kicker">Case study · NLP &amp; Security</span>
+              <h3>FakeAlert: detecting disinformation without doing more harm</h3>
+              <p>A full case study — how I designed a fake-news &amp; hate-speech classifier with bias, privacy and adversarial robustness as first-class concerns.</p>
+              <span class="more">Read case study →</span>
+            </div>
+          </a>
+          <a class="wu-card s" href="#threat-model-ml" style="text-decoration:none;">
+            <div class="band"></div>
+            <div class="body">
+              <span class="kicker">Security · ML</span>
+              <h3>Why I threat-model my machine-learning projects</h3>
+              <p>Accuracy is a vanity metric. The questions that matter are "who does it fail on?" and "how easily is it fooled?"</p>
+              <span class="more">Read →</span>
+            </div>
+          </a>
+          <a class="wu-card s" href="#usable-security" style="text-decoration:none;">
+            <div class="band"></div>
+            <div class="body">
+              <span class="kicker">Security · UX</span>
+              <h3>Designing PhishBlock: security for people who aren't technical</h3>
+              <p>The hardest part of an anti-phishing tool isn't detection — it's getting a non-expert to trust and act on the warning.</p>
+              <span class="more">Read →</span>
+            </div>
+          </a>
+          <a class="wu-card e" href="#humanitarian-data" style="text-decoration:none;">
+            <div class="band"></div>
+            <div class="body">
+              <span class="kicker">Privacy · Humanitarian tech</span>
+              <h3>Securing humanitarian data: lessons from GetRespondr</h3>
+              <p>In a crisis platform, the data <em>is</em> the risk. Notes on minimisation, access control, and designing for the worst case.</p>
+              <span class="more">Read →</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Article 1 -->
+    <section class="site-section alt">
+      <div class="shell cs-body" id="threat-model-ml">
+        <span class="kicker" style="color:var(--secure);font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:.74rem;">Security · ML</span>
+        <h2 style="margin-top:6px;">Why I threat-model my machine-learning projects</h2>
+        <p>When I started building classifiers, I optimised the same thing everyone does: a single accuracy number on a test set. It took shipping <a href="case-fakealert.html">FakeAlert</a> for me to internalise that, for any model that touches people, accuracy is close to a vanity metric. A content-moderation model can score 95% and still be a liability.</p>
+        <p>So now I run an ML project through the same lens I'd use for any system that has adversaries — because it does. Concretely, I ask three questions:</p>
+        <p><strong>1. Who does it fail on?</strong> Aggregate error hides distributional harm. A toxicity model that's 95% accurate overall can be 80% accurate on a minority dialect — meaning it silences the very people it was meant to protect. I measure error <em>per group</em> and treat the gap as a defect, not a footnote.</p>
+        <p><strong>2. How easily is it fooled?</strong> Anyone trying to evade a filter will reach for character swaps, spacing, homoglyphs, and paraphrase. If I haven't generated those perturbations and measured the accuracy drop, I don't actually know how the model performs in the wild — I know how it performs against opponents who aren't trying.</p>
+        <p><strong>3. What does it leak or retain?</strong> Training data can be memorised; inference pipelines can quietly hoard personal data. Data minimisation and a clear retention story are part of the model's design, not the ops team's problem later.</p>
+        <div class="cs-callout secure"><span class="lab">The shift</span><p>Threat-modelling a model — evasion, poisoning, membership inference, privacy leakage — consistently produces a better product than chasing a leaderboard. It's the most direct place my security background makes my engineering better.</p></div>
+      </div>
+    </section>
+
+    <!-- Article 2 -->
+    <section class="site-section">
+      <div class="shell cs-body" id="usable-security">
+        <span class="kicker" style="color:var(--secure);font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:.74rem;">Security · UX</span>
+        <h2 style="margin-top:6px;">Designing PhishBlock: security for people who aren't technical</h2>
+        <p>I built <a href="https://github.com/hiluxfnh/PhishBlock" target="_blank" rel="noopener">PhishBlock</a> after watching people I care about — none of them engineers — get caught by phishing that any security person would spot instantly. The lesson that stuck: <strong>the detection is the easy half.</strong> The hard half is getting a non-expert to understand and act on a warning before they click.</p>
+        <p>A few principles came out of it:</p>
+        <ul>
+          <li><strong>Explain the "why", not just the verdict.</strong> "This link is risky because it impersonates a bank domain" beats a red cross. People follow advice they understand.</li>
+          <li><strong>Make the safe path the easy path.</strong> If avoiding the risk is more work than taking it, users take the risk. The secure action has to be one tap.</li>
+          <li><strong>Assume fear and shame.</strong> People who've been scammed often don't report it. The tone has to be supportive, never "you should have known."</li>
+        </ul>
+        <p>This is the thread running through all my security work: the people most exposed to online harm are usually the least equipped to defend themselves. A tool that only a technical user can operate isn't protecting the people who need it most.</p>
+      </div>
+    </section>
+
+    <!-- Article 3 -->
+    <section class="site-section alt">
+      <div class="shell cs-body" id="humanitarian-data">
+        <span class="kicker" style="color:var(--empower);font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:.74rem;">Privacy · Humanitarian tech</span>
+        <h2 style="margin-top:6px;">Securing humanitarian data: lessons from GetRespondr</h2>
+        <p><a href="https://github.com/hiluxfnh/Getrespondr" target="_blank" rel="noopener">GetRespondr</a> coordinates crisis response — incident reports, volunteers, resources. Building it forced a realisation that reframed how I think about data: in a humanitarian context, <strong>the data itself is the threat surface.</strong> A list of who reported what, from where, during a conflict or disaster is not a database — it's a target.</p>
+        <p>That changes the defaults:</p>
+        <ul>
+          <li><strong>Minimise first.</strong> The most secure field is the one you never collect. Every data point has to justify the risk it creates for the person it describes.</li>
+          <li><strong>Least privilege, by role.</strong> A volunteer coordinating tasks does not need to see reporter identities. Access is scoped to the job, not the org.</li>
+          <li><strong>Design for the worst case.</strong> Assume the system could be seized or breached, and ask: what's the damage to the most vulnerable person in the dataset? Then engineer to shrink that.</li>
+        </ul>
+        <p>This is exactly where my two worlds meet. The years of humanitarian work taught me <em>who</em> gets hurt and how; the security training taught me how to build so they don't. That intersection — protection as an engineering discipline — is the work I want to keep doing.</p>
+        <div class="cs-links" style="margin-top:24px;">
+          <a class="btn-solid" href="contact.html"><i class="fas fa-paper-plane"></i> Talk to me about this</a>
+          <a class="btn-ghost" href="security.html"><i class="fas fa-shield-halved"></i> My security work</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="fb-logo">Hilux</div>
+          <p>Security &amp; technology for social good — building and securing tools that protect people, from disinformation to humanitarian crises.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Explore</h5>
+          <a href="tech.html">Work &amp; Projects</a>
+          <a href="security.html">Security</a>
+          <a href="writeups.html">Writeups</a>
+          <a href="research.html">Research</a>
+        </div>
+        <div class="footer-col">
+          <h5>More</h5>
+          <a href="professional-experience.html">Experience</a>
+          <a href="certifications.html">Certifications</a>
+          <a href="Awards.html">Awards</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2025 Hilux Fokou Ngoumo. All rights reserved.</span>
+        <span class="footer-social">
+          <a href="https://www.linkedin.com/in/fokou" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="https://github.com/hiluxfnh" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://twitter.com/FOKOUHilux1" target="_blank" rel="noopener" aria-label="X / Twitter"><i class="fab fa-x-twitter"></i></a>
+          <a href="mailto:hiluxfokou33@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="assets/js/nav.js"></script>
+  <script>window.AOS && AOS.init({ duration: 800, once: true, offset: 60 });</script>
+</body>
+</html>
