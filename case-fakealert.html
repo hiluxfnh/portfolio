@@ -51,7 +51,7 @@
           <div class="m"><b>Status</b><span>Published paper + prototype</span></div>
         </div>
         <div class="cs-tagrow">
-          <span class="chip build">Python</span><span class="chip build">Transformers</span><span class="chip build">scikit-learn</span>
+          <span class="chip build">Python</span><span class="chip build">BERT</span><span class="chip build">LSTM</span><span class="chip build">scikit-learn</span>
           <span class="chip secure">Adversarial robustness</span><span class="chip secure">Bias &amp; fairness</span><span class="chip empower">Online safety</span>
         </div>
         <div class="cs-links">
@@ -66,7 +66,7 @@
       <div class="shell cs-body">
 
         <h2>Context</h2>
-        <p>Disinformation and online hate aren't abstract problems for the communities I work with — they translate into real-world harm: manipulated elections, eroded trust in health information, and targeted abuse of women and minorities. I'd spent years on the <em>policy</em> side of this through UN forums. FakeAlert was my attempt to attack the same problem from the <em>engineering</em> side, and it became the basis of my 2025 paper, <a href="https://dx.doi.org/10.2139/ssrn.5181145" target="_blank" rel="noopener"><em>"NLP in the Digital Age: Combating Fake News, Hate Speech, and Ethical Risks for Social Integrity."</em></a></p>
+        <p>Disinformation and online hate aren't abstract problems for the communities I work with — they translate into real-world harm: manipulated elections, eroded trust in health information, and targeted abuse of women and minorities. I'd spent years on the <em>policy</em> side of this through UN forums. FakeAlert was my attempt to attack the same problem from the <em>engineering</em> side, and it became the basis of my 2025 paper, <a href="https://dx.doi.org/10.2139/ssrn.5181145" target="_blank" rel="noopener"><em>"NLP in the Digital Age: Combating Fake News, Hate Speech, and Ethical Risks for Social Integrity."</em></a> The work is framed against real regulation — the EU's <strong>Digital Services Act</strong> — because detection without a governance and accountability story is only half a solution.</p>
 
         <h2>The problem</h2>
         <p>Most content-classification systems optimise a single number — accuracy — and quietly inherit three dangerous failure modes:</p>
@@ -90,10 +90,10 @@
         <h3>Data</h3>
         <p>I combined public misinformation and hate-speech corpora, then deliberately stress-tested them for representation gaps before training — because a model is only as fair as the distribution it learns from.</p>
         <h3>Modelling</h3>
-        <p>I built up in layers rather than jumping to the heaviest model:</p>
+        <p>I built up in layers rather than jumping straight to the heaviest model:</p>
         <ol>
           <li>A transparent <strong>TF-IDF + linear</strong> baseline, to establish a floor and a sanity check on features.</li>
-          <li>A fine-tuned <strong>transformer encoder</strong> (BERT-family) for context-sensitive classification.</li>
+          <li>A sequence model (<strong>LSTM</strong>) and a fine-tuned <strong>BERT</strong> transformer for context-sensitive classification — the BERT model reached up to <strong>98% accuracy</strong> on fake-news detection.</li>
           <li>An <strong>explainability layer</strong> surfacing the tokens driving each decision, so flags are auditable.</li>
         </ol>
 
@@ -124,12 +124,12 @@
         <h2>Evaluation</h2>
         <p>I evaluated on a held-out split using precision, recall and F1 <em>per class</em>, plus a fairness gap across demographic slices and an adversarial-robustness delta (clean vs. perturbed accuracy). The full results and methodology are in the <a href="https://dx.doi.org/10.2139/ssrn.5181145" target="_blank" rel="noopener">published paper</a>.</p>
         <div class="cs-stats">
+          <div class="s"><b>98%</b><span>Peak fake-news accuracy (BERT)</span></div>
+          <div class="s"><b>LSTM + BERT</b><span>Core models</span></div>
           <div class="s"><b>2</b><span>Tasks: misinfo + hate</span></div>
-          <div class="s"><b>3</b><span>Model tiers compared</span></div>
-          <div class="s"><b><span class="fillme">__</span></b><span>F1 on held-out set</span></div>
-          <div class="s"><b><span class="fillme">__</span></b><span>Robustness retained</span></div>
+          <div class="s"><b>EU DSA</b><span>Framed against regulation</span></div>
         </div>
-        <p style="font-size:.86rem;color:var(--ink-faint);"><i class="fas fa-circle-info"></i> The two figures above are highlighted for me to drop in the exact numbers from the paper.</p>
+        <p style="font-size:.86rem;color:var(--ink-faint);"><i class="fas fa-circle-info"></i> Full methodology and per-class results are in the <a href="https://dx.doi.org/10.2139/ssrn.5181145" target="_blank" rel="noopener">published paper</a>.</p>
 
         <h2>What I learned</h2>
         <ul>

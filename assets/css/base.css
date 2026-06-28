@@ -340,6 +340,13 @@ a:focus-visible, button:focus-visible, .nav-toggle:focus-visible, .chip-link:foc
 .wu-card p { margin: 0; color: var(--ink-soft); font-size: .92rem; flex: 1; }
 .wu-card .more { color: var(--accent); font-weight: 600; font-size: .9rem; text-decoration: none; }
 
+/* =====================  MOMENTS PHOTO STRIP  ===================== */
+.moments { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px; margin-top: 34px; }
+.moments figure { margin: 0; border-radius: 14px; overflow: hidden; box-shadow: var(--shadow-sm); position: relative; }
+.moments img { width: 100%; height: 160px; object-fit: cover; display: block; transition: transform .4s ease; }
+.moments figure:hover img { transform: scale(1.06); }
+.moments figcaption { position: absolute; inset: auto 0 0 0; background: linear-gradient(transparent, rgba(15,18,28,.78)); color: #fff; font-size: .76rem; font-weight: 600; padding: 22px 12px 10px; }
+
 /* =====================  CHAT ASSISTANT  ===================== */
 .hbot {
   position: fixed; right: 20px; bottom: 20px; width: min(360px, calc(100vw - 32px));
