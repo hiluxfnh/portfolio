@@ -5,6 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta name="description" content="Achievements Gallery | Hilux Fokou Ngoumo - Explore a dynamic showcase of impactful milestones, global leadership, innovative tech projects, and transformative research." />
   <title>Achievements Gallery | Hilux Fokou Ngoumo</title>
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Achievements Gallery | Hilux Fokou Ngoumo" />
+  <meta property="og:description" content="Achievements Gallery | Hilux Fokou Ngoumo - Explore a dynamic showcase of impactful milestones, global leadership, innovative tech projects, and transformative research." />
+  <meta property="og:image" content="assets/img/prof1.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
   <link rel="icon" href="assets/img/icon.png" type="image/png">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Pacifico&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
@@ -43,8 +49,8 @@
     <!-- Global Youth Leadership -->
     <section class="achievement-card" data-aos="fade-up">
         <div class="achievement-media">
-          <img src="assets/img/unesco.jpeg" alt="Global Youth Leadership">
-          <img src="assets/img/wbg.png" alt="Global Youth Leadership">
+          <img src="assets/img/unesco.jpeg" alt="Global Youth Leadership" loading="lazy" decoding="async">
+          <img src="assets/img/wbg.jpg" alt="Global Youth Leadership" loading="lazy" decoding="async">
     
         </div>
         <div class="achievement-details">
@@ -93,7 +99,7 @@
     <!-- Academic & Award Honors -->
     <section class="achievement-card" data-aos="fade-up" data-aos-delay="100">
       <div class="achievement-media">
-        <img src="assets/img/ace.png" alt="Academic Honor">
+        <img src="assets/img/ace.jpg" alt="Academic Honor" loading="lazy" decoding="async">
       </div>
       <div class="achievement-details">
         <h2>Academic & Award Honors</h2>
@@ -106,7 +112,7 @@
     <!-- Tech Innovation & Research -->
     <section class="achievement-card" data-aos="fade-up" data-aos-delay="200">
       <div class="achievement-media">
-        <img src="assets/img/fund.png" alt="Tech Innovation">
+        <img src="assets/img/fund.jpg" alt="Tech Innovation" loading="lazy" decoding="async">
       </div>
       <div class="achievement-details">
         <h2>Tech Innovation & Research</h2>
@@ -156,7 +162,7 @@
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    AOS.init({
+    window.AOS && AOS.init({
       duration: 1000,
       once: true,
     });

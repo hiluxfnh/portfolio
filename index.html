@@ -56,7 +56,7 @@
           </p>
           <div class="hero-actions">
             <a href="tech.html" class="btn-solid"><i class="fas fa-code"></i> See my work</a>
-            <a href="contact.html" class="btn-ghost"><i class="fas fa-paper-plane"></i> Get in touch</a>
+            <a href="assets/Hilux-Fokou-CV.pdf" class="btn-ghost" target="_blank" rel="noopener"><i class="fas fa-download"></i> Download CV</a>
           </div>
           <div class="audience-router" aria-label="Choose your path">
             <span>I'm here for&nbsp;→</span>
@@ -65,9 +65,9 @@
           </div>
         </div>
         <div class="hero-collage" data-aos="fade-left">
-          <img class="span2" src="assets/img/prof1.jpg" alt="Hilux Fokou Ngoumo, portrait">
-          <img class="tall" src="assets/img/grad2.jpg" alt="Graduation at GITAM University">
-          <img class="tall" src="assets/img/ace10.jpeg" alt="Speaking at a leadership forum">
+          <img class="span2" src="assets/img/prof1.jpg" alt="Hilux Fokou Ngoumo, portrait" fetchpriority="high" decoding="async">
+          <img class="tall" src="assets/img/grad2.jpg" alt="Graduation at GITAM University" loading="lazy" decoding="async">
+          <img class="tall" src="assets/img/ace10.jpeg" alt="Speaking at a leadership forum" loading="lazy" decoding="async">
         </div>
       </div>
 
@@ -193,7 +193,7 @@
           <p>Whether you're a security team, a research lab, or a civil-society organization — I'd love to hear what you're working on.</p>
           <div class="hero-actions" style="justify-content:center;">
             <a href="contact.html" class="btn-solid"><i class="fas fa-paper-plane"></i> Get in touch</a>
-            <a href="security.html" class="btn-ghost"><i class="fas fa-shield-halved"></i> View security work</a>
+            <a href="assets/Hilux-Fokou-CV.pdf" class="btn-ghost" target="_blank" rel="noopener"><i class="fas fa-download"></i> Download CV</a>
           </div>
         </div>
       </div>
@@ -238,6 +238,6 @@
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="assets/js/nav.js"></script>
-  <script>AOS.init({ duration: 800, once: true, offset: 60 });</script>
+  <script>window.AOS && AOS.init({ duration: 800, once: true, offset: 60 });</script>
 </body>
 </html>

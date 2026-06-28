@@ -5,6 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta name="description" content="Social Impact | Hilux Fokou Ngoumo – IAWG, Mifali, trainings, guides, workshops, conferences and more." />
   <title>Social Impact | Hilux Fokou Ngoumo</title>
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Social Impact | Hilux Fokou Ngoumo" />
+  <meta property="og:description" content="Social Impact | Hilux Fokou Ngoumo – IAWG, Mifali, trainings, guides, workshops, conferences and more." />
+  <meta property="og:image" content="assets/img/prof1.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
   <link rel="icon" href="assets/img/icon.png" type="image/png">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Pacifico&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/social-impact.css">
@@ -268,18 +274,23 @@
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    AOS.init({ duration: 800, once: true });
+    window.AOS && AOS.init({ duration: 800, once: true });
 
-    // Accordion functionality
+    // Accordion functionality (with ARIA)
     document.querySelectorAll('.accordion-header').forEach(btn => {
+      btn.setAttribute('aria-expanded', 'false');
       btn.addEventListener('click', () => {
         const body = btn.nextElementSibling;
-        const open = body.style.maxHeight;
+        const isOpen = !!body.style.maxHeight;
         document.querySelectorAll('.accordion-body').forEach(b => b.style.maxHeight = null);
-        document.querySelectorAll('.accordion-header i').forEach(i => i.classList.remove('rotated'));
-        if (!open) {
+        document.querySelectorAll('.accordion-header').forEach(h => {
+          h.setAttribute('aria-expanded', 'false');
+          const ic = h.querySelector('i'); if (ic) ic.classList.remove('rotated');
+        });
+        if (!isOpen) {
           body.style.maxHeight = body.scrollHeight + 'px';
-          btn.querySelector('i').classList.add('rotated');
+          btn.setAttribute('aria-expanded', 'true');
+          const ic = btn.querySelector('i'); if (ic) ic.classList.add('rotated');
         }
       });
     });
