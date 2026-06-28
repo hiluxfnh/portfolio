@@ -3,122 +3,241 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Fokou Ngoumo Hilux - AI Researcher | Cybersecurity Enthusiast | Social Impact Leader. Discover projects, research, speeches & achievements." />
-  <title>Hilux Fokou Ngoumo | Portfolio</title>
+  <meta name="description" content="Hilux Fokou Ngoumo — I build and secure technology that protects people, from disinformation and online harm to climate and humanitarian crises. Security researcher, full-stack builder, and UN youth leader." />
+  <title>Hilux Fokou Ngoumo | Security & Technology for Social Good</title>
   <link rel="icon" href="assets/img/icon.png" type="image/png">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Pacifico&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <link rel="stylesheet" href="assets/css/style.css" />
+
+  <!-- Open Graph / social -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Hilux Fokou Ngoumo — Security & Technology for Social Good" />
+  <meta property="og:description" content="I build and secure technology that protects people — from disinformation and online harm to climate and humanitarian crises." />
+  <meta property="og:image" content="assets/img/prof1.jpg" />
+  <meta property="og:url" content="https://hiluxfokou.me/" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Pacifico&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/base.css" />
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <link rel="icon" href="assets/img/icon.png" type="image/x-icon">
-  
 </head>
 <body>
-  <header>
-    <nav class="navbar">
-      <div class="logo">Hilux</div>
-      <ul class="nav-links">
-        <li><a href="about.html" class="bubble">About</a></li>
-        <li><a href="research.html" class="bubble">Research</a></li>
-        <li><a href="tech.html" class="bubble">Tech</a></li>
-        <li><a href="social-impact.html" class="bubble">Leadership</a></li>
-        <li><a href="gallery.html" class="bubble">Gallery</a></li>
-        <li><a href="contact.html" class="bubble">Contact</a></li>
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <!-- ===== Shared header ===== -->
+  <header class="site-header">
+    <nav class="site-nav" aria-label="Primary">
+      <a href="index.html" class="brand">Hilux</a>
+      <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-list">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-list" id="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="tech.html">Work</a></li>
+        <li><a href="security.html">Security</a></li>
+        <li><a href="social-impact.html">Impact</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="contact.html" class="nav-cta">Contact</a></li>
       </ul>
     </nav>
   </header>
 
-  <section class="hero" id="home">
-    <div class="hero-content" data-aos="fade-up">
-      <h1>Hello, I'm <span class="highlight">Hilux Fokou Ngoumo</span></h1>
-      <p>Award-winning tech innovator, UN youth leader, and AI & cybersecurity enthusiast. Empowering Africa through code, education, and climate action.</p>
-      <a href="about.html" class="btn">Discover My Journey</a>
-    </div>
-    <div class="hero-collage" data-aos="fade-left">
-      <div class="collage-item collage-item-large">
-        <img src="assets/img/prof1.jpg" alt="Hilux Profile">
+  <main id="main">
+    <!-- ===== Hero ===== -->
+    <section class="site-hero">
+      <div class="shell hero-grid">
+        <div data-aos="fade-up">
+          <span class="hero-eyebrow"><span class="dot"></span> Security &amp; technology for social good</span>
+          <h1 class="hero-title">I build and secure technology that <span class="grad">protects people</span>.</h1>
+          <p class="hero-lead">
+            I'm Hilux Fokou Ngoumo — a security researcher and full-stack builder from Cameroon, and a UN youth leader.
+            From fighting disinformation and online harm to coordinating humanitarian and climate response, my work lives
+            where <strong>code</strong> meets <strong>human safety</strong>.
+          </p>
+          <div class="hero-actions">
+            <a href="tech.html" class="btn-solid"><i class="fas fa-code"></i> See my work</a>
+            <a href="contact.html" class="btn-ghost"><i class="fas fa-paper-plane"></i> Get in touch</a>
+          </div>
+          <div class="audience-router" aria-label="Choose your path">
+            <span>I'm here for&nbsp;→</span>
+            <a class="chip-link" href="security.html"><i class="fas fa-shield-halved"></i> Security &amp; Tech</a>
+            <a class="chip-link" href="social-impact.html"><i class="fas fa-earth-africa"></i> Impact &amp; Advocacy</a>
+          </div>
+        </div>
+        <div class="hero-collage" data-aos="fade-left">
+          <img class="span2" src="assets/img/prof1.jpg" alt="Hilux Fokou Ngoumo, portrait">
+          <img class="tall" src="assets/img/grad2.jpg" alt="Graduation at GITAM University">
+          <img class="tall" src="assets/img/ace10.jpeg" alt="Speaking at a leadership forum">
+        </div>
       </div>
-      <div class="collage-item collage-item-small">
-        <img src="assets/img/grad2.jpg" alt="Tech">
-      </div>
-      <div class="collage-item collage-item-small">
-        <img src="assets/img/ace10.jpeg" alt="Leadership">
-      </div>
-    </div>
-  </section>
 
-  <section class="highlights">
-    <div class="highlight-card" data-aos="zoom-in">
-      <i class="fas fa-robot"></i>
-      <h3>Tech, AI & Cybersecurity</h3>
-      <p>From AI-powered assistive tech to secure systems, see my projects.</p>
-      <a href="tech.html">Explore</a>
-    </div>
-    <div class="highlight-card" data-aos="zoom-in" data-aos-delay="100">
-      <i class="fas fa-globe"></i>
-      <h3>Global Leadership</h3>
-      <p>Voicing youth at UN events like COP28, CSW68, SB59 and beyond.</p>
-      <a href="social-impact.html">Learn More</a>
-    </div>
-    <div class="highlight-card" data-aos="zoom-in" data-aos-delay="200">
-      <i class="fas fa-award"></i>
-      <h3>Achievements</h3>
-      <p>Recognized by the UN, World Bank, and global fellowships.</p>
-      <a href="gallery.html">View Gallery</a>
-    </div>
-  </section>
+      <!-- Stat strip -->
+      <div class="shell">
+        <div class="stat-strip" data-aos="fade-up">
+          <div class="stat"><div class="num">13,000+</div><div class="lbl">Adolescents reached</div></div>
+          <div class="stat"><div class="num">7+</div><div class="lbl">UN / global forums</div></div>
+          <div class="stat"><div class="num">6</div><div class="lbl">Security certifications</div></div>
+          <div class="stat"><div class="num">2</div><div class="lbl">Published papers</div></div>
+          <div class="stat"><div class="num">36+</div><div class="lbl">Orgs trained</div></div>
+        </div>
+      </div>
+    </section>
 
-  <!-- Spotlight Section -->
-<section class="spotlight-section" id="spotlight">
-    <div class="section-title" data-aos="fade-up">More Highlights</div>
-    <div class="spotlight-grid">
-      
-      <!-- Internships -->
-      <div class="spotlight-card" data-aos="fade-up" data-aos-delay="100">
-        <i class="fas fa-user-graduate"></i>
-        <h3>Professional Experience</h3>
-        <p>Explore hands-on experiences with top organizations in AI, cybersecurity, and innovation.</p>
-        <a href="professional-experience.html" class="spotlight-btn">View Professional Experience</a>
+    <!-- ===== Three pillars (the bind) ===== -->
+    <section class="site-section alt">
+      <div class="shell">
+        <div class="sec-head" data-aos="fade-up">
+          <div class="sec-kicker">One mission, three ways</div>
+          <h2 class="sec-title">Build · Secure · Empower</h2>
+          <p class="sec-sub">Cybersecurity and social impact aren't two careers for me — they're the same goal at different layers: keeping people safe and giving them a voice.</p>
+        </div>
+        <div class="pillars">
+          <article class="pillar build" data-aos="fade-up">
+            <div class="ic"><i class="fas fa-code"></i></div>
+            <h3>Build</h3>
+            <p>Full-stack platforms and AI tools that solve real problems — student housing, crisis coordination, climate &amp; media-literacy education.</p>
+            <a class="pillar-link" href="tech.html">Explore the tech →</a>
+          </article>
+          <article class="pillar secure" data-aos="fade-up" data-aos-delay="100">
+            <div class="ic"><i class="fas fa-shield-halved"></i></div>
+            <h3>Secure</h3>
+            <p>Cybersecurity research and tooling — anti-phishing, NLP against fake news &amp; hate speech, exam integrity. CEH, ISC2 CC, SC-900 and an MSc in Information Security.</p>
+            <a class="pillar-link" href="security.html">Into the security work →</a>
+          </article>
+          <article class="pillar empower" data-aos="fade-up" data-aos-delay="200">
+            <div class="ic"><i class="fas fa-earth-africa"></i></div>
+            <h3>Empower</h3>
+            <p>Youth advocacy at the UN — IAWG co-chair, YOUNGO climate negotiator, trainer reaching 13,000+ adolescents across humanitarian settings.</p>
+            <a class="pillar-link" href="social-impact.html">See the impact →</a>
+          </article>
+        </div>
       </div>
-  
-      <!-- General Certifications -->
-      <div class="spotlight-card" data-aos="fade-up" data-aos-delay="200">
-        <i class="fas fa-certificate"></i>
-        <h3>Certifications</h3>
-        <p>Browse technical and leadership certifications that mark my continuous learning journey.</p>
-        <a href="certifications.html" class="spotlight-btn">Explore Certifications</a>
-      </div>
-  
-      <!-- Awards -->
-      <div class="spotlight-card" data-aos="fade-up" data-aos-delay="300">
-        <i class="fas fa-trophy"></i>
-        <h3>Awards & Recognition</h3>
-        <p>From international conferences to university honors—see the milestones that fuel my purpose.</p>
-        <a href="Awards.html" class="spotlight-btn">See Awards</a>
-      </div>
-      
-    </div>
-  </section>
-  
+    </section>
 
-  <footer>
-    <div class="footer-container">
-      <div class="social-icons">
-        <a href="https://www.linkedin.com/in/fokou" target="_blank"><i class="fab fa-linkedin"></i></a>
-        <a href="https://github.com/hiluxfnh" target="_blank"><i class="fab fa-github"></i></a>
-        <a href="https://twitter.com/FOKOUHilux1" target="_blank"><i class="fab fa-twitter"></i></a>
-        <a href="mailto:hiluxfokou33@gmail.com"><i class="fas fa-envelope"></i></a>
+    <!-- ===== Featured work (shows the bind in projects) ===== -->
+    <section class="site-section">
+      <div class="shell">
+        <div class="sec-head" data-aos="fade-up">
+          <div class="sec-kicker">Selected projects</div>
+          <h2 class="sec-title">Where code meets human safety</h2>
+          <p class="sec-sub">Every project carries both a technical stack and a human purpose — slice them however you like.</p>
+        </div>
+        <div class="feature-grid">
+
+          <article class="feature-card" data-aos="fade-up">
+            <div class="fc-body">
+              <h3>GetRespondr</h3>
+              <p>Real-time crisis coordination platform — incident reporting, volunteer task assignment, resource management, and AI-powered data ingestion from external sources.</p>
+              <div class="fc-tags">
+                <span class="tag t-build">Full-stack</span><span class="tag t-build">AI</span><span class="tag t-empower">Humanitarian</span>
+              </div>
+              <div class="fc-links">
+                <a href="https://github.com/hiluxfnh/Getrespondr" target="_blank" rel="noopener"><i class="fab fa-github"></i> Code</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="feature-card" data-aos="fade-up" data-aos-delay="80">
+            <div class="fc-body">
+              <h3>FakeAlert (NLP)</h3>
+              <p>Detecting fake news and hate speech to protect social integrity — the working implementation behind my 2025 paper on NLP and online safety.</p>
+              <div class="fc-tags">
+                <span class="tag t-build">Python · NLP</span><span class="tag t-secure">Trust &amp; Safety</span><span class="tag t-empower">Disinformation</span>
+              </div>
+              <div class="fc-links">
+                <a href="https://github.com/hiluxfnh/ITMO_FakeAlert_NLP" target="_blank" rel="noopener"><i class="fab fa-github"></i> Code</a>
+                <a href="https://dx.doi.org/10.2139/ssrn.5181145" target="_blank" rel="noopener"><i class="fas fa-file-lines"></i> Paper</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="feature-card" data-aos="fade-up" data-aos-delay="160">
+            <div class="fc-body">
+              <h3>PhishBlock</h3>
+              <p>A phishing-detection tool that helps everyday users spot and avoid malicious links — cybersecurity built for non-technical people.</p>
+              <div class="fc-tags">
+                <span class="tag t-secure">Cybersecurity</span><span class="tag t-build">JavaScript</span><span class="tag t-empower">Public safety</span>
+              </div>
+              <div class="fc-links">
+                <a href="https://github.com/hiluxfnh/PhishBlock" target="_blank" rel="noopener"><i class="fab fa-github"></i> Code</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="feature-card" data-aos="fade-up" data-aos-delay="240">
+            <div class="fc-body">
+              <h3>KamerLark</h3>
+              <p>A student-housing platform for Cameroon with verified listings and transparent broker reviews — tackling a real problem I lived through.</p>
+              <div class="fc-tags">
+                <span class="tag t-build">React · Node</span><span class="tag t-empower">Student welfare</span>
+              </div>
+              <div class="fc-links">
+                <a href="https://github.com/hiluxfnh/Kamerlark1.1" target="_blank" rel="noopener"><i class="fab fa-github"></i> Code</a>
+                <a href="tech.html"><i class="fas fa-arrow-right"></i> Details</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+        <p style="text-align:center; margin-top:34px;">
+          <a href="tech.html" class="btn-ghost">View all projects <i class="fas fa-arrow-right"></i></a>
+        </p>
       </div>
-      <p>&copy; 2025 Fokou Ngoumo Hilux. All Rights Reserved.</p>
+    </section>
+
+    <!-- ===== CTA band ===== -->
+    <section class="site-section alt">
+      <div class="shell">
+        <div class="cta-band" data-aos="fade-up">
+          <h2>Let's build something that protects people.</h2>
+          <p>Whether you're a security team, a research lab, or a civil-society organization — I'd love to hear what you're working on.</p>
+          <div class="hero-actions" style="justify-content:center;">
+            <a href="contact.html" class="btn-solid"><i class="fas fa-paper-plane"></i> Get in touch</a>
+            <a href="security.html" class="btn-ghost"><i class="fas fa-shield-halved"></i> View security work</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== Shared footer ===== -->
+  <footer class="site-footer">
+    <div class="shell">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="fb-logo">Hilux</div>
+          <p>Security &amp; technology for social good — building and securing tools that protect people, from disinformation to humanitarian crises.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Explore</h5>
+          <a href="tech.html">Work &amp; Projects</a>
+          <a href="security.html">Security</a>
+          <a href="social-impact.html">Impact</a>
+          <a href="research.html">Research</a>
+        </div>
+        <div class="footer-col">
+          <h5>More</h5>
+          <a href="professional-experience.html">Experience</a>
+          <a href="certifications.html">Certifications</a>
+          <a href="Awards.html">Awards</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2025 Hilux Fokou Ngoumo. All rights reserved.</span>
+        <span class="footer-social">
+          <a href="https://www.linkedin.com/in/fokou" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="https://github.com/hiluxfnh" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://twitter.com/FOKOUHilux1" target="_blank" rel="noopener" aria-label="X / Twitter"><i class="fab fa-x-twitter"></i></a>
+          <a href="mailto:hiluxfokou33@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        </span>
+      </div>
     </div>
   </footer>
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init({
-      duration: 1000,
-      once: true,
-    });
-  </script>
+  <script src="assets/js/nav.js"></script>
+  <script>AOS.init({ duration: 800, once: true, offset: 60 });</script>
 </body>
 </html>

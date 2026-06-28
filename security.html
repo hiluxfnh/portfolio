@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Cybersecurity work of Hilux Fokou Ngoumo — security research, anti-phishing, NLP against disinformation, and an MSc in Information Security. CEH, ISC2 CC, CAP, SC-900, AZ-900, AI-900." />
+  <title>Security | Hilux Fokou Ngoumo</title>
+  <link rel="icon" href="assets/img/icon.png" type="image/png">
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Security — Hilux Fokou Ngoumo" />
+  <meta property="og:description" content="Security research and tooling that keeps people safe online — anti-phishing, anti-disinformation NLP, exam integrity, and an MSc in Information Security." />
+  <meta property="og:image" content="assets/img/mssecurity.jpeg" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Pacifico&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/base.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    .sec-hero { background:
+        radial-gradient(900px 420px at 8% -10%, #d7f3e7 0%, transparent 60%),
+        radial-gradient(800px 380px at 100% 0%, #e9ecff 0%, transparent 55%), var(--bg);
+      padding: clamp(46px, 7vw, 80px) 0; }
+    .cert-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+    .cert-item { display: flex; gap: 14px; align-items: flex-start; background: var(--surface);
+      border: 1px solid var(--border); border-radius: var(--radius); padding: 18px; box-shadow: var(--shadow-sm); }
+    .cert-item .ci-ic { width: 40px; height: 40px; flex: 0 0 40px; border-radius: 10px; display: grid; place-items: center;
+      background: #e6f7ef; color: var(--secure); font-size: 1.1rem; }
+    .cert-item h4 { margin: 0 0 2px; font-size: 1rem; color: var(--ink); }
+    .cert-item span { font-size: .82rem; color: var(--ink-faint); }
+    .focus-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; }
+    .focus-card { background: var(--surface); border: 1px solid var(--border); border-left: 4px solid var(--secure);
+      border-radius: var(--radius); padding: 22px; box-shadow: var(--shadow-sm); }
+    .focus-card i { color: var(--secure); font-size: 1.3rem; margin-bottom: 10px; }
+    .focus-card h3 { margin: 0 0 6px; font-size: 1.1rem; color: var(--ink); }
+    .focus-card p { margin: 0; color: var(--ink-soft); font-size: .94rem; }
+  </style>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <header class="site-header">
+    <nav class="site-nav" aria-label="Primary">
+      <a href="index.html" class="brand">Hilux</a>
+      <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-list">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-list" id="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="tech.html">Work</a></li>
+        <li><a href="security.html">Security</a></li>
+        <li><a href="social-impact.html">Impact</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="contact.html" class="nav-cta">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="sec-hero">
+      <div class="shell">
+        <span class="hero-eyebrow" data-aos="fade-up"><span class="dot"></span> Cybersecurity &amp; digital safety</span>
+        <h1 class="hero-title" data-aos="fade-up" style="max-width: 18ch;">Security in service of <span class="grad">human safety</span>.</h1>
+        <p class="hero-lead" data-aos="fade-up">
+          Cybersecurity is what I studied and what I love. But I practice it with a purpose: protecting the people who are
+          easiest to harm online. My work spans anti-phishing, disinformation detection, exam integrity, and survivor-support
+          tooling — soon deepened by an <strong>MSc in Information Security at ITMO University</strong> (Open Doors Scholarship).
+        </p>
+        <div class="hero-actions" data-aos="fade-up">
+          <a href="https://www.credly.com/users/hilux/badges" target="_blank" rel="noopener" class="btn-solid"><i class="fas fa-certificate"></i> Verify on Credly</a>
+          <a href="contact.html" class="btn-ghost"><i class="fas fa-paper-plane"></i> Work with me</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Certifications ladder -->
+    <section class="site-section">
+      <div class="shell">
+        <div class="sec-head" data-aos="fade-up">
+          <div class="sec-kicker">Credentials</div>
+          <h2 class="sec-title">A deliberate security cert path</h2>
+          <p class="sec-sub">From offensive fundamentals to governance, cloud and AI security — all independently verifiable.</p>
+        </div>
+        <div class="cert-grid">
+          <div class="cert-item" data-aos="fade-up"><div class="ci-ic"><i class="fas fa-user-secret"></i></div><div><h4>CEH</h4><span>Certified Ethical Hacker · EC-Council</span></div></div>
+          <div class="cert-item" data-aos="fade-up" data-aos-delay="40"><div class="ci-ic"><i class="fas fa-shield-halved"></i></div><div><h4>ISC2 CC</h4><span>Certified in Cybersecurity</span></div></div>
+          <div class="cert-item" data-aos="fade-up" data-aos-delay="80"><div class="ci-ic"><i class="fas fa-clipboard-check"></i></div><div><h4>CAP</h4><span>Certified Authorization Professional</span></div></div>
+          <div class="cert-item" data-aos="fade-up" data-aos-delay="120"><div class="ci-ic"><i class="fas fa-lock"></i></div><div><h4>SC-900</h4><span>Microsoft Security, Compliance &amp; Identity</span></div></div>
+          <div class="cert-item" data-aos="fade-up" data-aos-delay="160"><div class="ci-ic"><i class="fas fa-cloud"></i></div><div><h4>AZ-900</h4><span>Microsoft Azure Fundamentals</span></div></div>
+          <div class="cert-item" data-aos="fade-up" data-aos-delay="200"><div class="ci-ic"><i class="fas fa-robot"></i></div><div><h4>AI-900</h4><span>Microsoft Azure AI Fundamentals</span></div></div>
+          <div class="cert-item" data-aos="fade-up" data-aos-delay="240"><div class="ci-ic"><i class="fas fa-network-wired"></i></div><div><h4>AWS Cloud Architecting</h4><span>AWS Academy Graduate</span></div></div>
+          <div class="cert-item" data-aos="fade-up" data-aos-delay="280"><div class="ci-ic"><i class="fas fa-graduation-cap"></i></div><div><h4>MSc Information Security</h4><span>ITMO University · Open Doors (in progress)</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Security projects -->
+    <section class="site-section alt">
+      <div class="shell">
+        <div class="sec-head" data-aos="fade-up">
+          <div class="sec-kicker">Applied security</div>
+          <h2 class="sec-title">Tools that keep people safe</h2>
+        </div>
+        <div class="feature-grid">
+          <article class="feature-card" data-aos="fade-up">
+            <div class="fc-body">
+              <h3>PhishBlock</h3>
+              <p>Phishing-detection tool that helps non-technical users recognise and avoid malicious links — security made usable.</p>
+              <div class="fc-tags"><span class="tag t-secure">Anti-phishing</span><span class="tag t-build">JavaScript</span></div>
+              <div class="fc-links"><a href="https://github.com/hiluxfnh/PhishBlock" target="_blank" rel="noopener"><i class="fab fa-github"></i> Code</a></div>
+            </div>
+          </article>
+          <article class="feature-card" data-aos="fade-up" data-aos-delay="80">
+            <div class="fc-body">
+              <h3>FakeAlert — NLP</h3>
+              <p>Detecting fake news and hate speech to protect social integrity; the implementation behind my 2025 research paper.</p>
+              <div class="fc-tags"><span class="tag t-secure">Trust &amp; Safety</span><span class="tag t-build">Python · NLP</span></div>
+              <div class="fc-links">
+                <a href="https://github.com/hiluxfnh/ITMO_FakeAlert_NLP" target="_blank" rel="noopener"><i class="fab fa-github"></i> Code</a>
+                <a href="https://dx.doi.org/10.2139/ssrn.5181145" target="_blank" rel="noopener"><i class="fas fa-file-lines"></i> Paper</a>
+              </div>
+            </div>
+          </article>
+          <article class="feature-card" data-aos="fade-up" data-aos-delay="160">
+            <div class="fc-body">
+              <h3>ProctoShield</h3>
+              <p>AI-assisted remote-exam integrity system using computer vision and anomaly detection — built for the Smart India Hackathon.</p>
+              <div class="fc-tags"><span class="tag t-secure">Exam integrity</span><span class="tag t-build">OpenCV · ML</span></div>
+              <div class="fc-links"><a href="https://github.com/hiluxfnh/Proctoshield" target="_blank" rel="noopener"><i class="fab fa-github"></i> Code</a></div>
+            </div>
+          </article>
+          <article class="feature-card" data-aos="fade-up" data-aos-delay="240">
+            <div class="fc-body">
+              <h3>CyberCraft Academy</h3>
+              <p>An education project teaching cyber-safety fundamentals to young people and first-time internet users.</p>
+              <div class="fc-tags"><span class="tag t-secure">Cyber awareness</span><span class="tag t-empower">Education</span></div>
+              <div class="fc-links"><a href="https://github.com/hiluxfnh/CyberCraft-Academy" target="_blank" rel="noopener"><i class="fab fa-github"></i> Code</a></div>
+            </div>
+          </article>
+          <article class="feature-card" data-aos="fade-up" data-aos-delay="320">
+            <div class="fc-body">
+              <h3>Survivor-Support Chatbot</h3>
+              <p>Open-source NLP chatbot consolidating legal resources, mental-health support and incident reporting for survivors of online &amp; gender-based violence — privacy-first by design.</p>
+              <div class="fc-tags"><span class="tag t-secure">Privacy</span><span class="tag t-build">NLP · Flask</span><span class="tag t-empower">GBV support</span></div>
+              <div class="fc-links"><a href="tech.html"><i class="fas fa-arrow-right"></i> Details</a></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Focus areas -->
+    <section class="site-section">
+      <div class="shell">
+        <div class="sec-head" data-aos="fade-up">
+          <div class="sec-kicker">Where I focus</div>
+          <h2 class="sec-title">My security niche</h2>
+        </div>
+        <div class="focus-grid">
+          <div class="focus-card" data-aos="fade-up"><i class="fas fa-comment-slash"></i><h3>Disinformation &amp; Trust/Safety</h3><p>Using NLP to fight fake news, hate speech and online manipulation.</p></div>
+          <div class="focus-card" data-aos="fade-up" data-aos-delay="60"><i class="fas fa-fish"></i><h3>Human-centred security</h3><p>Anti-phishing and awareness tools designed for non-technical, at-risk users.</p></div>
+          <div class="focus-card" data-aos="fade-up" data-aos-delay="120"><i class="fas fa-user-shield"></i><h3>Privacy &amp; survivor protection</h3><p>Privacy-preserving systems for survivors of GBV and online harm.</p></div>
+          <div class="focus-card" data-aos="fade-up" data-aos-delay="180"><i class="fas fa-cloud-arrow-up"></i><h3>Cloud &amp; AI security</h3><p>Securing cloud-native and AI-powered applications (Azure, AWS).</p></div>
+        </div>
+
+        <div class="chip-group" style="margin-top:38px;" data-aos="fade-up">
+          <h4>Security toolbox</h4>
+          <div class="chips">
+            <span class="chip secure">Ethical Hacking</span>
+            <span class="chip secure">Threat Modeling</span>
+            <span class="chip secure">Cryptography</span>
+            <span class="chip secure">Cloud Security</span>
+            <span class="chip secure">Identity &amp; Access</span>
+            <span class="chip secure">OSINT</span>
+            <span class="chip secure">Phishing Analysis</span>
+            <span class="chip build">Python</span>
+            <span class="chip build">NLP</span>
+            <span class="chip build">OpenCV</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="site-section alt">
+      <div class="shell">
+        <div class="cta-band" data-aos="fade-up">
+          <h2>Need security that respects people?</h2>
+          <p>I'm open to security research, trust &amp; safety, and digital-protection roles and collaborations.</p>
+          <div class="hero-actions" style="justify-content:center;">
+            <a href="contact.html" class="btn-solid"><i class="fas fa-paper-plane"></i> Get in touch</a>
+            <a href="tech.html" class="btn-ghost"><i class="fas fa-code"></i> See all work</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="fb-logo">Hilux</div>
+          <p>Security &amp; technology for social good — building and securing tools that protect people, from disinformation to humanitarian crises.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Explore</h5>
+          <a href="tech.html">Work &amp; Projects</a>
+          <a href="security.html">Security</a>
+          <a href="social-impact.html">Impact</a>
+          <a href="research.html">Research</a>
+        </div>
+        <div class="footer-col">
+          <h5>More</h5>
+          <a href="professional-experience.html">Experience</a>
+          <a href="certifications.html">Certifications</a>
+          <a href="Awards.html">Awards</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2025 Hilux Fokou Ngoumo. All rights reserved.</span>
+        <span class="footer-social">
+          <a href="https://www.linkedin.com/in/fokou" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="https://github.com/hiluxfnh" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://twitter.com/FOKOUHilux1" target="_blank" rel="noopener" aria-label="X / Twitter"><i class="fab fa-x-twitter"></i></a>
+          <a href="mailto:hiluxfokou33@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="assets/js/nav.js"></script>
+  <script>AOS.init({ duration: 800, once: true, offset: 60 });</script>
+</body>
+</html>

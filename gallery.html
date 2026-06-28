@@ -11,30 +11,35 @@
   <link rel="stylesheet" href="assets/css/gallery.css">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="icon" href="assets/img/icon.png" type="image/x-icon">
+  <link rel="stylesheet" href="assets/css/base.css" />
 </head>
 <body>
+  <a href="#main" class="skip-link">Skip to content</a>
   <!-- Navbar (common to all pages) -->
-  <nav class="navbar">
-    <div class="logo">Hilux</div>
-    <ul class="nav-links">
-      <li><a href="index.html" class="bubble">Home</a></li>
-      <li><a href="about.html" class="bubble">About</a></li>
-      <li><a href="research.html" class="bubble">Research</a></li>
-      <li><a href="tech.html" class="bubble">Tech</a></li>
-      <li><a href="social-impact.html" class="bubble">Leadership</a></li>
-      <li><a href="gallery.html" class="bubble">Gallery</a></li>
-      <li><a href="contact.html" class="bubble">Contact</a></li>
-    </ul>
-  </nav>
-
-  <!-- Page Header -->
+  <header class="site-header">
+    <nav class="site-nav" aria-label="Primary">
+      <a href="index.html" class="brand">Hilux</a>
+      <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-list">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-list" id="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="tech.html">Work</a></li>
+        <li><a href="security.html">Security</a></li>
+        <li><a href="social-impact.html">Impact</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="contact.html" class="nav-cta">Contact</a></li>
+      </ul>
+    </nav>
+  </header><!-- Page Header -->
   <header class="achievements-header" data-aos="fade-down">
     <h1>My Milestones</h1>
     <p>A journey of global impact – from transformative leadership at major international forums to groundbreaking tech innovations and research.</p>
   </header>
 
   <!-- Achievements Content -->
-  <main class="achievements-content">
+  <main class="achievements-content" id="main">
     <!-- Global Youth Leadership -->
     <section class="achievement-card" data-aos="fade-up">
         <div class="achievement-media">
@@ -93,7 +98,7 @@
       <div class="achievement-details">
         <h2>Academic & Award Honors</h2>
         <p>
-          I won the <strong>Study In India(SII) Scholarship</strong> that gave me a chance to pusue a Bachelor in Computer Applications(BCA) in India. I was awarded as an <strong>Outstanding Achiever of the year 2024</strong> at GITAM University and honored with the <strong>First Class with Distinction</strong> Degree by GITAM University, I have also secured accolades at the <strong>Smart India Hackathon</strong> and achieved the <strong>Open Doors Scholarship</strong> for further studies in Information Security.
+          I won the <strong>Study In India(SII) Scholarship</strong> that gave me a chance to pursue a Bachelor in Computer Applications(BCA) in India. I was awarded as an <strong>Outstanding Achiever of the year 2024</strong> at GITAM University and honored with the <strong>First Class with Distinction</strong> Degree by GITAM University, I have also secured accolades at the <strong>Smart India Hackathon</strong> and achieved the <strong>Open Doors Scholarship</strong> for further studies in Information Security.
         </p>
       </div>
     </section>
@@ -112,6 +117,43 @@
     </section>
   </main>
 
+  <footer class="site-footer">
+    <div class="shell">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="fb-logo">Hilux</div>
+          <p>Security &amp; technology for social good — building and securing tools that protect people, from disinformation to humanitarian crises.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Explore</h5>
+          <a href="tech.html">Work &amp; Projects</a>
+          <a href="security.html">Security</a>
+          <a href="social-impact.html">Impact</a>
+          <a href="research.html">Research</a>
+        </div>
+        <div class="footer-col">
+          <h5>More</h5>
+          <a href="professional-experience.html">Experience</a>
+          <a href="certifications.html">Certifications</a>
+          <a href="Awards.html">Awards</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2025 Hilux Fokou Ngoumo. All rights reserved.</span>
+        <span class="footer-social">
+          <a href="https://www.linkedin.com/in/fokou" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="https://github.com/hiluxfnh" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://twitter.com/FOKOUHilux1" target="_blank" rel="noopener" aria-label="X / Twitter"><i class="fab fa-x-twitter"></i></a>
+          <a href="mailto:hiluxfokou33@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        </span>
+      </div>
+    </div>
+  </footer>
+
+
+
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     AOS.init({
@@ -119,5 +161,6 @@
       once: true,
     });
   </script>
+  <script src="assets/js/nav.js"></script>
 </body>
 </html>

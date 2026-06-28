@@ -10,31 +10,36 @@
   <link rel="stylesheet" href="assets/css/contact.css">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="icon" href="assets/img/icon.png" type="image/x-icon">
+  <link rel="stylesheet" href="assets/css/base.css" />
 </head>
 <body>
+  <a href="#main" class="skip-link">Skip to content</a>
 
   <!-- Navbar -->
-  <nav class="navbar">
-    <div class="logo">Hilux</div>
-    <ul class="nav-links">
-      <li><a href="index.html" class="bubble">Home</a></li>
-      <li><a href="about.html" class="bubble">About</a></li>
-      <li><a href="research.html" class="bubble">Research</a></li>
-      <li><a href="tech.html" class="bubble">Tech</a></li>
-      <li><a href="social-impact.html" class="bubble">Impact</a></li>
-      <li><a href="gallery.html" class="bubble">Gallery</a></li>
-      <li><a href="contact.html" class="active bubble">Contact</a></li>
-    </ul>
-  </nav>
-
-  <!-- Header -->
+  <header class="site-header">
+    <nav class="site-nav" aria-label="Primary">
+      <a href="index.html" class="brand">Hilux</a>
+      <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-list">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-list" id="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="tech.html">Work</a></li>
+        <li><a href="security.html">Security</a></li>
+        <li><a href="social-impact.html">Impact</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="contact.html" class="nav-cta">Contact</a></li>
+      </ul>
+    </nav>
+  </header><!-- Header -->
   <header class="contact-header">
     <h1>Get in Touch with Hilux</h1>
     <p>Whether you have a question, collaboration idea, or just want to say hello—I'm here to help!</p>
   </header>
 
   <!-- Main Contact Hub -->
-  <main class="contact-main">
+  <main class="contact-main" id="main">
 
     <section class="contact-hub">
       <!-- Left: Form & Channels -->
@@ -73,26 +78,41 @@
 
   </main>
  <!-- Footer -->
- <footer>
-    <div class="footer-container">
-        <div class="social-icons">
-            <a href="https://www.linkedin.com/in/fokou" target="_blank">
-              <i class="fab fa-linkedin"></i>
-            </a>
-            <a href="https://github.com/hiluxfnh" target="_blank">
-              <i class="fab fa-github"></i>
-            </a>
-            <a href="https://twitter.com/FOKOUHilux1" target="_blank">
-              <i class="fab fa-twitter"></i>
-            </a>
-            <a href="mailto:hiluxfokou33@gmail.com">
-              <i class="fas fa-envelope"></i>
-            </a>
-          </div>
-          
-      <p>&copy; 2025 Fokou Ngoumo Hilux. All Rights Reserved.</p>
+ <footer class="site-footer">
+    <div class="shell">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="fb-logo">Hilux</div>
+          <p>Security &amp; technology for social good — building and securing tools that protect people, from disinformation to humanitarian crises.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Explore</h5>
+          <a href="tech.html">Work &amp; Projects</a>
+          <a href="security.html">Security</a>
+          <a href="social-impact.html">Impact</a>
+          <a href="research.html">Research</a>
+        </div>
+        <div class="footer-col">
+          <h5>More</h5>
+          <a href="professional-experience.html">Experience</a>
+          <a href="certifications.html">Certifications</a>
+          <a href="Awards.html">Awards</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2025 Hilux Fokou Ngoumo. All rights reserved.</span>
+        <span class="footer-social">
+          <a href="https://www.linkedin.com/in/fokou" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="https://github.com/hiluxfnh" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://twitter.com/FOKOUHilux1" target="_blank" rel="noopener" aria-label="X / Twitter"><i class="fab fa-x-twitter"></i></a>
+          <a href="mailto:hiluxfokou33@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        </span>
+      </div>
     </div>
   </footer>
   <script src="assets/js/contact.js"></script>
+  <script src="assets/js/nav.js"></script>
 </body>
 </html>

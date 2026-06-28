@@ -12,29 +12,34 @@
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="icon" href="assets/img/icon.png" type="image/x-icon">
+  <link rel="stylesheet" href="assets/css/base.css" />
 </head>
 <body>
+  <a href="#main" class="skip-link">Skip to content</a>
   <!-- Navbar -->
-  <nav class="navbar">
-    <div class="logo">Hilux</div>
-    <ul class="nav-links">
-      <li><a href="index.html" class="bubble">Home</a></li>
-      <li><a href="about.html" class="bubble">About</a></li>
-      <li><a href="research.html" class="bubble">Research</a></li>
-      <li><a href="tech.html" class="bubble">Tech</a></li>
-      <li><a href="social-impact.html" class="active bubble">Impact</a></li>
-      <li><a href="gallery.html" class="bubble">Gallery</a></li>
-      <li><a href="contact.html" class="bubble">Contact</a></li>
-    </ul>
-  </nav>
-
-  <!-- Page Header -->
+  <header class="site-header">
+    <nav class="site-nav" aria-label="Primary">
+      <a href="index.html" class="brand">Hilux</a>
+      <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-list">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-list" id="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="tech.html">Work</a></li>
+        <li><a href="security.html">Security</a></li>
+        <li><a href="social-impact.html">Impact</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="contact.html" class="nav-cta">Contact</a></li>
+      </ul>
+    </nav>
+  </header><!-- Page Header -->
   <header class="impact-header" data-aos="fade-down">
     <h1>My Social Impact</h1>
     <p>Harnessing technology, leadership, and education to empower communities worldwide.</p>
   </header>
 
-  <main class="impact-content">
+  <main class="impact-content" id="main">
 
     <!-- Conferences First -->
     <section class="impact-section alt-bg" data-aos="fade-up">
@@ -85,7 +90,7 @@
           </button>
           <div class="accordion-body">
             <p>
-              Negociated on loss &amp; damage for African communities and contributed to a policy brief adopted by the Loss &amp; Damage Coordination Unit.
+              Negotiated on loss &amp; damage for African communities and contributed to a policy brief adopted by the Loss &amp; Damage Coordination Unit.
             </p>
           </div>
         </div>
@@ -97,7 +102,7 @@
           </button>
           <div class="accordion-body">
             <p>
-              Co‑led youth roundtables on technology-driven adaptation and built coalitions for sustainable finance with UNFCCC negotiators. Speaking on on a high level side event.
+              Co‑led youth roundtables on technology-driven adaptation and built coalitions for sustainable finance with UNFCCC negotiators. Spoke at a high-level side event.
             </p>
           </div>
         </div>
@@ -180,7 +185,7 @@
           <i class="fas fa-globe"></i>
           <h3>YOUNGO – UNFCCC Youth Constituency</h3>
           <ul>
-            <li>Delegated to COP27 &amp; COP28; chaired conversations arround climate change adaptation and the role of AI for resilience.</li>
+            <li>Delegated to COP27 &amp; COP28; chaired conversations around climate change adaptation and the role of AI for resilience.</li>
             <li>Advocated minority inclusion in policy dialogues.</li>
           </ul>
         </div>
@@ -222,6 +227,43 @@
     </section>
   
   </main>
+
+  <footer class="site-footer">
+    <div class="shell">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="fb-logo">Hilux</div>
+          <p>Security &amp; technology for social good — building and securing tools that protect people, from disinformation to humanitarian crises.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Explore</h5>
+          <a href="tech.html">Work &amp; Projects</a>
+          <a href="security.html">Security</a>
+          <a href="social-impact.html">Impact</a>
+          <a href="research.html">Research</a>
+        </div>
+        <div class="footer-col">
+          <h5>More</h5>
+          <a href="professional-experience.html">Experience</a>
+          <a href="certifications.html">Certifications</a>
+          <a href="Awards.html">Awards</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2025 Hilux Fokou Ngoumo. All rights reserved.</span>
+        <span class="footer-social">
+          <a href="https://www.linkedin.com/in/fokou" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="https://github.com/hiluxfnh" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://twitter.com/FOKOUHilux1" target="_blank" rel="noopener" aria-label="X / Twitter"><i class="fab fa-x-twitter"></i></a>
+          <a href="mailto:hiluxfokou33@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        </span>
+      </div>
+    </div>
+  </footer>
+
+
   
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -242,5 +284,6 @@
       });
     });
   </script>
+  <script src="assets/js/nav.js"></script>
 </body>
 </html>

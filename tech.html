@@ -11,42 +11,65 @@
   <link rel="stylesheet" href="assets/css/tech.css" />
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="icon" href="assets/img/icon.png" type="image/x-icon">
+  <link rel="stylesheet" href="assets/css/base.css" />
 </head>
 <body>
+  <a href="#main" class="skip-link">Skip to content</a>
   <!-- Header / Navigation -->
-  <header>
-    <nav class="navbar">
-      <div class="logo">Hilux</div>
-      <ul class="nav-links">
-        <li><a href="index.html" class="bubble">Home</a></li>
-        <li><a href="about.html" class="bubble">About</a></li>
-        <li><a href="research.html" class="bubble">Research</a></li>
-        <li><a href="tech.html" class="bubble">Tech</a></li>
-        <li><a href="social-impact.html" class="bubble">Leadership</a></li>
-        <li><a href="gallery.html" class="bubble">Gallery</a></li>
-        <li><a href="contact.html" class="bubble">Contact</a></li>
+  <header class="site-header">
+    <nav class="site-nav" aria-label="Primary">
+      <a href="index.html" class="brand">Hilux</a>
+      <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-list">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-list" id="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="tech.html">Work</a></li>
+        <li><a href="security.html">Security</a></li>
+        <li><a href="social-impact.html">Impact</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="contact.html" class="nav-cta">Contact</a></li>
       </ul>
     </nav>
   </header>
 
   <!-- Tech Skills Section -->
-  <section class="tech-skills">
+  <section class="tech-skills" id="main">
     <div class="section-title" data-aos="fade-up">Core Technical Skills</div>
-    <div class="skills-bubbles" data-aos="fade-up" data-aos-delay="100">
-      <span class="skill-bubble" style="background: #FF6F61;">AI / ML</span>
-      <span class="skill-bubble" style="background: #6B5B95;">Cybersecurity</span>
-      <span class="skill-bubble" style="background: #88B04B;">Web Dev</span>
-      <span class="skill-bubble" style="background: #F7CAC9;">Python</span>
-      <span class="skill-bubble" style="background: #92A8D1;">NLP</span>
-      <span class="skill-bubble" style="background: #955251;">Cryptography</span>
-      <span class="skill-bubble" style="background: #B565A7;">Cloud</span>
-      <span class="skill-bubble" style="background: #009B77;">OpenCV</span>
-      <span class="skill-bubble" style="background: #FFB347;">Java</span>
-      <span class="skill-bubble" style="background: #FF6961;">JavaScript</span>
-      <span class="skill-bubble" style="background: #77DD77;">Gamedev (Unity)</span>
-      <span class="skill-bubble" style="background: #AEC6CF;">App Dev</span>
-      <span class="skill-bubble" style="background: #C23B22;">C++</span>
-      <span class="skill-bubble" style="background: #FDFD96;">Tech Analysis</span>
+    <div class="skills-bubbles shell" data-aos="fade-up" data-aos-delay="100" style="max-width:980px;">
+      <div class="chip-group">
+        <h4><i class="fas fa-code" style="color:var(--build)"></i> Build — engineering &amp; AI</h4>
+        <div class="chips">
+          <span class="chip build">Web Dev</span>
+          <span class="chip build">AI / ML</span>
+          <span class="chip build">NLP</span>
+          <span class="chip build">Python</span>
+          <span class="chip build">JavaScript</span>
+          <span class="chip build">Java</span>
+          <span class="chip build">C++</span>
+          <span class="chip build">App Dev</span>
+          <span class="chip build">OpenCV</span>
+          <span class="chip build">Game Dev (Unity)</span>
+        </div>
+      </div>
+      <div class="chip-group">
+        <h4><i class="fas fa-shield-halved" style="color:var(--secure)"></i> Secure — cybersecurity</h4>
+        <div class="chips">
+          <span class="chip secure">Cybersecurity</span>
+          <span class="chip secure">Cryptography</span>
+          <span class="chip secure">Cloud Security</span>
+          <span class="chip secure">Threat Analysis</span>
+        </div>
+      </div>
+      <div class="chip-group">
+        <h4><i class="fas fa-earth-africa" style="color:var(--empower)"></i> Empower — applied for impact</h4>
+        <div class="chips">
+          <span class="chip empower">Civic Tech</span>
+          <span class="chip empower">Climate &amp; MIL Tools</span>
+          <span class="chip empower">Humanitarian Platforms</span>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -69,6 +92,7 @@
             <li><strong>Architecture:</strong> Embraces RESTful API services with a focus on performance and user engagement.</li>
           </ul>
         </div>
+        <div class="fc-links"><a href="https://github.com/hiluxfnh/EcoCityAdapt" target="_blank" rel="noopener"><i class="fab fa-github"></i> View code</a></div>
       </div>
       <!-- Project 2: ProctoShield -->
       <div class="project-card" data-aos="fade-up" data-aos-delay="100">
@@ -86,6 +110,7 @@
             <li><strong>Security:</strong> Implements robust encryption protocols to safeguard sensitive data.</li>
           </ul>
         </div>
+        <div class="fc-links"><a href="https://github.com/hiluxfnh/Proctoshield" target="_blank" rel="noopener"><i class="fab fa-github"></i> View code</a></div>
       </div>
       <!-- Project 3: KamerLark - Student Housing Platform -->
       <div class="project-card" data-aos="fade-up" data-aos-delay="200">
@@ -102,6 +127,7 @@
             <li><strong>Features:</strong> Advanced search, user verification, and integrated property reviews ensure transparency.</li>
           </ul>
         </div>
+        <div class="fc-links"><a href="https://github.com/hiluxfnh/Kamerlark1.1" target="_blank" rel="noopener"><i class="fab fa-github"></i> View code</a></div>
       </div>
       <!-- Project 4: Open-Source AI Chatbot -->
       <div class="project-card" data-aos="fade-up" data-aos-delay="300">
@@ -119,6 +145,7 @@
             <li><strong>Ethics & Security:</strong> Emphasizes privacy, ethical AI use, and adherence to industry best practices.</li>
           </ul>
         </div>
+        <div class="fc-links"><a href="https://github.com/hiluxfnh" target="_blank" rel="noopener"><i class="fab fa-github"></i> View code</a></div>
       </div>
     </div>
   </section>
@@ -229,15 +256,38 @@
   </section>
 
   <!-- Footer -->
-  <footer>
-    <div class="footer-container">
-      <div class="social-icons">
-        <a href="https://www.linkedin.com/in/fokou" target="_blank"><i class="fab fa-linkedin"></i></a>
-        <a href="https://github.com/hiluxfnh" target="_blank"><i class="fab fa-github"></i></a>
-        <a href="https://twitter.com/FOKOUHilux1" target="_blank"><i class="fab fa-twitter"></i></a>
-        <a href="mailto:hiluxfokou33@gmail.com"><i class="fas fa-envelope"></i></a>
+  <footer class="site-footer">
+    <div class="shell">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="fb-logo">Hilux</div>
+          <p>Security &amp; technology for social good — building and securing tools that protect people, from disinformation to humanitarian crises.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Explore</h5>
+          <a href="tech.html">Work &amp; Projects</a>
+          <a href="security.html">Security</a>
+          <a href="social-impact.html">Impact</a>
+          <a href="research.html">Research</a>
+        </div>
+        <div class="footer-col">
+          <h5>More</h5>
+          <a href="professional-experience.html">Experience</a>
+          <a href="certifications.html">Certifications</a>
+          <a href="Awards.html">Awards</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="contact.html">Contact</a>
+        </div>
       </div>
-      <p>&copy; 2025 Fokou Ngoumo Hilux. All Rights Reserved.</p>
+      <div class="footer-bottom">
+        <span>&copy; 2025 Hilux Fokou Ngoumo. All rights reserved.</span>
+        <span class="footer-social">
+          <a href="https://www.linkedin.com/in/fokou" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="https://github.com/hiluxfnh" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://twitter.com/FOKOUHilux1" target="_blank" rel="noopener" aria-label="X / Twitter"><i class="fab fa-x-twitter"></i></a>
+          <a href="mailto:hiluxfokou33@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        </span>
+      </div>
     </div>
   </footer>
 
@@ -285,5 +335,6 @@
       }
     });
   </script>
+  <script src="assets/js/nav.js"></script>
 </body>
 </html>
