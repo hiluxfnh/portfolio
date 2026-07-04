@@ -24,6 +24,27 @@
     if (href === here) a.classList.add('active');
   });
 
+  // theme toggle (dark/light) — data-theme is pre-set by an inline head script
+  var root = document.documentElement;
+  var themeBtn = document.createElement('button');
+  themeBtn.className = 'theme-toggle';
+  themeBtn.type = 'button';
+  themeBtn.setAttribute('aria-label', 'Toggle dark mode');
+  function paintIcon() {
+    var dark = root.getAttribute('data-theme') === 'dark';
+    themeBtn.innerHTML = dark ? '<i class="fas fa-sun" aria-hidden="true"></i>' : '<i class="fas fa-moon" aria-hidden="true"></i>';
+    themeBtn.setAttribute('aria-pressed', dark ? 'true' : 'false');
+  }
+  paintIcon();
+  themeBtn.addEventListener('click', function () {
+    var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    try { localStorage.setItem('theme', next); } catch (e) {}
+    paintIcon();
+  });
+  var navEl = document.querySelector('.site-nav');
+  if (navEl) navEl.appendChild(themeBtn);
+
   // reading-progress bar
   var bar = document.createElement('div');
   bar.className = 'read-progress';

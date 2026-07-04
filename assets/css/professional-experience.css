@@ -7,8 +7,8 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  background: #f5f7fa;
-  color: #333;
+  background: var(--bg);
+  color: var(--ink);
 }
 
 /* Navbar */
@@ -18,14 +18,14 @@ body {
   flex-wrap: wrap;
   align-items: center;
   padding: 15px 20px;
-  background-color: #fff;
+  background-color: var(--surface);
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .logo {
   font-family: 'Pacifico', cursive;
   font-size: 2rem;
-  color: #6778fd;
+  color: var(--accent);
 }
 
 .nav-links {
@@ -37,7 +37,7 @@ body {
 
 .nav-links a {
   text-decoration: none;
-  color: #333;
+  color: var(--ink);
   font-size: 1rem;
   padding: 6px 12px;
   border-radius: 20px;
@@ -46,27 +46,27 @@ body {
 
 .nav-links a:hover,
 .nav-links a.active {
-  background: #e6f7ff;
-  color: #6778fd;
+  background: var(--surface-2);
+  color: var(--accent);
 }
 
 /* Header */
 .internship-header {
   text-align: center;
   padding: 60px 20px;
-  background: linear-gradient(135deg, #9fc4ca, #e6f7ff);
+  background: var(--hero-grad);
 }
 
 .internship-header h1 {
   font-size: 3rem;
-  color: #3d52a0;
+  color: var(--accent);
   font-family: 'Pacifico', cursive;
   margin-bottom: 10px;
 }
 
 .internship-header p {
   font-size: 1.1rem;
-  color: #555;
+  color: var(--ink-soft);
 }
 
 /* Internship List */
@@ -78,7 +78,7 @@ body {
 
 /* Card */
 .internship-card {
-  background: #fff;
+  background: var(--surface);
   padding: 25px 20px;
   border-radius: 12px;
   box-shadow: 0 5px 20px rgba(0,0,0,0.06);
@@ -93,13 +93,13 @@ body {
 
 .internship-content h2 {
   font-size: 1.6rem;
-  color: #6778fd;
+  color: var(--accent);
   margin-bottom: 10px;
 }
 
 .internship-content p {
   font-size: 1rem;
-  color: #555;
+  color: var(--ink-soft);
   margin-bottom: 8px;
   line-height: 1.6;
 }
@@ -134,7 +134,7 @@ footer {
 }
 
 .social-icons a:hover {
-  color: #6778fd;
+  color: var(--accent);
 }
 
 /* Responsive */
