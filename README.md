@@ -28,16 +28,44 @@ I hold a First Class with Distinction in Computer Applications from **GITAM Univ
 | `index.html` | Home — thesis, three pillars, featured projects |
 | `security.html` | Cybersecurity work, certifications, focus areas |
 | `tech.html` | Projects, skills (grouped), certifications, badges |
+| `case-fakealert.html` | Flagship engineering case study (FakeAlert / NLP) |
+| `writeups.html` | Technical writeups &amp; insights |
 | `social-impact.html` | UN forums, IAWG, community partnerships |
 | `research.html` | Papers, training, reviewer roles |
 | `about.html` | Bio and journey timeline |
 | `professional-experience.html` | Roles & internships |
 | `certifications.html` / `Awards.html` / `gallery.html` | Credentials, honors, media |
-| `contact.html` | Contact form & channels |
+| `contact.html` | Contact form, chat assistant & résumé downloads |
+
+Résumés (PDF + editable Word) live in `assets/` — `Hilux-Fokou-Ngoumo-Tech-Resume.*` and `Hilux-Fokou-Ngoumo-Community-Resume.*`.
 
 ## Tech
 
-Static site — semantic HTML5, a shared design system in `assets/css/base.css` (design tokens, responsive nav, components), vanilla JS, and [AOS](https://michalsnik.github.io/aos/) for scroll animation.
+Static site — semantic HTML5, a shared design system in `assets/css/base.css` (design tokens, responsive nav, components), vanilla JS (`assets/js/nav.js`, `assets/js/contact.js`), and [AOS](https://michalsnik.github.io/aos/) for scroll animation. No build step.
+
+## Local development
+
+```bash
+# 1. Clone
+git clone https://github.com/hiluxfnh/portfolio.git
+cd portfolio
+
+# 2. Serve locally (pick one)
+python3 -m http.server 8000      # then open http://localhost:8000
+npx serve .                      # or use the Node "serve" package
+# or: VS Code → Live Server extension → "Open with Live Server"
+
+# 3. Edit → commit → push (GitHub Pages auto-deploys)
+git add -A
+git commit -m "your message"
+git push origin main
+```
+
+> Serve the folder over HTTP — opening `index.html` directly with `file://`
+> can break the shared nav/footer JS and relative asset paths.
+
+**Windows note:** if `git` reports *"detected dubious ownership"*, run
+`git config --global --add safe.directory <path-to-repo>` once, then retry.
 
 ## Contact
 
