@@ -29,6 +29,8 @@ I hold a First Class with Distinction in Computer Applications from **GITAM Univ
 | `security.html` | Cybersecurity work, certifications, focus areas |
 | `tech.html` | Projects, skills (grouped), certifications, badges |
 | `case-fakealert.html` | Flagship engineering case study (FakeAlert / NLP) |
+| `sealtrace.html` | Working tool — seal screenshots into self-verifying, offline evidence capsules |
+| `case-sealtrace.html` | Case study — Sealtrace's design and threat model |
 | `writeups.html` | Technical writeups &amp; insights |
 | `social-impact.html` | UN forums, IAWG, community partnerships |
 | `research.html` | Papers, training, reviewer roles |
@@ -42,6 +44,16 @@ Résumés (PDF + editable Word) live in `assets/` — `Hilux-Fokou-Ngoumo-Tech-R
 ## Tech
 
 Static site — semantic HTML5, a shared design system in `assets/css/base.css` (design tokens, responsive nav, components), vanilla JS (`assets/js/nav.js`, `assets/js/contact.js`), and [AOS](https://michalsnik.github.io/aos/) for scroll animation. No build step.
+
+Sealtrace (`sealtrace.html`) is the one page with real client-side logic: its hashing/Merkle-tree core lives in `assets/js/sealtrace-core.mjs` as a dependency-free ES module (Web Crypto only), with the DOM wiring in `assets/js/sealtrace.js`. Everything runs in the visitor's browser — no upload, no backend, no analytics call.
+
+### Testing
+
+The Sealtrace core logic has a Node test suite (uses Node's built-in test runner — no dependencies to install):
+
+```bash
+node --test test/sealtrace.core.test.mjs
+```
 
 ## Local development
 

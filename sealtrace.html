@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>(function(){try{var t=localStorage.getItem("theme");if(!t)t=(window.matchMedia&&matchMedia("(prefers-color-scheme:dark)").matches)?"dark":"light";document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Sealtrace — a free, offline tool that seals screenshots (scam messages, harassment, disinformation) into a self-verifying evidence capsule. Runs entirely in your browser; nothing is ever uploaded." />
+  <title>Sealtrace — self-verifying evidence capsules | Hilux Fokou Ngoumo</title>
+  <link rel="icon" href="assets/img/icon.png" type="image/png">
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Sealtrace — seal evidence, verify it anywhere, upload nothing" />
+  <meta property="og:description" content="A free, client-side tool for turning a screenshot into a self-verifying evidence capsule — built for people documenting scams, harassment, or disinformation." />
+  <meta property="og:image" content="https://hiluxfokou.me/assets/img/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://hiluxfokou.me/assets/img/og-image.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Pacifico&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/base.css" />
+  <link rel="stylesheet" href="assets/css/sealtrace.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <header class="site-header">
+    <nav class="site-nav" aria-label="Primary">
+      <a href="index.html" class="brand">Hilux</a>
+      <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-list">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-list" id="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="tech.html">Work</a></li>
+        <li><a href="security.html">Security</a></li>
+        <li><a href="social-impact.html">Impact</a></li>
+        <li><a href="writeups.html">Writeups</a></li>
+        <li><a href="contact.html" class="nav-cta">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="cs-hero">
+      <div class="shell" style="max-width:900px;">
+        <a class="cs-back" href="tech.html"><i class="fas fa-arrow-left"></i> All projects</a>
+        <h1 class="cs-title">Sealtrace — seal evidence, verify it anywhere, upload nothing</h1>
+        <p class="hero-lead" style="margin:0;">Turn a screenshot of a scam, threat, or piece of disinformation into a
+          self-verifying <strong>evidence capsule</strong> — a single HTML file that proves its own contents haven't
+          changed since you sealed it, openable in any browser, forever, with no account and no server involved.</p>
+        <div class="cs-meta">
+          <div class="m"><b>What it is</b><span>Free, client-side web tool</span></div>
+          <div class="m"><b>Data leaves your device</b><span>Never</span></div>
+          <div class="m"><b>Domain</b><span>Trust &amp; Safety · Applied Crypto</span></div>
+          <div class="m"><b>Status</b><span>v1 prototype</span></div>
+        </div>
+        <div class="cs-tagrow">
+          <span class="chip build">Vanilla JS</span><span class="chip build">Web Crypto</span>
+          <span class="chip secure">SHA-256</span><span class="chip secure">Merkle proofs</span>
+          <span class="chip empower">Anti-scam</span><span class="chip empower">Digital safety</span>
+        </div>
+        <p style="margin-top:14px;"><a href="case-sealtrace.html" style="color:var(--accent); font-weight:600;">Read why I built this &amp; how it works <i class="fas fa-arrow-right"></i></a></p>
+      </div>
+    </section>
+
+    <section class="st-app">
+      <div class="shell" style="max-width:900px;">
+        <div class="st-privacy-banner">
+          <i class="fas fa-lock"></i>
+          <div><strong>Nothing you add here ever leaves this tab.</strong> There's no upload, no account, and no
+            network request involved in sealing — you can disconnect from the internet right now and everything
+            below will keep working. Open <code>assets/js/sealtrace.js</code> to check for yourself.</div>
+        </div>
+
+        <div class="st-dropzone" id="st-dropzone" tabindex="0" role="button" aria-label="Add screenshots to seal">
+          <i class="fas fa-cloud-arrow-up" aria-hidden="true"></i>
+          <p>Drop screenshots here, or click to choose files</p>
+          <p class="st-hint">PNG, JPG, WebP — as many as belong to one incident</p>
+        </div>
+        <input type="file" id="st-file-input" accept="image/*" multiple hidden />
+        <p id="st-status" role="status"></p>
+
+        <p class="st-empty" id="st-empty">No items sealed yet. Add a screenshot above to get started.</p>
+        <div id="st-items"></div>
+
+        <div id="st-actions" style="display:none;">
+          <label class="st-case-notes-label">Case notes (applies to the whole capsule)
+            <textarea id="st-case-notes" rows="2" placeholder="e.g. Series of WhatsApp messages received 12–14 Aug 2026 impersonating a bank."></textarea>
+          </label>
+          <div class="st-action-row">
+            <button id="st-export-capsule" class="btn-solid" type="button"><i class="fas fa-box-archive"></i> Export evidence capsule (.html)</button>
+            <button id="st-export-manifest" class="btn-ghost" type="button"><i class="fas fa-file-code"></i> Export manifest only (.json)</button>
+          </div>
+          <div id="st-anchor-wrap" style="display:none;">
+            <h4><i class="fas fa-anchor"></i> Anchor this seal publicly (recommended)</h4>
+            <p>A capsule alone can't prove <em>when</em> it was made, or that it wasn't quietly re-sealed later —
+              only that its own contents are internally consistent. Posting this short statement somewhere you don't
+              control (a public reply, a commit, a message to a friend) — <em>before</em> you share the capsule
+              file — timestamps the hash outside your device and closes that gap.</p>
+            <textarea id="st-anchor-text" rows="4" readonly></textarea>
+            <div class="st-action-row" style="margin-top:10px;">
+              <button id="st-copy-anchor" class="btn-ghost" type="button"><i class="fas fa-copy"></i> Copy anchor statement</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="st-howitworks">
+          <h2>How a capsule protects you</h2>
+          <ul class="st-steps">
+            <li><b>1. Seal</b> Each image is hashed (SHA-256) the moment you add it. Redact anything sensitive first — redaction is destructive and re-hashed, so nothing under a black box survives in the export.</li>
+            <li><b>2. Export</b> Everything is bundled into one HTML file: your images, your notes, and a tiny script that re-checks the hashes whenever the file is opened.</li>
+            <li><b>3. Anchor</b> Post the short hash statement publicly. This is the one step that actually happens outside your device, and it's what makes the timestamp trustworthy.</li>
+            <li><b>4. Share &amp; verify</b> Anyone can open the capsule offline and see a pass/fail banner — no app, login, or lookup required.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="fb-logo">Hilux</div>
+          <p>Security &amp; technology for social good — building and securing tools that protect people, from disinformation to humanitarian crises.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Explore</h5>
+          <a href="tech.html">Work &amp; Projects</a>
+          <a href="security.html">Security</a>
+          <a href="writeups.html">Writeups</a>
+          <a href="research.html">Research</a>
+        </div>
+        <div class="footer-col">
+          <h5>More</h5>
+          <a href="professional-experience.html">Experience</a>
+          <a href="certifications.html">Certifications</a>
+          <a href="Awards.html">Awards</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2025 Hilux Fokou Ngoumo. All rights reserved.</span>
+        <span class="footer-social">
+          <a href="https://www.linkedin.com/in/fokou" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="https://github.com/hiluxfnh" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://twitter.com/FOKOUHilux1" target="_blank" rel="noopener" aria-label="X / Twitter"><i class="fab fa-x-twitter"></i></a>
+          <a href="mailto:hiluxfokou33@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="assets/js/nav.js"></script>
+  <script type="module" src="assets/js/sealtrace.js"></script>
+  <script>window.AOS && AOS.init({ duration: 800, once: true, offset: 60 });</script>
+</body>
+</html>

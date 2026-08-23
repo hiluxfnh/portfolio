@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>(function(){try{var t=localStorage.getItem("theme");if(!t)t=(window.matchMedia&&matchMedia("(prefers-color-scheme:dark)").matches)?"dark":"light";document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Case study: Sealtrace — a client-side tool that turns a screenshot into a self-verifying evidence capsule for scams, harassment, and disinformation, with no server and no account. By Hilux Fokou Ngoumo." />
+  <title>Case Study — Sealtrace | Hilux Fokou Ngoumo</title>
+  <link rel="icon" href="assets/img/icon.png" type="image/png">
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Case Study — Sealtrace: evidence capsules with no server" />
+  <meta property="og:description" content="Why I built a client-side tool for sealing digital-harm evidence, and how a merkle root plus a one-line public post replaces a server nobody has to trust." />
+  <meta property="og:image" content="https://hiluxfokou.me/assets/img/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://hiluxfokou.me/assets/img/og-image.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Pacifico&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/base.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <header class="site-header">
+    <nav class="site-nav" aria-label="Primary">
+      <a href="index.html" class="brand">Hilux</a>
+      <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-list">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-list" id="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="tech.html">Work</a></li>
+        <li><a href="security.html">Security</a></li>
+        <li><a href="social-impact.html">Impact</a></li>
+        <li><a href="writeups.html">Writeups</a></li>
+        <li><a href="contact.html" class="nav-cta">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="cs-hero">
+      <div class="shell" style="max-width:900px;">
+        <a class="cs-back" href="tech.html"><i class="fas fa-arrow-left"></i> All projects</a>
+        <h1 class="cs-title">Sealtrace — a notary that never sees your evidence</h1>
+        <p class="hero-lead" style="margin:0;">A weekend invention: what's the smallest honest tool that lets someone
+          document a scam or harassment message well enough to be believed later — without asking them to trust a
+          server, make an account, or hand their evidence to a company?</p>
+        <div class="cs-meta">
+          <div class="m"><b>My role</b><span>Sole designer &amp; developer</span></div>
+          <div class="m"><b>Timeline</b><span>2026</span></div>
+          <div class="m"><b>Domain</b><span>Applied crypto · Trust &amp; Safety</span></div>
+          <div class="m"><b>Status</b><span>v1 prototype, self-hosted</span></div>
+        </div>
+        <div class="cs-tagrow">
+          <span class="chip build">Vanilla JS</span><span class="chip build">Web Crypto API</span>
+          <span class="chip secure">SHA-256 / Merkle trees</span><span class="chip empower">Digital-harm evidence</span>
+        </div>
+        <div class="cs-links">
+          <a class="btn-solid" href="sealtrace.html"><i class="fas fa-box-archive"></i> Try Sealtrace</a>
+          <a class="btn-ghost" href="assets/js/sealtrace-core.mjs" target="_blank" rel="noopener"><i class="fas fa-code"></i> Read the core logic</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="site-section">
+      <div class="shell cs-body">
+
+        <h2>Context</h2>
+        <p>FakeAlert (my other flagship project here) tries to catch disinformation and hate speech automatically.
+          Sealtrace starts from the opposite end of the same problem: the moment <em>after</em> a person has already
+          been targeted — by a phishing message, a scam impersonating their bank, a harassing DM, a doctored
+          screenshot circulating about them — and needs someone else (a platform, a bank's fraud team, a
+          moderator, a friend) to believe what they're showing them. That's a documentation and trust problem,
+          not a detection problem, and I hadn't seen a tool that treated it as its own design space.</p>
+
+        <h2>The problem</h2>
+        <p>Screenshots are the default evidence format for digital harm, and they're weak in a specific way:</p>
+        <ul>
+          <li><strong>They're trivially editable.</strong> Anyone can be told "that's photoshopped," and often they're right to be skeptical — there's no way to tell from the image alone.</li>
+          <li><strong>Formal chain-of-custody tools don't fit.</strong> Forensic evidence software is built for investigators with case management systems, not for someone forwarding a scam text to a bank's support inbox <em>tonight</em>.</li>
+          <li><strong>"Just trust our server" isn't good enough.</strong> The obvious fix — upload the image to a service that timestamps it — asks the victim to trust a company with exactly the sensitive material they're trying to prove is sensitive, and it dies the day that company does.</li>
+        </ul>
+
+        <h2>Goals &amp; constraints</h2>
+        <ul>
+          <li><strong>Zero trust in me.</strong> No upload, no account, no server call — I shouldn't be able to see anyone's evidence even if I wanted to.</li>
+          <li><strong>Zero install.</strong> A static HTML page, exactly like the rest of this site — open a link and use it.</li>
+          <li><strong>Verifiable by anyone, forever.</strong> A recipient with no relationship to Sealtrace should be able to check a capsule's integrity from the file alone, offline, years later.</li>
+          <li><strong>Honest about what client-side crypto can't do.</strong> This is the constraint that shaped the whole design — see below.</li>
+        </ul>
+
+        <h2>The design problem client-side tools can't dodge</h2>
+        <p>A single self-contained HTML file that embeds an image and a hash of that image can verify <em>internal
+          consistency</em> — "does this file's image match the hash printed in this same file?" — but it cannot,
+          by itself, prove <em>when</em> it was made or that it wasn't quietly regenerated later with a different
+          image and a matching new hash. Anyone who can edit a file can edit both halves. A lot of "proof" tools
+          quietly skip over this and let the packaging feel more authoritative than it is. I wanted Sealtrace to be
+          honest about it instead of hiding it.</p>
+        <p>The fix doesn't require a server — it requires one step happening <em>outside</em> the tool entirely:
+          publish the hash somewhere you don't control, before you hand the capsule to anyone. A forum reply, a
+          public commit, a text to a friend — anything with an external, independently-checkable timestamp. Once
+          that hash is out in the world, the capsule can't be quietly regenerated without the mismatch showing.
+          Sealtrace's actual contribution isn't the hashing (that part is standard); it's making that one external
+          step a first-class, one-click part of the workflow instead of an afterthought nobody does.</p>
+
+        <h3>Architecture</h3>
+        <div class="cs-flow">
+          <div class="node b"><i class="fas fa-image"></i><h4>Seal</h4><p>SHA-256 + perceptual hash computed locally per image.</p></div>
+          <div class="node s"><i class="fas fa-eraser"></i><h4>Redact</h4><p>Optional — destructive blackout, with a pre-redaction hash commitment kept.</p></div>
+          <div class="node b"><i class="fas fa-sitemap"></i><h4>Chain</h4><p>Items combined into one Merkle root so order can't be reshuffled.</p></div>
+          <div class="node e"><i class="fas fa-anchor"></i><h4>Anchor</h4><p>Root posted publicly — the one step outside the tool's control.</p></div>
+          <div class="node s"><i class="fas fa-check-double"></i><h4>Verify</h4><p>Capsule re-hashes itself on open, in any browser, forever.</p></div>
+        </div>
+
+        <h2>Notable design decisions</h2>
+        <div class="cs-callout secure">
+          <span class="lab"><i class="fas fa-lock"></i> Nothing to leak, because nothing is sent</span>
+          <p>There is no <code>fetch()</code> or <code>XMLHttpRequest</code> anywhere in the codebase. Hashing runs on-device via <code>crypto.subtle</code>; the exported capsule's self-check reads its own embedded <code>data:</code> URIs, which never touch a network. A person with something to hide from a platform doesn't have to hide it from me either.</p>
+        </div>
+        <div class="cs-callout secure">
+          <span class="lab"><i class="fas fa-eraser"></i> Redaction that's actually destructive</span>
+          <p>Before a blackout box is drawn, the tool hashes the pixels underneath it and records that hash — then overwrites those pixels in the working canvas. The original bytes are never exported and never sit in memory as a keepable copy; only a commitment to "something existed here, and it hashed to X" survives, so a redaction can't be silently thin (a transparent box someone forgets to flatten) or falsely claimed as more extensive than it was.</p>
+        </div>
+        <div class="cs-callout secure">
+          <span class="lab"><i class="fas fa-sitemap"></i> A Merkle root for the boring reason</span>
+          <p>Real incidents are usually more than one screenshot — a conversation, a sequence of messages. Hashing each image alone doesn't stop someone dropping message 3 or reordering the conversation. A Merkle root over the items, in order, does — for the same reason a git commit history resists silent reordering.</p>
+        </div>
+
+        <h2>What I deliberately did <em>not</em> claim</h2>
+        <p>It would be easy to oversell this as "cryptographically proven evidence." I didn't want to, because it isn't, and evidence tools that overclaim are worse than none:</p>
+        <ul>
+          <li>It cannot prove the <em>original</em> screenshot wasn't already faked before sealing — Sealtrace attests to "this is what was sealed," not "this is what really happened."</li>
+          <li>Without the anchor step, the timestamp is only as trustworthy as the device it was made on.</li>
+          <li>Perceptual hashing (used to flag likely-the-same image across re-compression) is a similarity signal, not an identity proof, and is documented as such in the UI.</li>
+        </ul>
+        <p>The honest pitch is narrower and, I think, more useful: a free way to make a screenshot <em>harder to
+          dismiss out of hand</em>, with the gaps stated up front rather than discovered under cross-examination.</p>
+
+        <h2>What's next</h2>
+        <ul>
+          <li>A "verify an existing capsule" mode that re-checks a capsule someone sends <em>you</em>, without needing the original Sealtrace session.</li>
+          <li>Optional OpenTimestamps-style anchoring for people who want a stronger, automatic external timestamp than a manual public post.</li>
+          <li>A short guide for platforms and support teams on how to read a Sealtrace capsule's verification banner.</li>
+        </ul>
+
+        <div class="cs-links" style="margin-top:30px;">
+          <a class="btn-solid" href="sealtrace.html"><i class="fas fa-box-archive"></i> Try Sealtrace</a>
+          <a class="btn-ghost" href="contact.html"><i class="fas fa-paper-plane"></i> Discuss this work</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="fb-logo">Hilux</div>
+          <p>Security &amp; technology for social good — building and securing tools that protect people, from disinformation to humanitarian crises.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Explore</h5>
+          <a href="tech.html">Work &amp; Projects</a>
+          <a href="security.html">Security</a>
+          <a href="writeups.html">Writeups</a>
+          <a href="research.html">Research</a>
+        </div>
+        <div class="footer-col">
+          <h5>More</h5>
+          <a href="professional-experience.html">Experience</a>
+          <a href="certifications.html">Certifications</a>
+          <a href="Awards.html">Awards</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2025 Hilux Fokou Ngoumo. All rights reserved.</span>
+        <span class="footer-social">
+          <a href="https://www.linkedin.com/in/fokou" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="https://github.com/hiluxfnh" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://twitter.com/FOKOUHilux1" target="_blank" rel="noopener" aria-label="X / Twitter"><i class="fab fa-x-twitter"></i></a>
+          <a href="mailto:hiluxfokou33@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="assets/js/nav.js"></script>
+  <script>window.AOS && AOS.init({ duration: 800, once: true, offset: 60 });</script>
+</body>
+</html>

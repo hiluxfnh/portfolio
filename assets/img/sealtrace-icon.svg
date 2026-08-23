@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-labelledby="st-icon-title">
+  <title id="st-icon-title">Sealtrace — a shield with a wax-seal hash mark</title>
+  <defs>
+    <linearGradient id="stg1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#6366f1"/>
+      <stop offset="1" stop-color="#0e9f6e"/>
+    </linearGradient>
+  </defs>
+  <path d="M100 12 L172 40 V96 C172 144 142 178 100 192 C58 178 28 144 28 96 V40 Z"
+        fill="url(#stg1)" opacity="0.14"/>
+  <path d="M100 12 L172 40 V96 C172 144 142 178 100 192 C58 178 28 144 28 96 V40 Z"
+        fill="none" stroke="url(#stg1)" stroke-width="6" stroke-linejoin="round"/>
+  <circle cx="100" cy="100" r="46" fill="none" stroke="url(#stg1)" stroke-width="6"/>
+  <path d="M78 100 L94 116 L124 84" fill="none" stroke="url(#stg1)" stroke-width="8"
+        stroke-linecap="round" stroke-linejoin="round"/>
+  <g stroke="url(#stg1)" stroke-width="4" stroke-linecap="round" opacity="0.55">
+    <line x1="100" y1="46" x2="100" y2="56"/>
+    <line x1="100" y1="144" x2="100" y2="154"/>
+    <line x1="46" y1="100" x2="56" y2="100"/>
+    <line x1="144" y1="100" x2="154" y2="100"/>
+  </g>
+</svg>
