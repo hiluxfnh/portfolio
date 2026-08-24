@@ -88,6 +88,27 @@
   <section class="tech-projects">
     <div class="section-title" data-aos="fade-up">Tech Projects</div>
     <div class="projects-container">
+      <!-- Project 0: Sealtrace -->
+      <div class="project-card" data-aos="fade-up">
+        <img src="assets/img/sealtrace-icon.svg" alt="Sealtrace" loading="lazy" decoding="async">
+        <h2>Sealtrace</h2>
+        <p>A free, client-side tool that seals screenshots of scams, harassment, or disinformation into a self-verifying evidence capsule — no upload, no account, nothing ever leaves your browser.</p>
+        <button class="open-modal" data-modal="project0">View Details</button>
+        <div class="modal-data" id="project0">
+          <h2>Sealtrace</h2>
+          <p><strong>Overview:</strong> Turns a screenshot into a self-contained, self-verifying "evidence capsule" — a single HTML file anyone can open offline to check its contents haven't changed since it was sealed.</p>
+          <ul>
+            <li><strong>Hashing:</strong> SHA-256 per item via the browser's <em>Web Crypto API</em>, plus a perceptual (average) hash to flag likely-the-same images across re-compression.</li>
+            <li><strong>Chaining:</strong> A <em>Merkle root</em> over multi-item incidents so a sequence of screenshots can't be silently reordered or dropped.</li>
+            <li><strong>Redaction:</strong> Destructive blackout with a pre-redaction hash commitment, so sensitive regions can be removed without losing proof of what was covered and where.</li>
+            <li><strong>Anchoring:</strong> One-click "anchor statement" text designed to be posted publicly, so the seal's timestamp lives outside the tool's — and my — control.</li>
+          </ul>
+        </div>
+        <div class="fc-links">
+          <a href="sealtrace.html"><i class="fas fa-box-archive"></i> Try it</a>
+          <a href="case-sealtrace.html"><i class="fas fa-book-open"></i> Case study</a>
+        </div>
+      </div>
       <!-- Project 1: EcoCityAdapt Platform -->
       <div class="project-card" data-aos="fade-up">
         <img src="assets/img/eco.jpg" alt="EcoCityAdapt" loading="lazy" decoding="async">
