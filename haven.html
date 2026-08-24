@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>(function(){try{var t=localStorage.getItem("theme");if(!t)t=(window.matchMedia&&matchMedia("(prefers-color-scheme:dark)").matches)?"dark":"light";document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Haven — pick what's happening and get routed to real, vetted support resources and tools. No account, no black-box model, nothing sent anywhere. By Hilux Fokou Ngoumo." />
+  <title>Haven — find real support, transparently | Hilux Fokou Ngoumo</title>
+  <link rel="icon" href="assets/img/icon.png" type="image/png">
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Haven — a transparent way to find real support" />
+  <meta property="og:description" content="Pick what's happening; get routed to vetted crisis directories and tools — no diagnosis, no black-box model, nothing sent anywhere." />
+  <meta property="og:image" content="https://hiluxfokou.me/assets/img/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://hiluxfokou.me/assets/img/og-image.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Pacifico&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/base.css" />
+  <link rel="stylesheet" href="assets/css/haven.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <header class="site-header">
+    <nav class="site-nav" aria-label="Primary">
+      <a href="index.html" class="brand">Hilux</a>
+      <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-list">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-list" id="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="tech.html">Work</a></li>
+        <li><a href="security.html">Security</a></li>
+        <li><a href="social-impact.html">Impact</a></li>
+        <li><a href="writeups.html">Writeups</a></li>
+        <li class="nav-more">
+          <details class="nav-more-details">
+            <summary>More <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+            <ul class="nav-more-list">
+              <li><a href="professional-experience.html">Experience</a></li>
+              <li><a href="certifications.html">Certifications</a></li>
+              <li><a href="research.html">Research</a></li>
+              <li><a href="Awards.html">Awards</a></li>
+              <li><a href="gallery.html">Gallery</a></li>
+            </ul>
+          </details>
+        </li>
+        <li><a href="contact.html" class="nav-cta">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="cs-hero">
+      <div class="shell" style="max-width:900px;">
+        <a class="cs-back" href="tech.html"><i class="fas fa-arrow-left"></i> All projects</a>
+        <h1 class="cs-title">Haven — find real support, transparently</h1>
+        <p class="hero-lead" style="margin:0;">Pick what's happening. Haven routes you to vetted, real directories and
+          tools — it doesn't diagnose, counsel, or pretend to understand you. Nothing you select ever leaves this
+          tab.</p>
+        <div class="cs-meta">
+          <div class="m"><b>What it is</b><span>Free, client-side web tool</span></div>
+          <div class="m"><b>Data leaves your device</b><span>Never</span></div>
+          <div class="m"><b>Domain</b><span>Trust &amp; Safety · Applied Ethics</span></div>
+          <div class="m"><b>Status</b><span>v1 prototype</span></div>
+        </div>
+        <div class="cs-tagrow">
+          <span class="chip build">Vanilla JS</span><span class="chip secure">No black-box model</span>
+          <span class="chip empower">Vetted resources only</span><span class="chip empower">Survivor-support</span>
+        </div>
+        <p style="margin-top:14px;"><a href="case-haven.html" style="color:var(--accent); font-weight:600;">Read why I built it this way <i class="fas fa-arrow-right"></i></a></p>
+      </div>
+    </section>
+
+    <section class="hv-app">
+      <div class="shell" style="max-width:900px;">
+        <div class="hv-intro-banner">
+          <i class="fas fa-lock"></i>
+          <div><strong>Nothing you select here is sent anywhere.</strong> Haven has no server, no account, and no
+            analytics — it's a fixed lookup table running entirely in your browser. Open
+            <code>assets/js/haven-core.mjs</code> to see the exact rules behind every result.</div>
+        </div>
+
+        <div class="hv-step-label">What's going on? (pick as many as apply)</div>
+        <div id="hv-categories"></div>
+
+        <div class="hv-step-label">Suggested next steps</div>
+        <p class="hv-empty" id="hv-empty">Select one or more situations above to see suggestions.</p>
+        <div id="hv-results"></div>
+
+        <div class="hv-howitworks">
+          <h2>Why it works this way</h2>
+          <ul class="hv-steps">
+            <li><b>No diagnosis</b> Haven never tries to assess how serious something is — every path leads to real people or real tools, not an AI opinion.</li>
+            <li><b>No black box</b> The routing is a small, fixed table, not a trained model. You can read the exact logic that produced your results.</li>
+            <li><b>Only vetted directories</b> Crisis resources link to established, actively-maintained international directories — never a hotline number typed in by hand.</li>
+            <li><b>Nothing stored</b> No account, no server, no analytics. Closing the tab clears everything.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="fb-logo">Hilux</div>
+          <p>Security &amp; technology for social good — building and securing tools that protect people, from disinformation to humanitarian crises.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Explore</h5>
+          <a href="tech.html">Work &amp; Projects</a>
+          <a href="security.html">Security</a>
+          <a href="writeups.html">Writeups</a>
+          <a href="research.html">Research</a>
+        </div>
+        <div class="footer-col">
+          <h5>More</h5>
+          <a href="professional-experience.html">Experience</a>
+          <a href="certifications.html">Certifications</a>
+          <a href="Awards.html">Awards</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2025 Hilux Fokou Ngoumo. All rights reserved.</span>
+        <span class="footer-social">
+          <a href="https://www.linkedin.com/in/fokou" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="https://github.com/hiluxfnh" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://twitter.com/FOKOUHilux1" target="_blank" rel="noopener" aria-label="X / Twitter"><i class="fab fa-x-twitter"></i></a>
+          <a href="mailto:hiluxfokou33@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="assets/js/nav.js"></script>
+  <script type="module" src="assets/js/haven.js"></script>
+  <script>window.AOS && AOS.init({ duration: 800, once: true, offset: 60 });</script>
+</body>
+</html>

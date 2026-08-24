@@ -173,23 +173,26 @@
         </div>
         <div class="fc-links"><a href="https://github.com/hiluxfnh/Kamerlark1.1" target="_blank" rel="noopener"><i class="fab fa-github"></i> View code</a></div>
       </div>
-      <!-- Project 4: Open-Source AI Chatbot -->
+      <!-- Project 4: Haven -->
       <div class="project-card" data-aos="fade-up" data-aos-delay="300">
-        <img src="assets/img/chat.jpg" alt="AI Chatbot" loading="lazy" decoding="async">
-        <h2>Open-Source AI Chatbot</h2>
-        <p>An innovative chatbot providing legal resources, mental health support, and incident reporting using cutting-edge NLP.</p>
+        <img src="assets/img/haven-icon.svg" alt="Haven" loading="lazy" decoding="async">
+        <h2>Haven — Support Navigator</h2>
+        <p>Pick what's happening and get routed to vetted crisis directories and tools — deliberately built as a transparent rule table, not an AI chatbot.</p>
         <button class="open-modal" data-modal="project4">View Details</button>
         <div class="modal-data" id="project4">
-          <h2>Open-Source AI Chatbot</h2>
-          <p><strong>Overview:</strong> Building an intelligent support tool that leverages advanced NLP to deliver tailored assistance.</p>
+          <h2>Haven</h2>
+          <p><strong>Overview:</strong> A client-side support-routing tool. No free text, no model, no server — a fixed, tested lookup table maps a person's selected situation to real, vetted resources.</p>
           <ul>
-            <li><strong>NLP Engine:</strong> Built in <em>Python</em> utilizing <em>Hugging Face Transformers</em> for robust language understanding.</li>
-            <li><strong>Backend:</strong> Developed with <em>Flask</em> and containerized via <em>Docker</em> for seamless deployment.</li>
-            <li><strong>Integration:</strong> Designed to consolidate legal resource lookup, mental health support, and incident reporting into one platform.</li>
-            <li><strong>Ethics & Security:</strong> Emphasizes privacy, ethical AI use, and adherence to industry best practices.</li>
+            <li><strong>Why not NLP:</strong> An earlier version of this project planned an AI chatbot for crisis support; I deliberately scrapped that in favour of something inspectable and impossible to misread — see the case study for why.</li>
+            <li><strong>Resources:</strong> Links only to established, actively-maintained directories (Find A Helpline, Befrienders Worldwide, IASP) — never a hand-typed hotline number.</li>
+            <li><strong>Reuse:</strong> Routes incident documentation to Sealtrace and phishing/scam checks to PhishBlock instead of rebuilding them.</li>
+            <li><strong>Privacy:</strong> No account, no server, no analytics — nothing you select ever leaves your browser.</li>
           </ul>
         </div>
-        <div class="fc-links"><a href="https://github.com/hiluxfnh" target="_blank" rel="noopener"><i class="fab fa-github"></i> View code</a></div>
+        <div class="fc-links">
+          <a href="haven.html"><i class="fas fa-compass"></i> Try it</a>
+          <a href="case-haven.html"><i class="fas fa-book-open"></i> Case study</a>
+        </div>
       </div>
     </div>
   </section>
