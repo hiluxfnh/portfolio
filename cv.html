@@ -3,142 +3,253 @@
 <head>
   <script>(function(){try{var t=localStorage.getItem("theme");if(!t)t=(window.matchMedia&&matchMedia("(prefers-color-scheme:dark)").matches)?"dark":"light";document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
 <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Hilux Fokou Ngoumo — CV</title>
 <style>
-  @page { size: A4; margin: 14mm 14mm; }
+  /* Single-column, ATS-safe layout — no tables, no text-columns, no
+     colored badges. Follows the converged guidance of Harvard OCS, Yale
+     OCS, MIT CAPD and Stanford CareerEd: standard font, 10.5-12pt body,
+     ≥0.5in margins, right-aligned dates, one clear column an ATS parser
+     reads top-to-bottom without jumbling. */
+  @page { size: A4; margin: 15mm; }
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: 'Helvetica Neue', Arial, sans-serif; color: #1f2433; font-size: 10.3px; line-height: 1.45; }
-  a { color: #4f46e5; text-decoration: none; }
-  .name { font-size: 23px; font-weight: 800; letter-spacing: -.3px; }
-  .role { color: #4f46e5; font-weight: 700; font-size: 11.5px; margin-top: 2px; }
-  .thesis { color: #4b5366; margin-top: 5px; max-width: 95%; }
-  .contacts { margin-top: 7px; color: #4b5366; font-size: 9.6px; }
-  .contacts span { margin-right: 12px; white-space: nowrap; }
-  hr { border: 0; border-top: 1.5px solid #e4e7f0; margin: 11px 0 9px; }
-  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 26px; }
-  h2 { font-size: 11px; text-transform: uppercase; letter-spacing: .09em; color: #4f46e5; margin: 11px 0 6px; border-bottom: 1.5px solid #eef0ff; padding-bottom: 3px; }
-  .item { margin-bottom: 7px; }
-  .item .t { font-weight: 700; }
-  .item .meta { color: #717a90; font-size: 9.3px; }
-  .item ul { margin: 2px 0 0 14px; }
-  .item li { margin-bottom: 1px; }
-  .pilltags { margin-top: 3px; }
-  .tag { display: inline-block; background: #eef0ff; color: #4044b8; border-radius: 8px; padding: 1px 7px; margin: 2px 3px 0 0; font-size: 8.8px; font-weight: 600; }
-  .tag.s { background: #e6f7ef; color: #0a7d56; }
-  .tag.e { background: #fdf1e1; color: #b96910; }
-  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 0 18px; }
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body {
+    font-family: Arial, Helvetica, 'Helvetica Neue', sans-serif;
+    color: #1a1f2b; font-size: 10.5pt; line-height: 1.35;
+    max-width: 800px; margin: 0 auto; padding: 30px 26px 40px;
+  }
+  @media print { body { padding: 0; max-width: none; } }
+  a { color: #38399b; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* ---- Header ---- */
+  .cv-name { font-size: 22pt; font-weight: 700; letter-spacing: -.2px; color: #14192b; }
+  .cv-role { font-size: 11.5pt; font-weight: 600; color: #38399b; margin-top: 2px; }
+  .cv-summary { margin-top: 8px; color: #333a4a; max-width: 640px; }
+  .cv-contact {
+    margin-top: 10px; padding-top: 10px; border-top: 1px solid #dde0ea;
+    font-size: 9.7pt; color: #4a5164;
+  }
+  .cv-contact span:not(:last-child)::after { content: " | "; color: #b8bdcc; }
+
+  /* ---- Sections ---- */
+  h2 {
+    font-size: 10pt; font-weight: 700; text-transform: uppercase; letter-spacing: .09em;
+    color: #38399b; margin: 10px 0 5px; padding-bottom: 3px; border-bottom: 1px solid #dde0ea;
+  }
+  section:first-of-type h2 { margin-top: 10px; }
+
+  /* ---- Reusable entry: role/title left, date right, org line, PAR bullets ---- */
+  .entry { margin-bottom: 6px; }
+  .entry-head { display: flex; justify-content: space-between; align-items: baseline; gap: 14px; }
+  .entry-title { font-weight: 700; color: #1a1f2b; }
+  .entry-date { font-size: 9.3pt; color: #6a7186; white-space: nowrap; font-weight: 600; }
+  .entry-org { font-size: 9.7pt; color: #55607a; margin-top: 1px; }
+  .entry ul { margin: 4px 0 0 15px; }
+  .entry li { margin-bottom: 2px; }
+
+  /* ---- Compact list rows (certifications, engagement) ---- */
+  .plainlist { margin: 0 0 0 15px; }
+  .plainlist li { margin-bottom: 2px; }
+
+  /* ---- Skills / languages: plain grouped text, no badges ---- */
+  .skillrow { margin-bottom: 3px; }
+  .skillrow b { color: #1a1f2b; }
+
   .back-link {
     position: fixed; top: 14px; right: 14px; display: inline-flex; align-items: center; gap: 6px;
     background: #eef0ff; color: #4044b8; font-weight: 700; font-size: 11px;
     padding: 7px 12px; border-radius: 999px; text-decoration: none; z-index: 10;
   }
-  .back-link:hover { background: #dee3ff; }
+  .back-link:hover { background: #dee3ff; text-decoration: none; }
   @media print { .back-link { display: none; } }
 </style>
 </head>
 <body>
   <a class="back-link" href="index.html">&larr; Back to hiluxfokou.me</a>
-  <div class="name">Hilux Fokou Ngoumo</div>
-  <div class="role">Security Researcher · Full-Stack Builder · UN Youth Leader</div>
-  <div class="thesis">I build and secure technology that protects people — from disinformation and online harm to climate and humanitarian crises.</div>
-  <div class="contacts">
-    <span>✉ hiluxfokou33@gmail.com</span>
-    <span>🔗 linkedin.com/in/fokou</span>
-    <span>💻 github.com/hiluxfnh</span>
-    <span>🌐 hiluxfokou.me</span>
-    <span>📍 Cameroon / India</span>
+
+  <div class="cv-name">Hilux Fokou Ngoumo</div>
+  <div class="cv-role">Security Researcher · Full-Stack &amp; AI Engineer · UN Youth Leader</div>
+  <p class="cv-summary">Security researcher and full-stack/AI engineer pursuing an MSc in Information Security, with a track record spanning anti-phishing tooling, NLP against disinformation, computer-vision exam integrity, and humanitarian-sector coordination platforms — alongside five years of youth advocacy across UN forums.</p>
+  <div class="cv-contact">
+    <span>hiluxfokou33@gmail.com</span>
+    <span>linkedin.com/in/fokou</span>
+    <span>github.com/hiluxfnh</span>
+    <span>hiluxfokou.me</span>
+    <span>+237 6 52 06 08 80</span>
+    <span>Bertoua, Cameroon / Saint Petersburg, Russia</span>
   </div>
-  <hr>
 
-  <div class="grid">
-    <div>
-      <h2>Profile</h2>
-      <p>Computer-science graduate (First Class with Distinction) and security researcher working where engineering meets human safety: anti-phishing, NLP against disinformation, exam integrity, and survivor-support tooling — alongside global youth advocacy at the UN.</p>
+  <section>
+    <h2>Education</h2>
+    <div class="entry">
+      <div class="entry-head">
+        <span class="entry-title">MSc, Information Security</span>
+        <span class="entry-date">2025 – present</span>
+      </div>
+      <div class="entry-org">ITMO University, Russia · Open Doors Scholarship</div>
+    </div>
+    <div class="entry">
+      <div class="entry-head">
+        <span class="entry-title">BCA, Computer Applications — First Class with Distinction</span>
+        <span class="entry-date">2021 – 2024</span>
+      </div>
+      <div class="entry-org">GITAM University, India · Outstanding Achiever 2024</div>
+    </div>
+  </section>
 
-      <h2>Education</h2>
-      <div class="item">
-        <div class="t">MSc, Information Security <span class="meta">— in progress</span></div>
-        <div class="meta">ITMO University, Russia · Open Doors Scholarship</div>
-      </div>
-      <div class="item">
-        <div class="t">BCA, Computer Applications</div>
-        <div class="meta">GITAM University, India · First Class with Distinction · Outstanding Achiever 2024</div>
-      </div>
+  <section>
+    <h2>Experience</h2>
 
-      <h2>Certifications</h2>
-      <div class="two">
-        <div>• CEH — Certified Ethical Hacker<br>• ISC2 CC — Certified in Cybersecurity<br>• CAP — Cert. Authorization Professional<br>• Microsoft SC-900</div>
-        <div>• Microsoft AZ-900 · AI-900<br>• Google Cybersecurity Professional<br>• UNDP Tech4Peace — Cybersecurity (2025)<br>• AWS Cloud Architecting &amp; Foundations<br>• Harvard HHI — Building a Better Response</div>
+    <div class="entry">
+      <div class="entry-head">
+        <span class="entry-title">Youth Panelist &amp; Project Report Reviewer</span>
+        <span class="entry-date">2024 – present</span>
       </div>
-
-      <h2>Selected Projects</h2>
-      <div class="item">
-        <div class="t">GetRespondr</div>
-        <div>Real-time crisis-coordination platform with AI data ingestion.</div>
-        <div class="pilltags"><span class="tag">Full-stack</span><span class="tag">AI</span><span class="tag e">Humanitarian</span></div>
-      </div>
-      <div class="item">
-        <div class="t">FakeAlert (NLP)</div>
-        <div>Fake-news & hate-speech detection for social integrity.</div>
-        <div class="pilltags"><span class="tag">Python·NLP</span><span class="tag s">Trust &amp; Safety</span></div>
-      </div>
-      <div class="item">
-        <div class="t">PhishBlock</div>
-        <div>Phishing detection for non-technical users.</div>
-        <div class="pilltags"><span class="tag s">Cybersecurity</span><span class="tag">JavaScript</span></div>
-      </div>
-      <div class="item">
-        <div class="t">KamerLark</div>
-        <div>Verified student-housing platform for Cameroon.</div>
-        <div class="pilltags"><span class="tag">React·Node</span><span class="tag e">Student welfare</span></div>
-      </div>
+      <div class="entry-org">EU Youth Empowerment Fund / Global Youth Mobilization</div>
+      <ul><li>Reviews 120+ youth-led grant proposals across Africa and Europe as a standing panel reviewer, informing the allocation of over &euro;1,000,000 in micro-grants.</li></ul>
     </div>
 
-    <div>
-      <h2>Experience</h2>
-      <div class="item">
-        <div class="t">Young Person Co-Chair → Trainer of Trainers</div>
-        <div class="meta">IAWG (ASRHR in Humanitarian Settings) · 2022–2024</div>
-        <ul><li>One of four globally selected youth co-chairs.</li>
-            <li>Trained 36+ organizations across 4 languages, reaching 13,000+ adolescents.</li>
-            <li>Co-developed the 2020 ASRHR Toolkit Supplementary Guide.</li></ul>
+    <div class="entry">
+      <div class="entry-head">
+        <span class="entry-title">Communication Assistant</span>
+        <span class="entry-date">2024 – present</span>
       </div>
-      <div class="item">
-        <div class="t">AI &amp; Vision Systems Intern</div>
-        <div class="meta">3rd Eye Vision Tech · 2023</div>
-        <ul><li>Real-time gesture recognition for assistive/smart-city prototypes (OpenCV, TensorFlow).</li></ul>
-      </div>
-      <div class="item">
-        <div class="t">Innovation &amp; Startup Research Fellow</div>
-        <div class="meta">HP Tech Ventures · 2022</div>
-        <ul><li>Research-backed recommendations for African EdTech/HealthTech ventures.</li></ul>
-      </div>
-      <div class="item">
-        <div class="t">Communication Assistant</div>
-        <div class="meta">Women for a Change (WFAC) Cameroon · 2024–present</div>
-        <ul><li>Led campaigns expanding reach to 500,000+ young people.</li></ul>
-      </div>
-      <div class="item">
-        <div class="t">Front-End Developer Lead</div>
-        <div class="meta">CodeX, GITAM University · 2022–2023</div>
-        <ul><li>Mentored 6+ junior developers; built student-focused web tools.</li></ul>
-      </div>
-
-      <h2>Global Engagement</h2>
-      <div class="item meta"><strong>Plant-for-the-Planet — Global Ambassador Council (2025–2027)</strong>, one of 16 young climate leaders worldwide. AfCFTA National Youth Champions Fellow &amp; UNDP Tech4Peace Fellow (2025). UN forums: CSW66/67/68 · COP27 · COP28 · SB58 · SB60 (Bonn) · World Bank Youth Summit 2023. YOUNGO climate negotiator; UNFCCC Youth Stocktake reviewer.</div>
-
-      <h2>Publications</h2>
-      <div class="item"><div class="t">NLP in the Digital Age: Combating Fake News, Hate Speech &amp; Ethical Risks</div><div class="meta">2025 · SSRN 10.2139/ssrn.5181145</div></div>
-      <div class="item"><div class="t">From Data to Action: Empowering African Youth in the Climate Crisis</div><div class="meta">2024</div></div>
-
-      <h2>Skills</h2>
-      <div class="pilltags">
-        <span class="tag">Python</span><span class="tag">JavaScript</span><span class="tag">NLP</span><span class="tag">OpenCV</span><span class="tag">React/Node</span>
-        <span class="tag s">Ethical Hacking</span><span class="tag s">Cryptography</span><span class="tag s">Cloud Security</span><span class="tag s">OSINT</span>
-        <span class="tag e">Advocacy</span><span class="tag e">Training</span><span class="tag e">Policy</span>
-      </div>
-      <div class="item" style="margin-top:5px;"><span class="meta">Languages: English, French (bilingual).</span></div>
+      <div class="entry-org">Women for a Change (WFAC), Cameroon</div>
+      <ul><li>Leads digital campaign strategy, directing the 15th-Anniversary and Menstrual Hygiene Day campaigns and expanding audience reach to 500,000+ young people.</li></ul>
     </div>
-  </div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <span class="entry-title">Founder &amp; Developer, EcoCityAdapt</span>
+        <span class="entry-date">2023 – present</span>
+      </div>
+      <div class="entry-org">KamerLark Lab</div>
+      <ul><li>Founded an AI-driven platform teaching climate resilience and media/cybersecurity literacy to students and communities across Cameroon.</li></ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <span class="entry-title">Young Person Co-Chair &rarr; Trainer of Trainers</span>
+        <span class="entry-date">2022 – 2024</span>
+      </div>
+      <div class="entry-org">Inter-Agency Working Group (ASRHR in Humanitarian Settings) · mentored by Save the Children &amp; Plan International</div>
+      <ul><li>Co-chaired IAWG's global youth delegation, one of four co-chairs selected worldwide; trained 36+ partner organizations across 4 languages and co-authored the 2020 ASRHR Toolkit Supplementary Guide, reaching 13,000+ adolescents in humanitarian settings.</li></ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <span class="entry-title">AI Engineer, ProctoShield</span>
+        <span class="entry-date">2023</span>
+      </div>
+      <div class="entry-org">Smart India Hackathon</div>
+      <ul><li>Engineered a computer-vision exam-integrity system (Python, OpenCV) that placed 3rd nationally.</li></ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <span class="entry-title">Android Developer</span>
+        <span class="entry-date">2023</span>
+      </div>
+      <div class="entry-org">PHN Technology Pvt Ltd</div>
+      <ul><li>Shipped 3 production Android applications end-to-end and cut user-reported bugs by ~30% by introducing structured QA testing.</li></ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <span class="entry-title">AI &amp; Vision Systems Intern</span>
+        <span class="entry-date">2023</span>
+      </div>
+      <div class="entry-org">3rd Eye Vision Tech</div>
+      <ul><li>Built real-time gesture-recognition prototypes (OpenCV, TensorFlow) for assistive and smart-city applications.</li></ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <span class="entry-title">Front-End Developer Lead, CodeX</span>
+        <span class="entry-date">2022 – 2023</span>
+      </div>
+      <div class="entry-org">GITAM University</div>
+      <ul><li>Mentored 6 junior developers and shipped student-facing web tools as team lead.</li></ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <span class="entry-title">Innovation &amp; Startup Research Fellow</span>
+        <span class="entry-date">2022</span>
+      </div>
+      <div class="entry-org">HP Tech Ventures</div>
+      <ul><li>Delivered research-backed investment recommendations on African EdTech and HealthTech ventures, supporting HP's innovation-pipeline strategy.</li></ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Selected Projects</h2>
+    <div class="entry">
+      <div class="entry-head"><span class="entry-title">Sealtrace</span></div>
+      <ul><li>Client-side tool sealing screenshots into self-verifying evidence capsules for scam/harassment reporting, using SHA-256 and Merkle-chained hashing. — Vanilla JS, Web Crypto API</li></ul>
+    </div>
+    <div class="entry">
+      <div class="entry-head"><span class="entry-title">GetRespondr</span></div>
+      <ul><li>Real-time crisis-coordination platform with AI-powered data ingestion from external sources. — Full-stack, AI</li></ul>
+    </div>
+    <div class="entry">
+      <div class="entry-head"><span class="entry-title">FakeAlert (NLP)</span></div>
+      <ul><li>Fake-news and hate-speech detection system, published as peer-reviewed research (SSRN, 2025). — Python, BERT, LSTM</li></ul>
+    </div>
+    <div class="entry">
+      <div class="entry-head"><span class="entry-title">PhishBlock</span></div>
+      <ul><li>Phishing-detection tool helping non-technical users identify malicious links. — JavaScript</li></ul>
+    </div>
+    <div class="entry">
+      <div class="entry-head"><span class="entry-title">KamerLark</span></div>
+      <ul><li>Verified student-housing platform for Cameroon with broker-review transparency. — React, Node.js, Firebase</li></ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Publications</h2>
+    <div class="entry">
+      <div class="entry-head">
+        <span class="entry-title">NLP in the Digital Age: Combating Fake News, Hate Speech &amp; Ethical Risks for Social Integrity</span>
+        <span class="entry-date">2025</span>
+      </div>
+      <div class="entry-org">SSRN · <a href="https://dx.doi.org/10.2139/ssrn.5181145" target="_blank" rel="noopener">10.2139/ssrn.5181145</a></div>
+    </div>
+    <div class="entry">
+      <div class="entry-head">
+        <span class="entry-title">From Data to Action: Empowering African Youth in the Climate Crisis</span>
+        <span class="entry-date">2024</span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Leadership &amp; Global Engagement</h2>
+    <ul class="plainlist">
+      <li>Global Ambassador Council, Plant-for-the-Planet (2025 – 2027) — one of 16 young climate leaders selected worldwide.</li>
+      <li>AfCFTA National Youth Champions Fellow &amp; UNDP Tech4Peace Cybersecurity Fellow (2025).</li>
+      <li>YOUNGO climate negotiator; UNFCCC Youth Stocktake reviewer.</li>
+      <li>Represented youth constituencies at CSW66/67/68, COP27, COP28, SB58, SB60 (Bonn), and the 2023 World Bank Youth Summit.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Certifications</h2>
+    <ul class="plainlist">
+      <li>CEH — Certified Ethical Hacker &nbsp;·&nbsp; ISC2 CC — Certified in Cybersecurity &nbsp;·&nbsp; CAP — Certified Authorization Professional &nbsp;·&nbsp; UNDP Tech4Peace — Cybersecurity (2025)</li>
+      <li>Microsoft SC-900, AZ-900, AI-900 &nbsp;·&nbsp; Google Cybersecurity Professional &nbsp;·&nbsp; AWS Cloud Architecting &amp; Foundations &nbsp;·&nbsp; Harvard HHI — Building a Better Response</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Skills</h2>
+    <p class="skillrow"><b>Languages &amp; frameworks:</b> Python, JavaScript, React/Node.js, NLP (BERT/LSTM), OpenCV</p>
+    <p class="skillrow"><b>Security &amp; cloud:</b> Ethical hacking, cryptography, cloud security, OSINT</p>
+    <p class="skillrow"><b>Advocacy &amp; leadership:</b> Policy advocacy, training facilitation, program M&amp;E, grant review</p>
+    <p class="skillrow" style="margin-top:6px;"><b>Languages:</b> English, French (bilingual)</p>
+  </section>
+
 </body>
 </html>
