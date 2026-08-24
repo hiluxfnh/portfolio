@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>(function(){try{var t=localStorage.getItem("theme");if(!t)t=(window.matchMedia&&matchMedia("(prefers-color-scheme:dark)").matches)?"dark":"light";document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Case study: Haven — why a support-navigator tool was deliberately built as a transparent rule table instead of an AI chatbot, and how its resources were vetted. By Hilux Fokou Ngoumo." />
+  <title>Case Study — Haven | Hilux Fokou Ngoumo</title>
+  <link rel="icon" href="assets/img/icon.png" type="image/png">
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Case Study — Haven: support routing without a black box" />
+  <meta property="og:description" content="Why I scrapped a planned NLP chatbot for survivor support and built a transparent, inspectable rule table instead." />
+  <meta property="og:image" content="https://hiluxfokou.me/assets/img/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://hiluxfokou.me/assets/img/og-image.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Pacifico&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/base.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <header class="site-header">
+    <nav class="site-nav" aria-label="Primary">
+      <a href="index.html" class="brand">Hilux</a>
+      <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-list">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-list" id="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="tech.html">Work</a></li>
+        <li><a href="security.html">Security</a></li>
+        <li><a href="social-impact.html">Impact</a></li>
+        <li><a href="writeups.html">Writeups</a></li>
+        <li class="nav-more">
+          <details class="nav-more-details">
+            <summary>More <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+            <ul class="nav-more-list">
+              <li><a href="professional-experience.html">Experience</a></li>
+              <li><a href="certifications.html">Certifications</a></li>
+              <li><a href="research.html">Research</a></li>
+              <li><a href="Awards.html">Awards</a></li>
+              <li><a href="gallery.html">Gallery</a></li>
+            </ul>
+          </details>
+        </li>
+        <li><a href="contact.html" class="nav-cta">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="cs-hero">
+      <div class="shell" style="max-width:900px;">
+        <a class="cs-back" href="tech.html"><i class="fas fa-arrow-left"></i> All projects</a>
+        <h1 class="cs-title">Haven — support routing without a black box</h1>
+        <p class="hero-lead" style="margin:0;">This page exists because an earlier version of this portfolio described
+          a project that didn't exist yet: an "AI chatbot" for legal resources, mental-health support, and incident
+          reporting. Haven is the honest, shipped replacement — and the story of why its scope shrank on purpose.</p>
+        <div class="cs-meta">
+          <div class="m"><b>My role</b><span>Sole designer &amp; developer</span></div>
+          <div class="m"><b>Timeline</b><span>2026</span></div>
+          <div class="m"><b>Domain</b><span>Trust &amp; Safety · Applied Ethics</span></div>
+          <div class="m"><b>Status</b><span>v1 prototype, self-hosted</span></div>
+        </div>
+        <div class="cs-tagrow">
+          <span class="chip build">Vanilla JS</span><span class="chip secure">No black-box model</span>
+          <span class="chip empower">Vetted resources only</span>
+        </div>
+        <div class="cs-links">
+          <a class="btn-solid" href="haven.html"><i class="fas fa-compass"></i> Try Haven</a>
+          <a class="btn-ghost" href="assets/js/haven-core.mjs" target="_blank" rel="noopener"><i class="fas fa-code"></i> Read the routing logic</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="site-section">
+      <div class="shell cs-body">
+
+        <h2>Context — and a correction</h2>
+        <p>While auditing this whole site for gaps, I found a project card describing an "Open-Source AI Chatbot"
+          consolidating legal resources, mental-health support, and incident reporting via Hugging Face Transformers
+          on a Flask/Docker backend. Its "View code" link went to my GitHub profile root — there was no repository
+          behind it. It was the one project on the site that read as real but wasn't, and it needed either a real
+          build or an honest correction. This is the real build.</p>
+
+        <h2>Why the original scope was the wrong scope</h2>
+        <p>The original description was a plausible tech stack for a plausible idea, but the idea itself was riskier
+          than it looked once I actually sat down to build it. A chatbot that gives NLP-driven advice to someone in
+          crisis has to be right — a wrong or subtly-off response to someone describing abuse or suicidal thoughts is
+          not a bug you patch later, it's a harm you've already caused. Building that responsibly needs domain
+          review, safety testing, and ongoing maintenance that a single portfolio project can't honestly promise.</p>
+        <p>So I changed the question from <em>"how do I build the chatbot that was described"</em> to <em>"what is
+          the smallest thing I can build today that is actually safe and actually helps?"</em> The answer was: stop
+          trying to understand the user at all, and just get them to the right door faster.</p>
+
+        <h2>What Haven actually does</h2>
+        <p>You select from a fixed list of situations — harassment, a scam, emotional distress, gender-based
+          violence, or just wanting to document something. There's no free-text box, no model reading what you type,
+          nothing to classify. Each situation maps to a fixed, ordered list of resources through a plain lookup
+          table in <a href="assets/js/haven-core.mjs" target="_blank" rel="noopener"><code>haven-core.mjs</code></a>
+          — the same file the Node test suite runs against, so the mapping is both inspectable and tested.</p>
+
+        <h3>Architecture</h3>
+        <div class="cs-flow">
+          <div class="node b"><i class="fas fa-list-check"></i><h4>Select</h4><p>Fixed checkboxes, no free text, nothing to classify.</p></div>
+          <div class="node s"><i class="fas fa-table"></i><h4>Look up</h4><p>A plain, tested mapping table — no model, no inference.</p></div>
+          <div class="node e"><i class="fas fa-life-ring"></i><h4>Route</h4><p>Only to vetted directories or tools I already ship.</p></div>
+        </div>
+
+        <h2>Notable design decisions</h2>
+        <div class="cs-callout secure">
+          <span class="lab"><i class="fas fa-ban"></i> Deliberately not "cutting-edge NLP"</span>
+          <p>The rejected version's biggest selling point — an NLP model reading free text — was also its biggest
+            liability. A rule table can't misread a crisis; it can only be incomplete, and incompleteness is
+            something a reader can see and I can fix, unlike a model's internal reasoning.</p>
+        </div>
+        <div class="cs-callout secure">
+          <span class="lab"><i class="fas fa-check-double"></i> Only resources I could verify</span>
+          <p>Crisis and abuse resources link to <a href="https://findahelpline.com/" target="_blank" rel="noopener">Find A Helpline</a>,
+            <a href="https://befrienders.org/" target="_blank" rel="noopener">Befrienders Worldwide</a>, and the
+            <a href="https://www.iasp.info/resources/Crisis_Centres/" target="_blank" rel="noopener">IASP Crisis Centres directory</a>
+            — established, actively-maintained international directories. I deliberately did not hand-type a
+            specific hotline number anywhere: an AI-generated crisis number that's wrong or outdated is exactly the
+            kind of harm this project exists to avoid.</p>
+        </div>
+        <div class="cs-callout secure">
+          <span class="lab"><i class="fas fa-link"></i> Reusing what already exists</span>
+          <p>"Incident reporting" from the original pitch already has a real answer on this site: <a href="sealtrace.html">Sealtrace</a>,
+            which seals evidence entirely client-side. Rather than rebuild that inside a chatbot, Haven just points
+            there. The scam/phishing path points at <a href="https://github.com/hiluxfnh/PhishBlock" target="_blank" rel="noopener">PhishBlock</a>
+            the same way.</p>
+        </div>
+
+        <h2>What I deliberately left out of v1</h2>
+        <ul>
+          <li>Free-text input of any kind — reintroducing it would reopen the exact risk this design avoids.</li>
+          <li>Country-specific hotline numbers — these change, and getting one wrong is worse than not showing one.</li>
+          <li>"Legal resources," as originally pitched — jurisdiction-specific legal aid is too easy to get
+            confidently wrong from outside that jurisdiction; a future version should source this from a vetted
+            directory the way the crisis resources are, not from me typing organisation names in.</li>
+        </ul>
+
+        <h2>What's next</h2>
+        <ul>
+          <li>A vetted legal-aid directory integration, once I find one with the same verification bar as Find A Helpline.</li>
+          <li>Localised resource ordering (e.g. prioritising Cameroon- or Russia-relevant directories) without ever inferring location automatically.</li>
+          <li>A short accessibility pass with screen-reader users, given who this is built for.</li>
+        </ul>
+
+        <div class="cs-links" style="margin-top:30px;">
+          <a class="btn-solid" href="haven.html"><i class="fas fa-compass"></i> Try Haven</a>
+          <a class="btn-ghost" href="contact.html"><i class="fas fa-paper-plane"></i> Discuss this work</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="fb-logo">Hilux</div>
+          <p>Security &amp; technology for social good — building and securing tools that protect people, from disinformation to humanitarian crises.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Explore</h5>
+          <a href="tech.html">Work &amp; Projects</a>
+          <a href="security.html">Security</a>
+          <a href="writeups.html">Writeups</a>
+          <a href="research.html">Research</a>
+        </div>
+        <div class="footer-col">
+          <h5>More</h5>
+          <a href="professional-experience.html">Experience</a>
+          <a href="certifications.html">Certifications</a>
+          <a href="Awards.html">Awards</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2025 Hilux Fokou Ngoumo. All rights reserved.</span>
+        <span class="footer-social">
+          <a href="https://www.linkedin.com/in/fokou" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="https://github.com/hiluxfnh" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://twitter.com/FOKOUHilux1" target="_blank" rel="noopener" aria-label="X / Twitter"><i class="fab fa-x-twitter"></i></a>
+          <a href="mailto:hiluxfokou33@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="assets/js/nav.js"></script>
+  <script>window.AOS && AOS.init({ duration: 800, once: true, offset: 60 });</script>
+</body>
+</html>
