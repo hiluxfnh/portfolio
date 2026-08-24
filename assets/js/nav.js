@@ -17,12 +17,27 @@
     });
   }
 
-  // auto-highlight current page
+  // auto-highlight current page (including links tucked inside the "More" dropdown)
   var here = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
   document.querySelectorAll('.site-nav .nav-list a').forEach(function (a) {
     var href = (a.getAttribute('href') || '').toLowerCase();
-    if (href === here) a.classList.add('active');
+    if (href === here) {
+      a.classList.add('active');
+      var details = a.closest('.nav-more-details');
+      if (details) details.classList.add('has-active');
+    }
   });
+
+  // "More" dropdown: close on outside click, and when a link inside it is picked
+  var moreDetails = document.querySelector('.nav-more-details');
+  if (moreDetails) {
+    document.addEventListener('click', function (e) {
+      if (moreDetails.open && !moreDetails.contains(e.target)) moreDetails.open = false;
+    });
+    moreDetails.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () { moreDetails.open = false; });
+    });
+  }
 
   // theme toggle (dark/light) — data-theme is pre-set by an inline head script
   var root = document.documentElement;

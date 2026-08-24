@@ -24,9 +24,17 @@
   .inline { color:#2a3140; }
   .inline b { color:#2a1c0d; }
   .skills b { color:#2a1c0d; }
+  .back-link {
+    position: fixed; top: 14px; right: 14px; display: inline-flex; align-items: center; gap: 6px;
+    background: #fbeedd; color: #7a4410; font-weight: 700; font-size: 11px;
+    padding: 7px 12px; border-radius: 999px; text-decoration: none; z-index: 10;
+  }
+  .back-link:hover { background: #f5e1c5; }
+  @media print { .back-link { display: none; } }
 </style>
 </head>
 <body>
+  <a class="back-link" href="index.html">&larr; Back to hiluxfokou.me</a>
   <div class="name">Hilux Fokou Ngoumo</div>
   <div class="headline">Youth Advocate &nbsp;·&nbsp; Climate &amp; SRHR &nbsp;·&nbsp; Digital Innovation for Social Impact</div>
   <div class="contact">
