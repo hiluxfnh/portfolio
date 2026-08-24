@@ -212,6 +212,25 @@
 .btn-ghost { background: #fff; color: var(--ink); border-color: var(--border); }
 .btn-ghost:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
 
+/* =====================  DOCUMENT VIEWER (résumé/CV pages)  ===================== */
+.doc-viewer-header { text-align: center; max-width: 62ch; margin: 0 auto 22px; }
+.doc-viewer-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-bottom: 28px; }
+.doc-viewer-frame {
+  max-width: 900px; margin: 0 auto; border-radius: var(--radius-lg); overflow: hidden;
+  border: 1px solid var(--border); box-shadow: var(--shadow-md); background: var(--surface);
+}
+.doc-viewer-frame object, .doc-viewer-frame iframe {
+  width: 100%; height: min(85vh, 1100px); min-height: 500px; display: block; border: 0; background: #fff;
+}
+.doc-viewer-fallback {
+  margin: 14px 0 0; padding: 16px; text-align: center; color: var(--ink-soft); font-size: .92rem;
+}
+.doc-viewer-fallback a { color: var(--accent); font-weight: 600; }
+.doc-viewer-note { text-align: center; color: var(--ink-soft); font-size: .88rem; margin: 16px auto 0; max-width: 62ch; }
+@media (max-width: 640px) {
+  .doc-viewer-frame object, .doc-viewer-frame iframe { height: 72vh; }
+}
+
 /* hero résumé picker */
 .resume-picker { position: relative; }
 .resume-picker summary { list-style: none; }
