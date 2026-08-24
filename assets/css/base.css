@@ -212,6 +212,31 @@
 .btn-ghost { background: #fff; color: var(--ink); border-color: var(--border); }
 .btn-ghost:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
 
+/* hero résumé picker */
+.resume-picker { position: relative; }
+.resume-picker summary { list-style: none; }
+.resume-picker summary::-webkit-details-marker,
+.resume-picker summary::marker { display: none; content: ""; }
+.resume-picker summary .chev { font-size: .68em; margin-left: 2px; transition: transform .18s ease; }
+.resume-picker[open] summary .chev { transform: rotate(180deg); }
+.resume-picker-menu {
+  position: absolute; top: calc(100% + 10px); left: 0; z-index: 20;
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md); padding: 10px; width: min(300px, 86vw);
+}
+@media (max-width: 480px) {
+  .resume-picker-menu { left: auto; right: 0; }
+}
+.resume-picker-menu a {
+  display: flex; align-items: flex-start; gap: 12px; padding: 10px 12px; border-radius: 10px;
+  text-decoration: none; color: var(--ink);
+}
+.resume-picker-menu a:hover { background: var(--surface-2); }
+.resume-picker-menu a i { font-size: 1.05rem; margin-top: 2px; width: 1.1em; text-align: center; }
+.resume-picker-menu .rp-label { display: block; font-weight: 700; font-size: .92rem; }
+.resume-picker-menu .rp-sub { display: block; font-size: .8rem; color: var(--ink-soft); margin-top: 1px; }
+.resume-picker-menu .rp-divider { height: 1px; background: var(--border); margin: 6px 4px; }
+
 /* =====================  HERO  ===================== */
 .site-hero {
   background:
