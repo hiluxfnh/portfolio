@@ -27,9 +27,17 @@
   .tag.s { background: #e6f7ef; color: #0a7d56; }
   .tag.e { background: #fdf1e1; color: #b96910; }
   .two { display: grid; grid-template-columns: 1fr 1fr; gap: 0 18px; }
+  .back-link {
+    position: fixed; top: 14px; right: 14px; display: inline-flex; align-items: center; gap: 6px;
+    background: #eef0ff; color: #4044b8; font-weight: 700; font-size: 11px;
+    padding: 7px 12px; border-radius: 999px; text-decoration: none; z-index: 10;
+  }
+  .back-link:hover { background: #dee3ff; }
+  @media print { .back-link { display: none; } }
 </style>
 </head>
 <body>
+  <a class="back-link" href="index.html">&larr; Back to hiluxfokou.me</a>
   <div class="name">Hilux Fokou Ngoumo</div>
   <div class="role">Security Researcher · Full-Stack Builder · UN Youth Leader</div>
   <div class="thesis">I build and secure technology that protects people — from disinformation and online harm to climate and humanitarian crises.</div>

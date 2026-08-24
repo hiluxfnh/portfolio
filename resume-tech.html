@@ -25,9 +25,17 @@
   .skills b { color:#12203a; }
   .inline { color:#2a3140; }
   .inline b { color:#12203a; }
+  .back-link {
+    position: fixed; top: 14px; right: 14px; display: inline-flex; align-items: center; gap: 6px;
+    background: #e8edf7; color: #1a3a6b; font-weight: 700; font-size: 11px;
+    padding: 7px 12px; border-radius: 999px; text-decoration: none; z-index: 10;
+  }
+  .back-link:hover { background: #d7e0f2; }
+  @media print { .back-link { display: none; } }
 </style>
 </head>
 <body>
+  <a class="back-link" href="index.html">&larr; Back to hiluxfokou.me</a>
   <div class="name">Hilux Fokou Ngoumo</div>
   <div class="headline">Security Researcher &nbsp;·&nbsp; Full-Stack &amp; AI Engineer</div>
   <div class="contact">
