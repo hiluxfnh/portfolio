@@ -39,7 +39,7 @@
       { "@type": "CollegeOrUniversity", "name": "Parul University" },
       { "@type": "CollegeOrUniversity", "name": "GITAM University" }
     ],
-    "knowsAbout": ["Cybersecurity for development", "Climate action", "Digital rights", "Civic technology", "Internet governance", "Youth governance"],
+    "knowsAbout": ["Security measurement", "Vulnerability exploitation prediction", "Intrusion detection", "Steganalysis", "Machine learning evaluation", "Climate action", "Youth leadership"],
     "sameAs": [
       "https://www.linkedin.com/in/fokou",
       "https://github.com/hiluxfnh",
@@ -54,7 +54,7 @@
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-      { "@type": "Question", "name": "What are you looking for in a PhD?", "acceptedAnswer": { "@type": "Answer", "text": "A group working on online safety, trust and safety, or security for development, where I can take my research on misinformation and hate speech further. I am open on location and start date." } },
+      { "@type": "Question", "name": "What are you looking for in a PhD?", "acceptedAnswer": { "@type": "Answer", "text": "A group working on security measurement, systems security, or human-centered security, where I can take my work on vulnerability exploitation, intrusion detection, and steganalysis further. I am open on location and start date." } },
       { "@type": "Question", "name": "Are you ready to start?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. I am completing my master's in information security, and I am ready to begin a PhD. I am open to funded positions." } },
       { "@type": "Question", "name": "Which languages do you work in?", "acceptedAnswer": { "@type": "Answer", "text": "French and English, both fluently." } },
       { "@type": "Question", "name": "Can you relocate?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. I have studied in India and Russia, and I am comfortable moving for the right programme." } },
@@ -122,7 +122,7 @@
           <div class="strand">
             <i class="ph ph-shield-check" aria-hidden="true"></i>
             <h2>Security research</h2>
-            <p>Natural language processing for online safety, cybersecurity for development, and digital rights. Published researcher, 2025.</p>
+            <p>Measuring whether vulnerability and intrusion detection tools hold up on real data. Two papers under review, plus a steganalysis thesis.</p>
           </div>
           <div class="strand">
             <i class="ph ph-plant" aria-hidden="true"></i>
@@ -143,34 +143,50 @@
       <div class="wrap">
         <div class="section-head io">
           <p class="kicker">Research</p>
-          <h2 class="section-title">Language models for online safety, built to avoid new harms.</h2>
-          <p class="section-lead">I study how to detect misinformation and hate speech with natural language processing, and how to make that detection fair, hard to fool, and privacy respecting. I want to continue this work in a PhD.</p>
+          <h2 class="section-title">I test whether security tools hold up outside the lab.</h2>
+          <p class="section-lead">Most of my work comes back to one problem: models and systems that look strong when you evaluate them, then fail quietly in the conditions they were built for. I measure how they behave on real, time-ordered data, and I report where they fall short. I want to take this further in a PhD.</p>
         </div>
 
         <article class="paper io">
-          <p class="paper-meta">SSRN preprint · 2025</p>
-          <h3>NLP in the Digital Age: Combating Fake News, Hate Speech, and Ethical Risks for Social Integrity</h3>
-          <p>I compared classical and transformer models, LSTM and BERT, for detecting fake news and hate speech, reaching up to 98% accuracy on fake news. I looked closely at the failures that matter in the real world: bias across groups, how easily a filter can be fooled, and privacy. The work is framed against the EU Digital Services Act.</p>
+          <p class="paper-meta">Under review · 2026</p>
+          <h3>Predicting which vulnerabilities get exploited, tested honestly</h3>
+          <p>I built a dataset of 183,409 CVEs and found that the records keep changing after they are published, which can leak the answer into models that predict exploitation. Two enrichment fields turn the task into a lookup, and average precision jumps from about 0.08 to about 0.85. Even using only the fields available at disclosure, ordinary cross-validation overstates results about three times compared with honest forward-in-time testing. A simple model on clean fields still ranks vulnerabilities better than CVSS severity (AUROC 0.86 to 0.93 against 0.64 to 0.67). I released the code and feature tables, and the paper ends with an audit checklist for this kind of work.</p>
           <div class="paper-links">
-            <a href="https://dx.doi.org/10.2139/ssrn.5181145" target="_blank" rel="noopener">Read the paper <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
             <a href="https://orcid.org/0009-0008-8798-7851" target="_blank" rel="noopener">ORCID 0009-0008-8798-7851 <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
           </div>
         </article>
+
+        <div class="work-grid">
+          <article class="work-card io">
+            <p class="work-cat">Under review · ICISSP 2027</p>
+            <h3>Open-set intrusion detection</h3>
+            <p>I benchmarked lightweight methods for spotting attacks a model has never seen, on NSL-KDD and CICIoT2023. The method that won on one dataset (mean AUROC 0.95) was the worst on the other (0.42). The rankings did not transfer, which says a lot about how we compare detectors.</p>
+          </article>
+          <article class="work-card io">
+            <p class="work-cat">Master's thesis · in progress</p>
+            <h3>Image steganalysis</h3>
+            <p>Detecting hidden messages in images with machine learning, comparing a classic SRM and ensemble baseline with an SRNet-style CNN. The question I care about most: does a detector trained on some embedding methods still work on ones it has not seen?</p>
+          </article>
+        </div>
 
         <div class="research-cols">
           <div class="interests io">
             <h3>What I want to work on</h3>
             <ul>
-              <li>Natural language processing for online safety</li>
-              <li>Misinformation and hate speech detection</li>
-              <li>Cybersecurity for development</li>
-              <li>Digital rights and internet governance</li>
+              <li>Security measurement and honest evaluation</li>
+              <li>Vulnerability exploitation prediction</li>
+              <li>Intrusion and anomaly detection</li>
+              <li>Steganalysis and evasion</li>
+              <li>Who security tools actually protect</li>
             </ul>
           </div>
           <article class="paper paper-sm io">
-            <p class="paper-meta">Forthcoming</p>
-            <h3>From Data to Action: Empowering African Youth in the Climate Crisis</h3>
-            <p>A data driven look at how young people in Africa can use open data to act on climate.</p>
+            <p class="paper-meta">Earlier work · SSRN, 2025</p>
+            <h3>NLP in the Digital Age: fake news, hate speech, and ethical risk</h3>
+            <p>My bachelor's thesis, on detecting fake news and hate speech with classical and transformer models, with attention to bias and to how easily these classifiers can be attacked.</p>
+            <div class="paper-links">
+              <a href="https://dx.doi.org/10.2139/ssrn.5181145" target="_blank" rel="noopener">Read the paper <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
+            </div>
           </article>
         </div>
       </div>
@@ -366,7 +382,7 @@
         <div class="faq io">
           <div class="faq-item">
             <h3>What are you looking for in a PhD?</h3>
-            <p>A group working on online safety, trust and safety, or security for development, where I can take my research on misinformation and hate speech further. I am open on location and start date.</p>
+            <p>A group working on security measurement, systems security, or human-centered security, where I can take my work on vulnerability exploitation, intrusion detection, and steganalysis further. I am open on location and start date.</p>
           </div>
           <div class="faq-item">
             <h3>Are you ready to start?</h3>
