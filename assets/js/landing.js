@@ -57,4 +57,49 @@
   }
   if (document.readyState !== "loading") observeAll();
   else document.addEventListener("DOMContentLoaded", observeAll);
+
+  // tagline: words light up one at a time on scroll.
+  // single rAF-throttled handler, gated by IntersectionObserver so it only
+  // runs while the section is on screen. Full reduced-motion fallback.
+  (function () {
+    var text = document.querySelector(".tagline-text");
+    if (!text) return;
+    var words = Array.prototype.slice.call(text.querySelectorAll(".tw"));
+    if (!words.length) return;
+    var reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduce || !("IntersectionObserver" in window)) {
+      words.forEach(function (w) { w.classList.add("lit"); });
+      return;
+    }
+    text.classList.add("is-dimming");
+    var ticking = false, active = false;
+    function update() {
+      ticking = false;
+      var r = text.getBoundingClientRect();
+      var vh = window.innerHeight || 800;
+      var start = vh * 0.85, end = vh * 0.35;
+      var prog = (start - r.top) / (start - end);
+      prog = Math.max(0, Math.min(1, prog));
+      var n = Math.round(prog * words.length);
+      for (var i = 0; i < words.length; i++) words[i].classList.toggle("lit", i < n);
+    }
+    function onScroll() { if (!ticking) { requestAnimationFrame(update); ticking = true; } }
+    var section = text.closest(".tagline") || text;
+    var gate = new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (e.isIntersecting && !active) {
+          active = true;
+          window.addEventListener("scroll", onScroll, { passive: true });
+          window.addEventListener("resize", onScroll);
+          update();
+        } else if (!e.isIntersecting && active) {
+          active = false;
+          window.removeEventListener("scroll", onScroll);
+          window.removeEventListener("resize", onScroll);
+        }
+      });
+    }, { threshold: 0 });
+    gate.observe(section);
+    update();
+  })();
 })();
