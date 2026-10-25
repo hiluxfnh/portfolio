@@ -3,344 +3,218 @@
 <head>
   <script>(function(){try{var t=localStorage.getItem("theme");if(!t)t=(window.matchMedia&&matchMedia("(prefers-color-scheme:dark)").matches)?"dark":"light";document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Social Impact | Hilux Fokou Ngoumo – IAWG, Mifali, trainings, guides, workshops, conferences and more." />
-  <title>Social Impact | Hilux Fokou Ngoumo</title>
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Social Impact | Hilux Fokou Ngoumo" />
-  <meta property="og:description" content="Social Impact | Hilux Fokou Ngoumo – IAWG, Mifali, trainings, guides, workshops, conferences and more." />
-  <meta property="og:image" content="https://hiluxfokou.me/assets/img/og-image.png" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:image" content="https://hiluxfokou.me/assets/img/og-image.png" />
-
-  <link rel="icon" href="assets/img/icon.png" type="image/png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Pacifico&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/social-impact.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <link rel="icon" href="assets/img/icon.png" type="image/x-icon">
-  <link rel="stylesheet" href="assets/css/base.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Social impact · Hilux Fokou Ngoumo</title>
+  <meta name="description" content="Community and social impact work by Hilux Fokou Ngoumo: global forums, youth leadership, climate action, and gender justice." />
+  <link rel="icon" href="assets/img/icon.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+  <link rel="stylesheet" href="assets/css/landing.css" />
+  <link rel="stylesheet" href="assets/css/subpage.css" />
 </head>
 <body>
   <a href="#main" class="skip-link">Skip to content</a>
-  <!-- Navbar -->
-  <header class="site-header">
-    <nav class="site-nav" aria-label="Primary">
-      <a href="index.html" class="brand">Hilux</a>
-      <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-list">
+
+  <div class="nav-overlay" data-open="false" aria-hidden="true">
+    <a href="index.html">Home</a>
+    <a href="Awards.html">Awards</a>
+    <a href="certifications.html">Certificates</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="professional-experience.html">Experience</a>
+    <a href="social-impact.html">Impact</a>
+    <a href="assets/Hilux-Fokou-Ngoumo-CV.pdf" target="_blank" rel="noopener">Download CV</a>
+  </div>
+
+  <header class="nav">
+    <nav class="nav-inner" aria-label="Primary">
+      <a href="index.html" class="nav-brand">Hilux Fokou Ngoumo</a>
+      <div class="nav-links">
+        <a href="Awards.html">Awards</a>
+        <a href="certifications.html">Certificates</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="professional-experience.html">Experience</a>
+        <a href="social-impact.html">Impact</a>
+      </div>
+      <a href="assets/Hilux-Fokou-Ngoumo-CV.pdf" class="nav-cta" target="_blank" rel="noopener">Download CV</a>
+      <button class="nav-theme" type="button" aria-label="Toggle dark mode"></button>
+      <button class="nav-burger" type="button" aria-label="Open menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
-      <ul class="nav-list" id="nav-list">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="tech.html">Work</a></li>
-        <li><a href="security.html">Security</a></li>
-        <li><a href="social-impact.html">Impact</a></li>
-        <li><a href="writeups.html">Writeups</a></li>
-        <li class="nav-more">
-          <details class="nav-more-details">
-            <summary>More <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
-            <ul class="nav-more-list">
-              <li><a href="professional-experience.html">Experience</a></li>
-              <li><a href="certifications.html">Certifications</a></li>
-              <li><a href="research.html">Research</a></li>
-              <li><a href="Awards.html">Awards</a></li>
-              <li><a href="gallery.html">Gallery</a></li>
-            </ul>
-          </details>
-        </li>
-        <li><a href="contact.html" class="nav-cta">Contact</a></li>
-      </ul>
     </nav>
-  </header><!-- Page Header -->
-  <header class="impact-header" data-aos="fade-down">
-    <h1>My Social Impact</h1>
-    <p>Harnessing technology, leadership, and education to empower communities worldwide.</p>
   </header>
 
-  <main class="impact-content" id="main">
-
-    <!-- Conferences First -->
-    <section class="impact-section alt-bg" data-aos="fade-up">
-      <h2 class="section-title">Conferences &amp; Forums</h2>
-      <div class="accordion">
-  
-        <!-- CSW68 -->
-        <div class="accordion-item">
-          <button class="accordion-header">
-            <span>CSW68 – New York, USA (Mar 2024)</span>
-            <i class="fas fa-chevron-down"></i>
-          </button>
-          <div class="accordion-body">
-            <p>
-              Panelist at the Youth Forum opening—presented strategic recommendations on ASRHR policy directly to UN Women delegates and global civil society.
-            </p>
-          </div>
-        </div>
-        <!-- CSW67 -->
-        <div class="accordion-item">
-          <button class="accordion-header">
-            <span>CSW67 – New York, USA (Mar 2023, Virtual)</span>
-            <i class="fas fa-chevron-down"></i>
-          </button>
-          <div class="accordion-body">
-            <p>
-              Panelist in a virtual session chaired by Women for a Change on reproductive health in humanitarian settings, connecting 20+ youth organizations across four continents.
-            </p>
-          </div>
-        </div>
-        <!-- CSW66 -->
-        <div class="accordion-item">
-          <button class="accordion-header">
-            <span>CSW66 – Nairobi, Kenya (Mar 2022)</span>
-            <i class="fas fa-chevron-down"></i>
-          </button>
-          <div class="accordion-body">
-            <p>
-              Spoke on adolescent gender equity, influencing the Nairobi Declaration to include digital access as an empowerment tool.
-            </p>
-          </div>
-        </div>
-        <!-- COP28 -->
-        <div class="accordion-item">
-          <button class="accordion-header">
-            <span>COP28 – Dubai, UAE (Dec 2023)</span>
-            <i class="fas fa-chevron-down"></i>
-          </button>
-          <div class="accordion-body">
-            <p>
-              Negotiated on loss &amp; damage for African communities and contributed to a policy brief adopted by the Loss &amp; Damage Coordination Unit.
-            </p>
-          </div>
-        </div>
-        <!-- COP27 -->
-        <div class="accordion-item">
-          <button class="accordion-header">
-            <span>COP27 – Sharm El Sheikh, Egypt (Nov 2022)</span>
-            <i class="fas fa-chevron-down"></i>
-          </button>
-          <div class="accordion-body">
-            <p>
-              Co‑led youth roundtables on technology-driven adaptation and built coalitions for sustainable finance with UNFCCC negotiators. Spoke at a high-level side event.
-            </p>
-          </div>
-        </div>
-        <!-- SB60 -->
-        <div class="accordion-item">
-          <button class="accordion-header">
-            <span>SB60 – Bonn, Germany - virtual(Jun 2024)</span>
-            <i class="fas fa-chevron-down"></i>
-          </button>
-          <div class="accordion-body">
-            <p>
-              Advocated for gender‑responsive climate action under the enhanced Lima work programme, co‑authoring the youth position paper.
-            </p>
-          </div>
-        </div>
-        <!-- SB58 -->
-        <div class="accordion-item">
-          <button class="accordion-header">
-            <span>SB58 – Bonn, Germany (Jun 2023)</span>
-            <i class="fas fa-chevron-down"></i>
-          </button>
-          <div class="accordion-body">
-            <p>
-              Ensured youth perspectives in just transition dialogues and embedded climate finance initiatives in the SB58 outcomes.
-            </p>
-          </div>
-        </div>
-        <!-- World Bank Youth Summit -->
-        <div class="accordion-item">
-          <button class="accordion-header">
-            <span>World Bank Youth Summit – Washington D.C., USA (May 2023)</span>
-            <i class="fas fa-chevron-down"></i>
-          </button>
-          <div class="accordion-body">
-            <p>
-              Engaged with leadership on “From the Ground Up: Local Solutions” and pitched KamerLark’s scalable housing model for students.
-            </p>
-          </div>
-        </div>
-  
+  <main id="main" class="page">
+    <section class="page-hero">
+      <div class="wrap">
+        <p class="kicker">Social impact</p>
+        <h1>Community work, in Africa and beyond.</h1>
+        <p class="lead">Technology, leadership, and education put to work for communities: global forums, youth mobilisation, climate action, and gender justice.</p>
+        <a class="page-back" href="index.html#more"><i class="ph ph-arrow-left" aria-hidden="true"></i> Back to the full record</a>
       </div>
     </section>
- <br>
-        <!-- IAWG Work -->
-        <section class="impact-section" data-aos="fade-up">
-            <h2 class="section-title">IAWG Leadership</h2>
-            <div class="card-grid">
-              <div class="impact-card">
-                <i class="fas fa-hand-holding-medical"></i>
-                <h3>Youth Co‑Chair, IAWG ASRHR</h3>
-                <p>One of four globally selected youth co‑chairs for the Inter‑Agency Working Group on Adolescent Sexual &amp; Reproductive Health in Humanitarian Settings. I guided policy discussions, convened stakeholders, and co‑developed the 2020 ASRHR Toolkit Supplementary Guide (EN, FR, ES, AR).</p>
-              </div>
-              <div class="impact-card">
-                <i class="fas fa-chalkboard-teacher"></i>
-                <h3>Trainer of Trainers</h3>
-                <p>Designed and delivered Training‑of‑Trainers programs on ASRHR in crisis zones—equipping 36+ organizations to reach over 13,000 adolescents with vital reproductive health education and support.</p>
-              </div>
-            </div>
-          </section>
-  <br>
-    <!-- Community & Partnerships -->
-    <section class="impact-section" data-aos="fade-up">
-      <h2 class="section-title">Community &amp; Partnerships</h2>
-      <div class="card-grid">
 
-        <!-- Plant-for-the-Planet -->
-        <div class="impact-card">
-          <i class="fas fa-tree"></i>
-          <h3>Plant‑for‑the‑Planet — Global Ambassador Council</h3>
-          <ul>
-            <li>Selected as one of <strong>16 young climate leaders worldwide</strong> on the official youth leadership body (<strong>2025–2027</strong>).</li>
-            <li>Represent Climate Justice Ambassadors in global climate advocacy.</li>
-            <li><a href="https://blog.plant-for-the-planet.org/2026/global-ambassador-council-2025-2027/" target="_blank" rel="noopener">See the announcement →</a></li>
-          </ul>
+    <section class="page-section">
+      <div class="wrap">
+        <div class="block-head io">
+          <h2>Conferences and forums</h2>
+          <p>Where I have represented youth and carried their priorities into the room.</p>
         </div>
-
-        <!-- EU Youth Empowerment Fund -->
-        <div class="impact-card">
-          <i class="fas fa-hand-holding-dollar"></i>
-          <h3>EU Youth Empowerment Fund — Global Youth Mobilization</h3>
-          <ul>
-            <li>Youth Panelist &amp; Project Report Reviewer: assessed <strong>120+ youth-led proposals</strong> across Africa and Europe.</li>
-            <li>Helped allocate <strong>€1,000,000+</strong> in micro-grants, embedding gender, climate and digital innovation.</li>
-          </ul>
+        <div class="accordion io">
+          <div class="acc-item">
+            <button class="acc-head" type="button">CSW68, New York, USA (Mar 2024) <i class="ph ph-caret-down" aria-hidden="true"></i></button>
+            <div class="acc-body"><div>Panellist at the Youth Forum opening, presenting strategic recommendations on ASRHR policy directly to UN Women delegates and global civil society.</div></div>
+          </div>
+          <div class="acc-item">
+            <button class="acc-head" type="button">CSW67, New York, USA (Mar 2023, virtual) <i class="ph ph-caret-down" aria-hidden="true"></i></button>
+            <div class="acc-body"><div>Panellist in a virtual session chaired by Women for a Change on reproductive health in humanitarian settings, connecting 20+ youth organisations across four continents.</div></div>
+          </div>
+          <div class="acc-item">
+            <button class="acc-head" type="button">CSW66, Nairobi, Kenya (Mar 2022) <i class="ph ph-caret-down" aria-hidden="true"></i></button>
+            <div class="acc-body"><div>Spoke on adolescent gender equity, contributing to the Nairobi Declaration including digital access as an empowerment tool.</div></div>
+          </div>
+          <div class="acc-item">
+            <button class="acc-head" type="button">COP28, Dubai, UAE (Dec 2023) <i class="ph ph-caret-down" aria-hidden="true"></i></button>
+            <div class="acc-body"><div>Negotiated on loss and damage for African communities and contributed to a policy brief adopted by the Loss and Damage Coordination Unit.</div></div>
+          </div>
+          <div class="acc-item">
+            <button class="acc-head" type="button">COP27, Sharm El Sheikh, Egypt (Nov 2022) <i class="ph ph-caret-down" aria-hidden="true"></i></button>
+            <div class="acc-body"><div>Co-led youth roundtables on technology-driven adaptation, built coalitions for sustainable finance with UNFCCC negotiators, and spoke at a high-level side event.</div></div>
+          </div>
+          <div class="acc-item">
+            <button class="acc-head" type="button">SB60, Bonn, Germany (Jun 2024, virtual) <i class="ph ph-caret-down" aria-hidden="true"></i></button>
+            <div class="acc-body"><div>Advocated for gender-responsive climate action under the enhanced Lima work programme, co-authoring the youth position paper.</div></div>
+          </div>
+          <div class="acc-item">
+            <button class="acc-head" type="button">SB58, Bonn, Germany (Jun 2023) <i class="ph ph-caret-down" aria-hidden="true"></i></button>
+            <div class="acc-body"><div>Ensured youth perspectives in just-transition dialogues and helped embed climate-finance initiatives in the SB58 outcomes.</div></div>
+          </div>
+          <div class="acc-item">
+            <button class="acc-head" type="button">World Bank Youth Summit, Washington D.C. (May 2023) <i class="ph ph-caret-down" aria-hidden="true"></i></button>
+            <div class="acc-body"><div>Engaged with leadership on "From the Ground Up: Local Solutions" and pitched KamerLark's scalable housing model for students.</div></div>
+          </div>
         </div>
-
-        <!-- AfCFTA -->
-        <div class="impact-card">
-          <i class="fas fa-people-group"></i>
-          <h3>AfCFTA National Youth Champions</h3>
-          <ul>
-            <li>Selected Fellow (3rd Cohort, 2025) championing youth participation in the African Continental Free Trade Area.</li>
-          </ul>
-        </div>
-
-        <!-- Mifali -->
-        <div class="impact-card">
-          <i class="fas fa-seedling"></i>
-          <h3>Mifali Cameroon</h3>
-          <ul>
-            <li>Ran workshops &amp; campaigns empowering women and girls, <strong>reaching 9,000+ young people</strong> across Cameroon.</li>
-            <li>Secured and coordinated partnership with Save the Children on a cross continental project.</li>
-            <li>Organized climate‑education campaigns across rural regions.</li>
-            <li>Ran leadership workshops in Yaoundé, Buea, Bamenda, Bertoua, and Douala with the teammates.</li>
-          </ul>
-        </div>
-  
-        <!-- YOUNGO -->
-        <div class="impact-card">
-          <i class="fas fa-globe"></i>
-          <h3>YOUNGO – UNFCCC Youth Constituency</h3>
-          <ul>
-            <li>Delegated to COP27 &amp; COP28; chaired conversations around climate change adaptation and the role of AI for resilience.</li>
-            <li>Advocated minority inclusion in policy dialogues.</li>
-          </ul>
-        </div>
-  
-        <!-- Women for a Change -->
-        <div class="impact-card">
-          <i class="fas fa-hands-helping"></i>
-          <h3>Women for a Change</h3>
-          <ul>
-            <li>As Communications Specialist, managed multi‑platform gender‑justice campaigns.</li>
-            <li>Contributed to <strong>#EndPadTaxNow</strong> — an 18‑month AFD‑funded campaign (WFAC + 10 national partners) to end the tax on menstrual pads and advance menstrual dignity in Cameroon.</li>
-            <li>Coordinated campaigns and support for women in conflict zones, and drafted policy briefs on adolescent reproductive health.</li>
-          </ul>
-        </div>
-  
-        <!-- GenEgalite ECCAS -->
-        <div class="impact-card">
-          <i class="fas fa-network-wired"></i>
-          <h3>GenEgalite ECCAS</h3>
-          <ul>
-            <li>Amplified women’s voices at regional forums and online.</li>
-            <li>Supported the annual Beijing+30 Feminist Forum.</li>
-            <li>Advocated for gender‑responsive ECCAS policies.</li>
-          </ul>
-        </div>
-  
-        <!-- CRAM -->
-        <div class="impact-card">
-          <i class="fas fa-user-tie"></i>
-          <h3>CRAM – Center for Research &amp; Action on Migration</h3>
-          <ul>
-            <li>Steer research on youth migration in Central Africa.</li>
-            <li>Oversee support programs for migrants.</li>
-            <li>Facilitate cross‑border safe‑migration workshops.</li>
-          </ul>
-        </div>
-  
       </div>
     </section>
-  
+
+    <section class="page-section">
+      <div class="wrap">
+        <div class="block-head io">
+          <h2>IAWG leadership</h2>
+        </div>
+        <div class="impact-grid">
+          <div class="impact-card io">
+            <div class="ic"><i class="ph ph-hand-heart" aria-hidden="true"></i></div>
+            <h3>Youth Co-Chair, IAWG ASRHR</h3>
+            <p>One of four globally selected youth co-chairs for the Inter-Agency Working Group on Adolescent Sexual and Reproductive Health in Humanitarian Settings. Guided policy discussions, convened stakeholders, and co-developed the 2020 ASRHR Toolkit Supplementary Guide in English, French, Spanish, and Arabic.</p>
+          </div>
+          <div class="impact-card io">
+            <div class="ic"><i class="ph ph-presentation" aria-hidden="true"></i></div>
+            <h3>Trainer of Trainers</h3>
+            <p>Designed and delivered Training-of-Trainers programs on ASRHR in crisis zones, equipping 36+ organisations to reach over 13,000 adolescents with reproductive health education and support.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-section">
+      <div class="wrap">
+        <div class="block-head io">
+          <h2>Community and partnerships</h2>
+        </div>
+        <div class="impact-grid">
+          <div class="impact-card io">
+            <div class="ic"><i class="ph ph-tree" aria-hidden="true"></i></div>
+            <h3>Plant-for-the-Planet, Global Ambassador Council</h3>
+            <ul>
+              <li>Selected as one of <strong>16 young climate leaders worldwide</strong> on the official youth leadership body (<strong>2025 to 2027</strong>).</li>
+              <li>Represent Climate Justice Ambassadors in global climate advocacy.</li>
+              <li><a href="https://blog.plant-for-the-planet.org/2026/global-ambassador-council-2025-2027/" target="_blank" rel="noopener">See the announcement</a></li>
+            </ul>
+          </div>
+          <div class="impact-card io">
+            <div class="ic"><i class="ph ph-hand-coins" aria-hidden="true"></i></div>
+            <h3>EU Youth Empowerment Fund, Global Youth Mobilization</h3>
+            <ul>
+              <li>Youth Panellist and Project Report Reviewer, assessing <strong>120+ youth-led proposals</strong> across Africa and Europe.</li>
+              <li>Helped allocate <strong>€1,000,000+</strong> in micro-grants, embedding gender, climate, and digital innovation.</li>
+            </ul>
+          </div>
+          <div class="impact-card io">
+            <div class="ic"><i class="ph ph-users-three" aria-hidden="true"></i></div>
+            <h3>AfCFTA National Youth Champions</h3>
+            <ul>
+              <li>Selected Fellow (3rd Cohort, 2025), championing youth participation in the African Continental Free Trade Area.</li>
+            </ul>
+          </div>
+          <div class="impact-card io">
+            <div class="ic"><i class="ph ph-plant" aria-hidden="true"></i></div>
+            <h3>Mifali Cameroon</h3>
+            <ul>
+              <li>Ran workshops and campaigns empowering women and girls, <strong>reaching 9,000+ young people</strong> across Cameroon.</li>
+              <li>Secured and coordinated a partnership with Save the Children on a cross-continental project.</li>
+              <li>Organised climate-education campaigns across rural regions, and leadership workshops in Yaoundé, Buea, Bamenda, Bertoua, and Douala.</li>
+            </ul>
+          </div>
+          <div class="impact-card io">
+            <div class="ic"><i class="ph ph-globe" aria-hidden="true"></i></div>
+            <h3>YOUNGO, UNFCCC Youth Constituency</h3>
+            <ul>
+              <li>Delegated to COP27 and COP28, chairing conversations on climate adaptation and the role of AI for resilience.</li>
+              <li>Advocated for minority inclusion in policy dialogues.</li>
+            </ul>
+          </div>
+          <div class="impact-card io">
+            <div class="ic"><i class="ph ph-heart" aria-hidden="true"></i></div>
+            <h3>Women for a Change</h3>
+            <ul>
+              <li>As Communications Specialist, managed multi-platform gender-justice campaigns.</li>
+              <li>Contributed to <strong>#EndPadTaxNow</strong>, an 18-month AFD-funded campaign (WFAC and 10 national partners) for menstrual dignity in Cameroon.</li>
+              <li>Coordinated support for women in conflict zones and drafted policy briefs on adolescent reproductive health.</li>
+            </ul>
+          </div>
+          <div class="impact-card io">
+            <div class="ic"><i class="ph ph-share-network" aria-hidden="true"></i></div>
+            <h3>GenEgalite ECCAS</h3>
+            <ul>
+              <li>Amplified women's voices at regional forums and online.</li>
+              <li>Supported the annual Beijing+30 Feminist Forum.</li>
+              <li>Advocated for gender-responsive ECCAS policies.</li>
+            </ul>
+          </div>
+          <div class="impact-card io">
+            <div class="ic"><i class="ph ph-path" aria-hidden="true"></i></div>
+            <h3>CRAM, Center for Research and Action on Migration</h3>
+            <ul>
+              <li>Steer research on youth migration in Central Africa.</li>
+              <li>Oversee support programs for migrants.</li>
+              <li>Facilitate cross-border safe-migration workshops.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="shell">
-      <div class="footer-top">
-        <div class="footer-brand">
-          <div class="fb-logo">Hilux</div>
-          <p>Security &amp; technology for social good — building and securing tools that protect people, from disinformation to humanitarian crises.</p>
-        </div>
-        <div class="footer-col">
-          <h5>Explore</h5>
-          <a href="tech.html">Work &amp; Projects</a>
-          <a href="security.html">Security</a>
-          <a href="social-impact.html">Impact</a>
-          <a href="research.html">Research</a>
-        </div>
-        <div class="footer-col">
-          <h5>More</h5>
-          <a href="professional-experience.html">Experience</a>
-          <a href="certifications.html">Certifications</a>
-          <a href="Awards.html">Awards</a>
-          <a href="gallery.html">Gallery</a>
-          <a href="contact.html">Contact</a>
-        </div>
+  <footer class="site-foot">
+    <div class="wrap foot-grid">
+      <div>
+        <div class="foot-brand">Hilux Fokou Ngoumo</div>
+        <div class="foot-note">Information security research, climate, and youth leadership. Bertoua, Cameroon.</div>
       </div>
-      <div class="footer-bottom">
-        <span>&copy; 2025 Hilux Fokou Ngoumo. All rights reserved.</span>
-        <span class="footer-social">
-          <a href="https://www.linkedin.com/in/fokou" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-          <a href="https://github.com/hiluxfnh" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
-          <a href="https://twitter.com/FOKOUHilux1" target="_blank" rel="noopener" aria-label="X / Twitter"><i class="fab fa-x-twitter"></i></a>
-          <a href="mailto:hiluxfokou33@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-        </span>
-      </div>
+      <nav class="foot-social" aria-label="Social and contact links">
+        <a href="https://www.linkedin.com/in/fokou" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="ph ph-linkedin-logo" aria-hidden="true"></i></a>
+        <a href="https://github.com/hiluxfnh" target="_blank" rel="noopener" aria-label="GitHub"><i class="ph ph-github-logo" aria-hidden="true"></i></a>
+        <a href="https://twitter.com/FOKOUHilux1" target="_blank" rel="noopener" aria-label="X"><i class="ph ph-x-logo" aria-hidden="true"></i></a>
+        <a href="https://orcid.org/0009-0008-8798-7851" target="_blank" rel="noopener" aria-label="ORCID"><i class="ph ph-identification-badge" aria-hidden="true"></i></a>
+        <a href="mailto:hiluxfokou33@gmail.com" aria-label="Email"><i class="ph ph-envelope-simple" aria-hidden="true"></i></a>
+      </nav>
     </div>
+    <div class="wrap"><p class="foot-copy">© 2026 Hilux Fokou Ngoumo. This site uses no trackers.</p></div>
   </footer>
 
-
-  
-
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    window.AOS && AOS.init({ duration: 800, once: true });
-
-    // Accordion functionality (with ARIA)
-    document.querySelectorAll('.accordion-header').forEach(btn => {
-      btn.setAttribute('aria-expanded', 'false');
-      btn.addEventListener('click', () => {
-        const body = btn.nextElementSibling;
-        const isOpen = !!body.style.maxHeight;
-        document.querySelectorAll('.accordion-body').forEach(b => b.style.maxHeight = null);
-        document.querySelectorAll('.accordion-header').forEach(h => {
-          h.setAttribute('aria-expanded', 'false');
-          const ic = h.querySelector('i'); if (ic) ic.classList.remove('rotated');
-        });
-        if (!isOpen) {
-          body.style.maxHeight = body.scrollHeight + 'px';
-          btn.setAttribute('aria-expanded', 'true');
-          const ic = btn.querySelector('i'); if (ic) ic.classList.add('rotated');
-        }
-      });
-    });
-  </script>
-  <script src="assets/js/nav.js"></script>
+  <script src="assets/js/landing.js"></script>
+  <script src="assets/js/subpage.js"></script>
 </body>
 </html>
