@@ -204,6 +204,18 @@ img { display: block; max-width: 100%; }
 .hero-badge b { font-weight: 600; }
 .hero-badge span { color: var(--faint); display: block; font-size: 12px; margin-top: 2px; }
 
+/* three strands band: security, climate, youth leadership (equal billing) */
+.hero-strands {
+  margin-top: 48px; padding-top: 40px; border-top: 1px solid var(--line);
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px;
+}
+.strand i { font-size: 22px; color: var(--accent); }
+.strand h2 { font-size: 16px; line-height: 24px; font-weight: 600; margin: 12px 0 6px; color: var(--fg); }
+.strand p { font-size: 14px; line-height: 22px; color: var(--muted); margin: 0; text-wrap: pretty; }
+@media (max-width: 760px) {
+  .hero-strands { grid-template-columns: 1fr; gap: 24px; margin-top: 36px; padding-top: 28px; }
+}
+
 @media (max-width: 920px) {
   .hero-grid { grid-template-columns: 1fr; gap: 40px; }
   .hero h1 { font-size: 44px; }
