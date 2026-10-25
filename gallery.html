@@ -3,187 +3,171 @@
 <head>
   <script>(function(){try{var t=localStorage.getItem("theme");if(!t)t=(window.matchMedia&&matchMedia("(prefers-color-scheme:dark)").matches)?"dark":"light";document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Achievements Gallery | Hilux Fokou Ngoumo - Explore a dynamic showcase of impactful milestones, global leadership, innovative tech projects, and transformative research." />
-  <title>Achievements Gallery | Hilux Fokou Ngoumo</title>
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Achievements Gallery | Hilux Fokou Ngoumo" />
-  <meta property="og:description" content="Achievements Gallery | Hilux Fokou Ngoumo - Explore a dynamic showcase of impactful milestones, global leadership, innovative tech projects, and transformative research." />
-  <meta property="og:image" content="https://hiluxfokou.me/assets/img/og-image.png" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:image" content="https://hiluxfokou.me/assets/img/og-image.png" />
-
-  <link rel="icon" href="assets/img/icon.png" type="image/png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Pacifico&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="assets/css/gallery.css">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <link rel="icon" href="assets/img/icon.png" type="image/x-icon">
-  <link rel="stylesheet" href="assets/css/base.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery · Hilux Fokou Ngoumo</title>
+  <meta name="description" content="Photos and milestones from Hilux Fokou Ngoumo's work: global youth forums, graduation, hackathons, and building with teams." />
+  <link rel="icon" href="assets/img/icon.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+  <link rel="stylesheet" href="assets/css/landing.css" />
+  <link rel="stylesheet" href="assets/css/subpage.css" />
 </head>
 <body>
   <a href="#main" class="skip-link">Skip to content</a>
-  <!-- Navbar (common to all pages) -->
-  <header class="site-header">
-    <nav class="site-nav" aria-label="Primary">
-      <a href="index.html" class="brand">Hilux</a>
-      <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-list">
+
+  <div class="nav-overlay" data-open="false" aria-hidden="true">
+    <a href="index.html">Home</a>
+    <a href="Awards.html">Awards</a>
+    <a href="certifications.html">Certificates</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="professional-experience.html">Experience</a>
+    <a href="social-impact.html">Impact</a>
+    <a href="assets/Hilux-Fokou-Ngoumo-CV.pdf" target="_blank" rel="noopener">Download CV</a>
+  </div>
+
+  <header class="nav">
+    <nav class="nav-inner" aria-label="Primary">
+      <a href="index.html" class="nav-brand">Hilux Fokou Ngoumo</a>
+      <div class="nav-links">
+        <a href="Awards.html">Awards</a>
+        <a href="certifications.html">Certificates</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="professional-experience.html">Experience</a>
+        <a href="social-impact.html">Impact</a>
+      </div>
+      <a href="assets/Hilux-Fokou-Ngoumo-CV.pdf" class="nav-cta" target="_blank" rel="noopener">Download CV</a>
+      <button class="nav-theme" type="button" aria-label="Toggle dark mode"></button>
+      <button class="nav-burger" type="button" aria-label="Open menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
-      <ul class="nav-list" id="nav-list">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="tech.html">Work</a></li>
-        <li><a href="security.html">Security</a></li>
-        <li><a href="social-impact.html">Impact</a></li>
-        <li><a href="writeups.html">Writeups</a></li>
-        <li class="nav-more">
-          <details class="nav-more-details">
-            <summary>More <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
-            <ul class="nav-more-list">
-              <li><a href="professional-experience.html">Experience</a></li>
-              <li><a href="certifications.html">Certifications</a></li>
-              <li><a href="research.html">Research</a></li>
-              <li><a href="Awards.html">Awards</a></li>
-              <li><a href="gallery.html">Gallery</a></li>
-            </ul>
-          </details>
-        </li>
-        <li><a href="contact.html" class="nav-cta">Contact</a></li>
-      </ul>
     </nav>
-  </header><!-- Page Header -->
-  <header class="achievements-header" data-aos="fade-down">
-    <h1>My Milestones</h1>
-    <p>A journey of global impact – from transformative leadership at major international forums to groundbreaking tech innovations and research.</p>
   </header>
 
-  <!-- Achievements Content -->
-  <main class="achievements-content" id="main">
-    <!-- Global Youth Leadership -->
-    <section class="achievement-card" data-aos="fade-up">
-        <div class="achievement-media">
-          <img src="assets/img/unesco.jpeg" alt="Global Youth Leadership" loading="lazy" decoding="async">
-          <img src="assets/img/wbg.jpg" alt="Global Youth Leadership" loading="lazy" decoding="async">
-    
-        </div>
-        <div class="achievement-details">
-          <h2>Global Youth Leadership & Advocacy</h2>
-          <p>
-            Throughout my journey, I've had the privilege to engage on the global stage and drive transformative change. My involvement spans several influential events, including:
-          </p>
-          <ul>
-            <li>
-              <strong>COP27 – Sharm El Sheikh, Egypt (Nov 2022):</strong> Participated in pivotal climate negotiations, emphasizing the urgent need for youth-led sustainable development.
-            </li>
-            <li>
-              <strong>COP28 – Dubai, UAE (Dec 2023):</strong> Engaged in discussions on global stocktake and loss &amp; damage, advocating for inclusive policies that empower future generations.
-            </li>
-            <li>
-              <strong>CSW66 – Nairobi, Kenya (Mar 2022):</strong> Contributed to a groundbreaking session marking the first Africa-hosted Commission on the Status of Women, highlighting critical gender issues.
-            </li>
-            <li>
-              <strong>CSW67 – New York, USA (Mar 2023, Virtual):</strong> Participated remotely to demonstrate that distance is no barrier to impactful advocacy.
-            </li>
-            <li>
-              <strong>CSW68 – New York, USA (Mar 2024):</strong> Served as a panelist at the UN Headquarters during the Youth Forum’s opening ceremony, where I provided strategic recommendations directly to global leaders.
-            </li>
-            <li>
-              <strong>SB58 – Bonn, Germany (Jun 2023):</strong> Engaged in sessions focused on global stocktake and just transition, ensuring youth voices were at the forefront of climate dialogues.
-            </li>
-            <li>
-              <strong>SB60 – Bonn, Germany (Jun 2024):</strong> Contributed to discussions on the enhanced Lima work programme, emphasizing the intersections of gender and climate change.
-            </li>
-            <li>
-              <strong>World Bank Group Youth Summit 2023 – Washington D.C. (May 2023):</strong> Honored to participate under the theme <em>"From the Ground Up: Local Solutions to Drive Global Impact"</em>, where I engaged with decision makers, shared innovative tech solutions, and advocated for sustainable, inclusive change.
-            </li>
-          </ul>
-          <br>
-          <p>
-            I am deeply grateful for the trust placed in my work. Each experience has empowered me to advocate for social justice and drive positive change on a global scale.
-          </p>
-          <div class="media-embed">
-            <!-- Replace VIDEO_ID with the actual video ID for your panel intervention -->
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/PozGoyse0YM?si=GrBerm2mDFqJYI2s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-          </div>
-        </div>
-      </section>
-      
-
-    <!-- Academic & Award Honors -->
-    <section class="achievement-card" data-aos="fade-up" data-aos-delay="100">
-      <div class="achievement-media">
-        <img src="assets/img/ace.jpg" alt="Academic Honor" loading="lazy" decoding="async">
-      </div>
-      <div class="achievement-details">
-        <h2>Academic & Award Honors</h2>
-        <p>
-          I won the <strong>Study In India(SII) Scholarship</strong> that gave me a chance to pursue a Bachelor in Computer Applications(BCA) in India. I was awarded as an <strong>Outstanding Achiever of the year 2024</strong> at GITAM University and honored with the <strong>First Class with Distinction</strong> Degree by GITAM University, I have also secured accolades at the <strong>Smart India Hackathon</strong> and achieved the <strong>Open Doors Scholarship</strong> for further studies in Information Security.
-        </p>
+  <main id="main" class="page">
+    <section class="page-hero">
+      <div class="wrap">
+        <p class="kicker">Gallery</p>
+        <h1>Moments from the work.</h1>
+        <p class="lead">Photos from forums, campuses, and the teams I have built with. Click any photo to see it larger.</p>
+        <a class="page-back" href="index.html#more"><i class="ph ph-arrow-left" aria-hidden="true"></i> Back to the full record</a>
       </div>
     </section>
 
-    <!-- Tech Innovation & Research -->
-    <section class="achievement-card" data-aos="fade-up" data-aos-delay="200">
-      <div class="achievement-media">
-        <img src="assets/img/fund.jpg" alt="Tech Innovation" loading="lazy" decoding="async">
+    <section class="page-section">
+      <div class="wrap">
+        <div class="media-grid">
+          <button class="media-card io" data-full="assets/img/ace10.jpeg" data-cap="Outstanding Achiever of the Year, GITAM University">
+            <span class="zoom"><i class="ph ph-magnifying-glass-plus" aria-hidden="true"></i></span>
+            <span class="thumb"><img src="assets/img/ace10.jpeg" alt="Receiving an award on stage" loading="lazy" decoding="async" /></span>
+            <span class="cap"><h3>Outstanding Achiever of the Year</h3><div class="meta">GITAM University</div></span>
+          </button>
+          <button class="media-card io" data-full="assets/img/un.jpg" data-cap="CSW68 Youth Forum, UN Headquarters, New York">
+            <span class="zoom"><i class="ph ph-magnifying-glass-plus" aria-hidden="true"></i></span>
+            <span class="thumb"><img src="assets/img/un.jpg" alt="Speaking at the CSW68 Youth Forum" loading="lazy" decoding="async" /></span>
+            <span class="cap"><h3>CSW68 Youth Forum</h3><div class="meta">UN Headquarters, New York</div></span>
+          </button>
+          <button class="media-card io" data-full="assets/img/code.jpg" data-cap="Building with the team">
+            <span class="zoom"><i class="ph ph-magnifying-glass-plus" aria-hidden="true"></i></span>
+            <span class="thumb"><img src="assets/img/code.jpg" alt="Building with the team" loading="lazy" decoding="async" /></span>
+            <span class="cap"><h3>Building with the team</h3><div class="meta">Hackathon</div></span>
+          </button>
+          <button class="media-card io" data-full="assets/img/grad1.jpg" data-cap="Graduation, GITAM University">
+            <span class="zoom"><i class="ph ph-magnifying-glass-plus" aria-hidden="true"></i></span>
+            <span class="thumb"><img src="assets/img/grad1.jpg" alt="Graduation" loading="lazy" decoding="async" /></span>
+            <span class="cap"><h3>Graduation</h3><div class="meta">GITAM University</div></span>
+          </button>
+          <button class="media-card io" data-full="assets/img/grad2.jpg" data-cap="Graduation day">
+            <span class="zoom"><i class="ph ph-magnifying-glass-plus" aria-hidden="true"></i></span>
+            <span class="thumb"><img src="assets/img/grad2.jpg" alt="Graduation day" loading="lazy" decoding="async" /></span>
+            <span class="cap"><h3>Graduation day</h3><div class="meta">With a friend</div></span>
+          </button>
+          <button class="media-card io" data-full="assets/img/prof1.jpg" data-cap="At a conference">
+            <span class="zoom"><i class="ph ph-magnifying-glass-plus" aria-hidden="true"></i></span>
+            <span class="thumb"><img src="assets/img/prof1.jpg" alt="At a conference" loading="lazy" decoding="async" /></span>
+            <span class="cap"><h3>At a conference</h3><div class="meta">Technology for social good</div></span>
+          </button>
+        </div>
       </div>
-      <div class="achievement-details">
-        <h2>Tech Innovation & Research</h2>
-        <p>
-          My journey in innovation spans founding <strong>KamerLark</strong> to revolutionize student housing, developing <strong>EcoCityAdapt</strong> for climate education, and building systems like <strong>ProctoShield</strong>, <strong>Sealtrace</strong>, and <strong>Haven</strong> — a transparent, rule-based tool routing survivors of online violence to vetted support resources. I have also presented influential research papers including <strong>"From Data to Action"</strong> and <strong>"NLP in the Digital Age"</strong>.
-        </p>
+    </section>
+
+    <section class="page-section">
+      <div class="wrap">
+        <div class="block-head io">
+          <h2>Global youth leadership and advocacy</h2>
+          <p>A few of the forums where I have represented youth and pushed for technology that serves people.</p>
+        </div>
+        <div class="impact-grid">
+          <div class="impact-card io">
+            <div class="ic"><i class="ph ph-globe-hemisphere-west" aria-hidden="true"></i></div>
+            <h3>Climate negotiations</h3>
+            <ul>
+              <li>COP27, Sharm El Sheikh, Egypt (2022) and COP28, Dubai (2023).</li>
+              <li>SB58 and SB60, Bonn, Germany (2023 and 2024).</li>
+              <li>YOUNGO youth representative at the UNFCCC.</li>
+            </ul>
+          </div>
+          <div class="impact-card io">
+            <div class="ic"><i class="ph ph-users-three" aria-hidden="true"></i></div>
+            <h3>Gender and development</h3>
+            <ul>
+              <li>CSW66 in Nairobi (2022), CSW67 virtual (2023), and CSW68 panellist at the UN in New York (2024).</li>
+              <li>World Bank Group Youth Summit, Washington D.C. (2023).</li>
+            </ul>
+          </div>
+        </div>
+        <div class="embed io">
+          <iframe src="https://www.youtube.com/embed/PozGoyse0YM" title="Panel intervention" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-section">
+      <div class="wrap">
+        <div class="block-head io">
+          <h2>Academic honours and innovation</h2>
+        </div>
+        <div class="impact-grid">
+          <div class="impact-card io">
+            <div class="ic"><i class="ph ph-graduation-cap" aria-hidden="true"></i></div>
+            <h3>Academic and award honours</h3>
+            <p>Study in India Scholarship for a Bachelor in Computer Applications, Outstanding Achiever of the Year 2024 and First Class with Distinction at GITAM University, an award at the Smart India Hackathon, and the Open Doors Scholarship for a master's in Information Security.</p>
+          </div>
+          <div class="impact-card io">
+            <div class="ic"><i class="ph ph-rocket-launch" aria-hidden="true"></i></div>
+            <h3>Tech innovation and research</h3>
+            <p>Founded KamerLark for student housing, built EcoCityAdapt for climate education, and developed ProctoShield, Sealtrace, and Haven. Presented the research papers "From Data to Action" and "NLP in the Digital Age".</p>
+          </div>
+        </div>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="shell">
-      <div class="footer-top">
-        <div class="footer-brand">
-          <div class="fb-logo">Hilux</div>
-          <p>Security &amp; technology for social good — building and securing tools that protect people, from disinformation to humanitarian crises.</p>
-        </div>
-        <div class="footer-col">
-          <h5>Explore</h5>
-          <a href="tech.html">Work &amp; Projects</a>
-          <a href="security.html">Security</a>
-          <a href="social-impact.html">Impact</a>
-          <a href="research.html">Research</a>
-        </div>
-        <div class="footer-col">
-          <h5>More</h5>
-          <a href="professional-experience.html">Experience</a>
-          <a href="certifications.html">Certifications</a>
-          <a href="Awards.html">Awards</a>
-          <a href="gallery.html">Gallery</a>
-          <a href="contact.html">Contact</a>
-        </div>
+  <div class="lightbox" data-open="false" role="dialog" aria-modal="true" aria-label="Photo preview">
+    <button class="lb-close" type="button" aria-label="Close preview"><i class="ph ph-x" aria-hidden="true"></i></button>
+    <img src="" alt="" />
+    <p class="lb-cap"></p>
+  </div>
+
+  <footer class="site-foot">
+    <div class="wrap foot-grid">
+      <div>
+        <div class="foot-brand">Hilux Fokou Ngoumo</div>
+        <div class="foot-note">Information security research, climate, and youth leadership. Bertoua, Cameroon.</div>
       </div>
-      <div class="footer-bottom">
-        <span>&copy; 2025 Hilux Fokou Ngoumo. All rights reserved.</span>
-        <span class="footer-social">
-          <a href="https://www.linkedin.com/in/fokou" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-          <a href="https://github.com/hiluxfnh" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
-          <a href="https://twitter.com/FOKOUHilux1" target="_blank" rel="noopener" aria-label="X / Twitter"><i class="fab fa-x-twitter"></i></a>
-          <a href="mailto:hiluxfokou33@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-        </span>
-      </div>
+      <nav class="foot-social" aria-label="Social and contact links">
+        <a href="https://www.linkedin.com/in/fokou" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="ph ph-linkedin-logo" aria-hidden="true"></i></a>
+        <a href="https://github.com/hiluxfnh" target="_blank" rel="noopener" aria-label="GitHub"><i class="ph ph-github-logo" aria-hidden="true"></i></a>
+        <a href="https://twitter.com/FOKOUHilux1" target="_blank" rel="noopener" aria-label="X"><i class="ph ph-x-logo" aria-hidden="true"></i></a>
+        <a href="https://orcid.org/0009-0008-8798-7851" target="_blank" rel="noopener" aria-label="ORCID"><i class="ph ph-identification-badge" aria-hidden="true"></i></a>
+        <a href="mailto:hiluxfokou33@gmail.com" aria-label="Email"><i class="ph ph-envelope-simple" aria-hidden="true"></i></a>
+      </nav>
     </div>
+    <div class="wrap"><p class="foot-copy">© 2026 Hilux Fokou Ngoumo. This site uses no trackers.</p></div>
   </footer>
 
-
-
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    window.AOS && AOS.init({
-      duration: 1000,
-      once: true,
-    });
-  </script>
-  <script src="assets/js/nav.js"></script>
+  <script src="assets/js/landing.js"></script>
+  <script src="assets/js/subpage.js"></script>
 </body>
 </html>

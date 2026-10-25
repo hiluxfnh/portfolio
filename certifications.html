@@ -3,231 +3,154 @@
 <head>
   <script>(function(){try{var t=localStorage.getItem("theme");if(!t)t=(window.matchMedia&&matchMedia("(prefers-color-scheme:dark)").matches)?"dark":"light";document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Certifications | Hilux Fokou Ngoumo – A showcase of professional credentials across Tech, Research, and Leadership." />
-  <title>Certifications | Hilux Fokou Ngoumo</title>
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Certifications | Hilux Fokou Ngoumo" />
-  <meta property="og:description" content="Certifications | Hilux Fokou Ngoumo – A showcase of professional credentials across Tech, Research, and Leadership." />
-  <meta property="og:image" content="https://hiluxfokou.me/assets/img/og-image.png" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:image" content="https://hiluxfokou.me/assets/img/og-image.png" />
-
-  <link rel="icon" href="assets/img/icon.png" type="image/png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Pacifico&display=swap" rel="stylesheet">
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    integrity="sha512-pc6g6Ptsk0rQwzLCFUR6R3F+IEb3hg1qSWuZq3YlG5q5bF/Iumqk/XfqMNk9WEeP5XrpCOEtO6T/tdY3dRlU4g=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="assets/css/certificates.css">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <link rel="icon" href="assets/img/icon.png" type="image/x-icon">
-  <link rel="stylesheet" href="assets/css/base.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Certifications · Hilux Fokou Ngoumo</title>
+  <meta name="description" content="Professional certifications and credentials from Hilux Fokou Ngoumo across cloud, security, AI, and software development." />
+  <link rel="icon" href="assets/img/icon.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+  <link rel="stylesheet" href="assets/css/landing.css" />
+  <link rel="stylesheet" href="assets/css/subpage.css" />
 </head>
 <body>
   <a href="#main" class="skip-link">Skip to content</a>
-   <!-- Navbar -->
-   <header class="site-header">
-    <nav class="site-nav" aria-label="Primary">
-      <a href="index.html" class="brand">Hilux</a>
-      <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-list">
+
+  <div class="nav-overlay" data-open="false" aria-hidden="true">
+    <a href="index.html">Home</a>
+    <a href="Awards.html">Awards</a>
+    <a href="certifications.html">Certificates</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="professional-experience.html">Experience</a>
+    <a href="social-impact.html">Impact</a>
+    <a href="assets/Hilux-Fokou-Ngoumo-CV.pdf" target="_blank" rel="noopener">Download CV</a>
+  </div>
+
+  <header class="nav">
+    <nav class="nav-inner" aria-label="Primary">
+      <a href="index.html" class="nav-brand">Hilux Fokou Ngoumo</a>
+      <div class="nav-links">
+        <a href="Awards.html">Awards</a>
+        <a href="certifications.html">Certificates</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="professional-experience.html">Experience</a>
+        <a href="social-impact.html">Impact</a>
+      </div>
+      <a href="assets/Hilux-Fokou-Ngoumo-CV.pdf" class="nav-cta" target="_blank" rel="noopener">Download CV</a>
+      <button class="nav-theme" type="button" aria-label="Toggle dark mode"></button>
+      <button class="nav-burger" type="button" aria-label="Open menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
-      <ul class="nav-list" id="nav-list">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="tech.html">Work</a></li>
-        <li><a href="security.html">Security</a></li>
-        <li><a href="social-impact.html">Impact</a></li>
-        <li><a href="writeups.html">Writeups</a></li>
-        <li class="nav-more">
-          <details class="nav-more-details">
-            <summary>More <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
-            <ul class="nav-more-list">
-              <li><a href="professional-experience.html">Experience</a></li>
-              <li><a href="certifications.html">Certifications</a></li>
-              <li><a href="research.html">Research</a></li>
-              <li><a href="Awards.html">Awards</a></li>
-              <li><a href="gallery.html">Gallery</a></li>
-            </ul>
-          </details>
-        </li>
-        <li><a href="contact.html" class="nav-cta">Contact</a></li>
-      </ul>
     </nav>
-  </header><!-- Header -->
-  <header class="cert-header" data-aos="fade-down">
-    <h1>My Certifications</h1>
-    <p>Explore my professional credentials across Tech, Research, and Leadership.</p>
   </header>
 
-  <!-- Filters & Search -->
-  <section class="cert-controls" data-aos="fade-up" data-aos-delay="100" id="main">
-    <div class="filter-buttons">
-      <button class="filter-btn active" data-filter="all">All</button>
-      <button class="filter-btn" data-filter="tech">Tech</button>
-    </div>
-    <input type="text" id="certSearch" placeholder="Search certificates…" />
-  </section>
-
- <!-- Certificates Grid -->
-<section class="cert-grid" data-aos="fade-up" data-aos-delay="200">
-  <!-- AWS Academy Cloud Architecting -->
-  <div class="cert-card" data-category="tech" data-title="AWS Academy Cloud Architecting">
-    <img src="assets/img/awsarch.jpg" alt="AWS Academy Cloud Architecting" loading="lazy" decoding="async">
-    <div class="card-overlay">
-      <h3>AWS Academy Graduate – AWS Academy Cloud Architecting</h3>
-      <button class="view-btn"><i class="fas fa-eye"></i> View</button>
-    </div>
-    <div class="card-data" data-src="assets/img/awsarch.jpg"></div>
-  </div>
-
-  <!-- Microsoft Security -->
-  <div class="cert-card" data-category="tech" data-title="Microsoft Security">
-    <img src="assets/img/mssecurity.jpeg" alt="Microsoft Security" loading="lazy" decoding="async">
-    <div class="card-overlay">
-      <h3>Microsoft Certified: Security, Compliance, and Identity Fundamentals</h3>
-      <button class="view-btn"><i class="fas fa-eye"></i> View</button>
-    </div>
-    <div class="card-data" data-src="assets/img/mssecurity.jpeg"></div>
-  </div>
-
-  <!-- IBM AI Intro -->
-  <div class="cert-card" data-category="tech" data-title="IBM AI Introduction">
-    <img src="assets/img/ibmai.jpg" alt="IBM AI Introduction" loading="lazy" decoding="async">
-    <div class="card-overlay">
-      <h3>IBM: Introduction to Artificial Intelligence (AI) - Coursera</h3>
-      <button class="view-btn"><i class="fas fa-eye"></i> View</button>
-    </div>
-    <div class="card-data" data-src="assets/img/ibmai.jpg"></div>
-  </div>
-
-  <!-- Agile Software Development -->
-  <div class="cert-card" data-category="tech" data-title="Agile Software Development">
-    <img src="assets/img/minesotaagile.jpeg" alt="Agile Software Development" loading="lazy" decoding="async">
-    <div class="card-overlay">
-      <h3>Agile Software Development</h3>
-      <button class="view-btn"><i class="fas fa-eye"></i> View</button>
-    </div>
-    <div class="card-data" data-src="assets/img/minesotaagile.jpeg"></div>
-  </div>
-
-  <!-- AWS Cloud Foundations -->
-  <div class="cert-card" data-category="tech" data-title="AWS Cloud Foundations">
-    <img src="assets/img/awscloud.jpg" alt="AWS Cloud Foundations" loading="lazy" decoding="async">
-    <div class="card-overlay">
-      <h3>AWS Academy Graduate – AWS Academy Cloud Foundations</h3>
-      <button class="view-btn"><i class="fas fa-eye"></i> View</button>
-    </div>
-    <div class="card-data" data-src="assets/img/awscloud.jpg"></div>
-  </div>
-
-  <!-- Office Productivity Software -->
-  <div class="cert-card" data-category="tech" data-title="Office Productivity Software">
-    <img src="assets/img/prodsf.jpg" alt="Office Productivity Software" loading="lazy" decoding="async">
-    <div class="card-overlay">
-      <h3>Introduction to Computers and Office Productivity Software - The Hong Kong University of Science and Technology</h3>
-      <button class="view-btn"><i class="fas fa-eye"></i> View</button>
-    </div>
-    <div class="card-data" data-src="assets/img/prodsf.jpg"></div>
-  </div>
-
-  <!-- Python Programming -->
-  <div class="cert-card" data-category="tech" data-title="Python Programming">
-    <img src="assets/img/prog.jpg" alt="Python Programming" loading="lazy" decoding="async">
-    <div class="card-overlay">
-      <h3>Programming for Everybody (Getting Started with Python) - University of Michigan</h3>
-      <button class="view-btn"><i class="fas fa-eye"></i> View</button>
-    </div>
-    <div class="card-data" data-src="assets/img/prog.jpg"></div>
-  </div>
-
-  <!-- Matrix Algebra -->
-  <div class="cert-card" data-category="tech" data-title="Matrix Algebra">
-    <img src="assets/img/math.jpg" alt="Matrix Algebra" loading="lazy" decoding="async">
-    <div class="card-overlay">
-      <h3>Matrix Algebra for Engineers - The Hong Kong University of Science and Technology</h3>
-      <button class="view-btn"><i class="fas fa-eye"></i> View</button>
-    </div>
-    <div class="card-data" data-src="assets/img/math.jpg"></div>
-  </div>
-
-  <!-- JavaScript Programming -->
-  <div class="cert-card" data-category="tech" data-title="JavaScript Programming">
-    <img src="assets/img/JsMeta.jpeg" alt="JavaScript Programming" loading="lazy" decoding="async">
-    <div class="card-overlay">
-      <h3>Programming with JavaScript</h3>
-      <button class="view-btn"><i class="fas fa-eye"></i> View</button>
-    </div>
-    <div class="card-data" data-src="assets/img/JsMeta.jpeg"></div>
-  </div>
-
-  <!-- Canva Web Pages -->
-  <div class="cert-card" data-category="tech" data-title="Canva Web Pages">
-    <img src="assets/img/wesitecanva.jpeg" alt="Canva Web Pages" loading="lazy" decoding="async">
-    <div class="card-overlay">
-      <h3>Use Canva to Create Desktop and Mobile-friendly Web Pages - Coursera Project Network</h3>
-      <button class="view-btn"><i class="fas fa-eye"></i> View</button>
-    </div>
-    <div class="card-data" data-src="assets/img/wesitecanva.jpeg"></div>
-  </div>
-</section>
-
-
-  <!-- Modal -->
-  <div id="certModal" class="modal">
-    <div class="modal-content">
-      <span class="modal-close">&times;</span>
-      <div class="modal-body"></div>
-    </div>
-  </div>
-
-  <!-- Footer -->
-  <footer class="site-footer">
-    <div class="shell">
-      <div class="footer-top">
-        <div class="footer-brand">
-          <div class="fb-logo">Hilux</div>
-          <p>Security &amp; technology for social good — building and securing tools that protect people, from disinformation to humanitarian crises.</p>
-        </div>
-        <div class="footer-col">
-          <h5>Explore</h5>
-          <a href="tech.html">Work &amp; Projects</a>
-          <a href="security.html">Security</a>
-          <a href="social-impact.html">Impact</a>
-          <a href="research.html">Research</a>
-        </div>
-        <div class="footer-col">
-          <h5>More</h5>
-          <a href="professional-experience.html">Experience</a>
-          <a href="certifications.html">Certifications</a>
-          <a href="Awards.html">Awards</a>
-          <a href="gallery.html">Gallery</a>
-          <a href="contact.html">Contact</a>
-        </div>
+  <main id="main" class="page">
+    <section class="page-hero">
+      <div class="wrap">
+        <p class="kicker">Certificates</p>
+        <h1>Certifications and credentials.</h1>
+        <p class="lead">Credentials across cloud, security, AI, and software development. Click any certificate to see it in full.</p>
+        <a class="page-back" href="index.html#more"><i class="ph ph-arrow-left" aria-hidden="true"></i> Back to the full record</a>
       </div>
-      <div class="footer-bottom">
-        <span>&copy; 2025 Hilux Fokou Ngoumo. All rights reserved.</span>
-        <span class="footer-social">
-          <a href="https://www.linkedin.com/in/fokou" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-          <a href="https://github.com/hiluxfnh" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
-          <a href="https://twitter.com/FOKOUHilux1" target="_blank" rel="noopener" aria-label="X / Twitter"><i class="fab fa-x-twitter"></i></a>
-          <a href="mailto:hiluxfokou33@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-        </span>
+    </section>
+
+    <section class="page-section">
+      <div class="wrap">
+        <div class="controls">
+          <input type="text" id="certSearch" class="search-input" placeholder="Search certificates..." aria-label="Search certificates" />
+        </div>
+
+        <div class="media-grid">
+          <button class="media-card io" data-title="AWS Academy Cloud Architecting AWS" data-full="assets/img/awsarch.jpg" data-cap="AWS Academy Cloud Architecting">
+            <span class="zoom"><i class="ph ph-magnifying-glass-plus" aria-hidden="true"></i></span>
+            <span class="thumb"><img src="assets/img/awsarch.jpg" alt="AWS Academy Cloud Architecting certificate" loading="lazy" decoding="async" /></span>
+            <span class="cap"><h3>AWS Academy Cloud Architecting</h3><div class="meta">AWS Academy</div></span>
+          </button>
+
+          <button class="media-card io" data-title="Microsoft Security Compliance Identity Fundamentals" data-full="assets/img/mssecurity.jpeg" data-cap="Microsoft Certified: Security, Compliance and Identity Fundamentals">
+            <span class="zoom"><i class="ph ph-magnifying-glass-plus" aria-hidden="true"></i></span>
+            <span class="thumb"><img src="assets/img/mssecurity.jpeg" alt="Microsoft Security, Compliance and Identity Fundamentals certificate" loading="lazy" decoding="async" /></span>
+            <span class="cap"><h3>Security, Compliance and Identity Fundamentals</h3><div class="meta">Microsoft Certified</div></span>
+          </button>
+
+          <button class="media-card io" data-title="IBM Introduction to Artificial Intelligence AI Coursera" data-full="assets/img/ibmai.jpg" data-cap="IBM: Introduction to Artificial Intelligence (AI)">
+            <span class="zoom"><i class="ph ph-magnifying-glass-plus" aria-hidden="true"></i></span>
+            <span class="thumb"><img src="assets/img/ibmai.jpg" alt="IBM Introduction to Artificial Intelligence certificate" loading="lazy" decoding="async" /></span>
+            <span class="cap"><h3>Introduction to Artificial Intelligence</h3><div class="meta">IBM · Coursera</div></span>
+          </button>
+
+          <button class="media-card io" data-title="Agile Software Development University of Minnesota" data-full="assets/img/minesotaagile.jpeg" data-cap="Agile Software Development">
+            <span class="zoom"><i class="ph ph-magnifying-glass-plus" aria-hidden="true"></i></span>
+            <span class="thumb"><img src="assets/img/minesotaagile.jpeg" alt="Agile Software Development certificate" loading="lazy" decoding="async" /></span>
+            <span class="cap"><h3>Agile Software Development</h3><div class="meta">University of Minnesota</div></span>
+          </button>
+
+          <button class="media-card io" data-title="AWS Academy Cloud Foundations AWS" data-full="assets/img/awscloud.jpg" data-cap="AWS Academy Cloud Foundations">
+            <span class="zoom"><i class="ph ph-magnifying-glass-plus" aria-hidden="true"></i></span>
+            <span class="thumb"><img src="assets/img/awscloud.jpg" alt="AWS Academy Cloud Foundations certificate" loading="lazy" decoding="async" /></span>
+            <span class="cap"><h3>AWS Academy Cloud Foundations</h3><div class="meta">AWS Academy</div></span>
+          </button>
+
+          <button class="media-card io" data-title="Introduction to Computers and Office Productivity Software HKUST" data-full="assets/img/prodsf.jpg" data-cap="Introduction to Computers and Office Productivity Software">
+            <span class="zoom"><i class="ph ph-magnifying-glass-plus" aria-hidden="true"></i></span>
+            <span class="thumb"><img src="assets/img/prodsf.jpg" alt="Computers and Office Productivity Software certificate" loading="lazy" decoding="async" /></span>
+            <span class="cap"><h3>Computers and Office Productivity Software</h3><div class="meta">HKUST</div></span>
+          </button>
+
+          <button class="media-card io" data-title="Programming for Everybody Python University of Michigan" data-full="assets/img/prog.jpg" data-cap="Programming for Everybody (Getting Started with Python)">
+            <span class="zoom"><i class="ph ph-magnifying-glass-plus" aria-hidden="true"></i></span>
+            <span class="thumb"><img src="assets/img/prog.jpg" alt="Programming for Everybody with Python certificate" loading="lazy" decoding="async" /></span>
+            <span class="cap"><h3>Programming for Everybody (Python)</h3><div class="meta">University of Michigan</div></span>
+          </button>
+
+          <button class="media-card io" data-title="Matrix Algebra for Engineers HKUST" data-full="assets/img/math.jpg" data-cap="Matrix Algebra for Engineers">
+            <span class="zoom"><i class="ph ph-magnifying-glass-plus" aria-hidden="true"></i></span>
+            <span class="thumb"><img src="assets/img/math.jpg" alt="Matrix Algebra for Engineers certificate" loading="lazy" decoding="async" /></span>
+            <span class="cap"><h3>Matrix Algebra for Engineers</h3><div class="meta">HKUST</div></span>
+          </button>
+
+          <button class="media-card io" data-title="Programming with JavaScript Meta" data-full="assets/img/JsMeta.jpeg" data-cap="Programming with JavaScript">
+            <span class="zoom"><i class="ph ph-magnifying-glass-plus" aria-hidden="true"></i></span>
+            <span class="thumb"><img src="assets/img/JsMeta.jpeg" alt="Programming with JavaScript certificate" loading="lazy" decoding="async" /></span>
+            <span class="cap"><h3>Programming with JavaScript</h3><div class="meta">Meta</div></span>
+          </button>
+
+          <button class="media-card io" data-title="Use Canva to Create Web Pages Coursera" data-full="assets/img/wesitecanva.jpeg" data-cap="Use Canva to Create Desktop and Mobile-friendly Web Pages">
+            <span class="zoom"><i class="ph ph-magnifying-glass-plus" aria-hidden="true"></i></span>
+            <span class="thumb"><img src="assets/img/wesitecanva.jpeg" alt="Create web pages with Canva certificate" loading="lazy" decoding="async" /></span>
+            <span class="cap"><h3>Create Web Pages with Canva</h3><div class="meta">Coursera Project Network</div></span>
+          </button>
+        </div>
+        <p class="empty-note" hidden>No certificates match that search.</p>
       </div>
+    </section>
+  </main>
+
+  <div class="lightbox" data-open="false" role="dialog" aria-modal="true" aria-label="Certificate preview">
+    <button class="lb-close" type="button" aria-label="Close preview"><i class="ph ph-x" aria-hidden="true"></i></button>
+    <img src="" alt="" />
+    <p class="lb-cap"></p>
+  </div>
+
+  <footer class="site-foot">
+    <div class="wrap foot-grid">
+      <div>
+        <div class="foot-brand">Hilux Fokou Ngoumo</div>
+        <div class="foot-note">Information security research, climate, and youth leadership. Bertoua, Cameroon.</div>
+      </div>
+      <nav class="foot-social" aria-label="Social and contact links">
+        <a href="https://www.linkedin.com/in/fokou" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="ph ph-linkedin-logo" aria-hidden="true"></i></a>
+        <a href="https://github.com/hiluxfnh" target="_blank" rel="noopener" aria-label="GitHub"><i class="ph ph-github-logo" aria-hidden="true"></i></a>
+        <a href="https://twitter.com/FOKOUHilux1" target="_blank" rel="noopener" aria-label="X"><i class="ph ph-x-logo" aria-hidden="true"></i></a>
+        <a href="https://orcid.org/0009-0008-8798-7851" target="_blank" rel="noopener" aria-label="ORCID"><i class="ph ph-identification-badge" aria-hidden="true"></i></a>
+        <a href="mailto:hiluxfokou33@gmail.com" aria-label="Email"><i class="ph ph-envelope-simple" aria-hidden="true"></i></a>
+      </nav>
     </div>
+    <div class="wrap"><p class="foot-copy">© 2026 Hilux Fokou Ngoumo. This site uses no trackers.</p></div>
   </footer>
 
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script src="assets/js/certificates.js"></script>
-  <script>
-    window.AOS && AOS.init({ duration: 800, once: true });
-  </script>
-  <script src="assets/js/nav.js"></script>
+  <script src="assets/js/landing.js"></script>
+  <script src="assets/js/subpage.js"></script>
 </body>
 </html>

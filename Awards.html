@@ -3,183 +3,185 @@
 <head>
   <script>(function(){try{var t=localStorage.getItem("theme");if(!t)t=(window.matchMedia&&matchMedia("(prefers-color-scheme:dark)").matches)?"dark":"light";document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Awards & Recognition | Hilux Fokou Ngoumo - Explore the awards and honors received internationally and nationally across tech, research, and leadership." />
-  <title>Hilux | Awards & Recognition</title>
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Hilux | Awards & Recognition" />
-  <meta property="og:description" content="Awards & Recognition | Hilux Fokou Ngoumo - Explore the awards and honors received internationally and nationally across tech, research, and leadership." />
-  <meta property="og:image" content="https://hiluxfokou.me/assets/img/og-image.png" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:image" content="https://hiluxfokou.me/assets/img/og-image.png" />
-
-  <link rel="icon" href="assets/img/icon.png" type="image/png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Pacifico&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="assets/css/awards.css">
-  <link rel="icon" href="assets/img/icon.png" type="image/x-icon">
-  <link rel="stylesheet" href="assets/css/base.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Awards · Hilux Fokou Ngoumo</title>
+  <meta name="description" content="Awards and recognition received by Hilux Fokou Ngoumo across technology, research, climate, and youth leadership." />
+  <link rel="icon" href="assets/img/icon.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+  <link rel="stylesheet" href="assets/css/landing.css" />
+  <link rel="stylesheet" href="assets/css/subpage.css" />
 </head>
 <body>
   <a href="#main" class="skip-link">Skip to content</a>
-  <!-- Floating Trophy Animation -->
-  <div class="floating-trophy">
-    <i class="fas fa-trophy"></i>
+
+  <div class="nav-overlay" data-open="false" aria-hidden="true">
+    <a href="index.html">Home</a>
+    <a href="Awards.html">Awards</a>
+    <a href="certifications.html">Certificates</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="professional-experience.html">Experience</a>
+    <a href="social-impact.html">Impact</a>
+    <a href="assets/Hilux-Fokou-Ngoumo-CV.pdf" target="_blank" rel="noopener">Download CV</a>
   </div>
 
-  <header class="site-header">
-    <nav class="site-nav" aria-label="Primary">
-      <a href="index.html" class="brand">Hilux</a>
-      <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-list">
+  <header class="nav">
+    <nav class="nav-inner" aria-label="Primary">
+      <a href="index.html" class="nav-brand">Hilux Fokou Ngoumo</a>
+      <div class="nav-links">
+        <a href="Awards.html">Awards</a>
+        <a href="certifications.html">Certificates</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="professional-experience.html">Experience</a>
+        <a href="social-impact.html">Impact</a>
+      </div>
+      <a href="assets/Hilux-Fokou-Ngoumo-CV.pdf" class="nav-cta" target="_blank" rel="noopener">Download CV</a>
+      <button class="nav-theme" type="button" aria-label="Toggle dark mode"></button>
+      <button class="nav-burger" type="button" aria-label="Open menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
-      <ul class="nav-list" id="nav-list">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="tech.html">Work</a></li>
-        <li><a href="security.html">Security</a></li>
-        <li><a href="social-impact.html">Impact</a></li>
-        <li><a href="writeups.html">Writeups</a></li>
-        <li class="nav-more">
-          <details class="nav-more-details">
-            <summary>More <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
-            <ul class="nav-more-list">
-              <li><a href="professional-experience.html">Experience</a></li>
-              <li><a href="certifications.html">Certifications</a></li>
-              <li><a href="research.html">Research</a></li>
-              <li><a href="Awards.html">Awards</a></li>
-              <li><a href="gallery.html">Gallery</a></li>
-            </ul>
-          </details>
-        </li>
-        <li><a href="contact.html" class="nav-cta">Contact</a></li>
-      </ul>
     </nav>
-  </header><header class="awards-header">
-    <h1>Awards & Recognition</h1>
-    <p>Celebrating milestones that honor resilience, innovation, and global impact.</p>
-    <a href="assets/Hilux-Fokou-CV.pdf" target="_blank" rel="noopener" class="download-cv">Download CV</a>
   </header>
 
-<!-- Award Slider (Real Award Images) -->
-<section class="award-slider" data-aos="fade-up" id="main">
-    <div class="slider-container">
-      <div class="slider">
-        <!-- Original slides -->
-        <div class="slide"><img src="assets/img/unfccc.jpg" alt="Award Image 1" loading="lazy" decoding="async"></div>
-        <div class="slide"><img src="assets/img/gyf.jpg" alt="Award Image 2" loading="lazy" decoding="async"></div>
-        <div class="slide"><img src="assets/img/hackfest.jpg" alt="Award Image 3" loading="lazy" decoding="async"></div>
-        <div class="slide"><img src="assets/img/tot.jpg" alt="Award Image 4" loading="lazy" decoding="async"></div>
-        <div class="slide"><img src="assets/img/ace.jpg" alt="Award Image 5" loading="lazy" decoding="async"></div>
-        <div class="slide"><img src="assets/img/arambh.jpg" alt="Award Image 6" loading="lazy" decoding="async"></div>
+  <main id="main" class="page">
+    <section class="page-hero">
+      <div class="wrap">
+        <p class="kicker">Awards</p>
+        <h1>Awards and recognition.</h1>
+        <p class="lead">Honours across technology, research, climate, and youth leadership. Click any image to see it in full.</p>
+        <a class="page-back" href="index.html#more"><i class="ph ph-arrow-left" aria-hidden="true"></i> Back to the full record</a>
       </div>
-    </div>
-  </section>
-  
+    </section>
 
-  <!-- Awards Grid -->
-  <section class="awards-grid">
-    <!-- Each card below represents one award -->
-    <div class="award-card global">
-      <i class="fas fa-globe-americas"></i>
-      <h2>United Nations</h2>
-      <p>Youth Speaker at the CSW68 Youth Forum opening ceremony at UN Headquarters in New York, where I shared insights on using technology for social transformation and advised global leaders on tech for social development.</p>
-    </div>
-
-    <div class="award-card university">
-      <i class="fas fa-graduation-cap"></i>
-      <h2>Outstanding Achiever</h2>
-      <p>Recognised and awarded the Outstanding Achiever Prize at National & International Levels by GITAM University. This came as a result of continuous contributions at multiple levels.</p>
-    </div>
-
-    <div class="award-card tech">
-      <i class="fas fa-robot"></i>
-      <h2>Smart India Hackathon Winner</h2>
-      <p>Won 3rd Prize for building an AI-powered remote proctored exam system using computer vision and ML, contributing to a more efficient and trustworthy exam process.</p>
-    </div>
-
-    <div class="award-card international">
-      <i class="fas fa-award"></i>
-      <h2>Open Doors Scholarship Winner</h2>
-      <p>After a rigorous exam, I was selected as a winner of the Open Doors Full Russian Government Scholarship program to pursue a Master in Information Security at ITMO University.</p>
-    </div>
-
-    <div class="award-card climate">
-      <i class="fas fa-leaf"></i>
-      <h2>YOUNGO FWG Youth Representative</h2>
-      <p>Selected to represent global youth at the FWG11 UNFCCC climate negotiations, pushing forward minority voices in climate spaces ahead of SB60.</p>
-    </div>
-
-    <div class="award-card academic">
-      <i class="fas fa-star"></i>
-      <h2>Graduation with Distinction</h2>
-      <p>Graduated with First Class Distinction from GITAM University, recognized for groundbreaking research and impactful projects.</p>
-    </div>
-
-    <div class="award-card speaker">
-      <i class="fas fa-microphone-alt"></i>
-      <h2>UN Women Youth Day Speaker</h2>
-      <p>Invited to speak about AI & GBV prevention at the 2024 International Youth Day celebration, emphasizing the risks and necessary empowerment.</p>
-    </div>
-
-    <div class="award-card fellowship">
-      <i class="fas fa-user-friends"></i>
-      <h2>NGO CSW Youth Fellow 2024</h2>
-      <p>Selected as a global youth fellow for NGO CSW / New York, collaborating with diverse cultures to co-create impactful solutions for gender equality.</p>
-    </div>
-
-    <div class="award-card bank">
-      <i class="fas fa-building"></i>
-      <h2>World Bank Youth Summit 2023</h2>
-      <p>Presented tech solutions at a prestigious global youth platform, engaging directly with decision makers and proposing solutions that reflect real-world needs.</p>
-    </div>
-
-    <div class="award-card climate">
-      <i class="fas fa-tree"></i>
-      <h2>Plant-for-the-Planet Global Ambassador Council</h2>
-      <p>Selected as one of 16 young climate leaders worldwide (2025 – 2027) to the Global Ambassador Council, advising on youth-led climate action strategy.</p>
-    </div>
-  </section>
-
-  <footer class="site-footer">
-    <div class="shell">
-      <div class="footer-top">
-        <div class="footer-brand">
-          <div class="fb-logo">Hilux</div>
-          <p>Security &amp; technology for social good — building and securing tools that protect people, from disinformation to humanitarian crises.</p>
-        </div>
-        <div class="footer-col">
-          <h5>Explore</h5>
-          <a href="tech.html">Work &amp; Projects</a>
-          <a href="security.html">Security</a>
-          <a href="social-impact.html">Impact</a>
-          <a href="research.html">Research</a>
-        </div>
-        <div class="footer-col">
-          <h5>More</h5>
-          <a href="professional-experience.html">Experience</a>
-          <a href="certifications.html">Certifications</a>
-          <a href="Awards.html">Awards</a>
-          <a href="gallery.html">Gallery</a>
-          <a href="contact.html">Contact</a>
+    <section class="page-section">
+      <div class="wrap">
+        <div class="media-grid">
+          <button class="media-card io" data-full="assets/img/ace.jpg" data-cap="Outstanding Achiever of the Year, GITAM University (2024)">
+            <span class="zoom"><i class="ph ph-magnifying-glass-plus" aria-hidden="true"></i></span>
+            <span class="thumb"><img src="assets/img/ace.jpg" alt="Outstanding Achiever award" loading="lazy" decoding="async" /></span>
+            <span class="cap"><h3>Outstanding Achiever of the Year</h3><div class="meta">GITAM University</div></span>
+          </button>
+          <button class="media-card io" data-full="assets/img/gyf.jpg" data-cap="NGO CSW/NY Global Youth Fellow Award">
+            <span class="zoom"><i class="ph ph-magnifying-glass-plus" aria-hidden="true"></i></span>
+            <span class="thumb"><img src="assets/img/gyf.jpg" alt="NGO CSW Global Youth Fellow Award" loading="lazy" decoding="async" /></span>
+            <span class="cap"><h3>Global Youth Fellow Award</h3><div class="meta">NGO CSW/NY</div></span>
+          </button>
+          <button class="media-card io" data-full="assets/img/hackfest.jpg" data-cap="Code, Create and Conquer Hackfest, Third Prize, GITAM">
+            <span class="zoom"><i class="ph ph-magnifying-glass-plus" aria-hidden="true"></i></span>
+            <span class="thumb"><img src="assets/img/hackfest.jpg" alt="Code, Create and Conquer Hackfest award" loading="lazy" decoding="async" /></span>
+            <span class="cap"><h3>Code, Create and Conquer Hackfest</h3><div class="meta">Third Prize, GITAM</div></span>
+          </button>
+          <button class="media-card io" data-full="assets/img/tot.jpg" data-cap="ASRHR Trainer of Trainers, Inter-Agency Working Group">
+            <span class="zoom"><i class="ph ph-magnifying-glass-plus" aria-hidden="true"></i></span>
+            <span class="thumb"><img src="assets/img/tot.jpg" alt="Trainer of Trainers certificate" loading="lazy" decoding="async" /></span>
+            <span class="cap"><h3>Trainer of Trainers</h3><div class="meta">Inter-Agency Working Group</div></span>
+          </button>
+          <button class="media-card io" data-full="assets/img/unfccc.jpg" data-cap="Mastering International Climate Negotiations, UNITAR">
+            <span class="zoom"><i class="ph ph-magnifying-glass-plus" aria-hidden="true"></i></span>
+            <span class="thumb"><img src="assets/img/unfccc.jpg" alt="UNITAR climate negotiations certificate" loading="lazy" decoding="async" /></span>
+            <span class="cap"><h3>International Climate Negotiations</h3><div class="meta">UNITAR</div></span>
+          </button>
+          <button class="media-card io" data-full="assets/img/arambh.jpg" data-cap="Innovation Expo, aarambh 2024, GITAM">
+            <span class="zoom"><i class="ph ph-magnifying-glass-plus" aria-hidden="true"></i></span>
+            <span class="thumb"><img src="assets/img/arambh.jpg" alt="Innovation Expo" loading="lazy" decoding="async" /></span>
+            <span class="cap"><h3>Innovation Expo</h3><div class="meta">aarambh 2024, GITAM</div></span>
+          </button>
+          <button class="media-card io" data-full="assets/img/unesco.jpeg" data-cap="UNESCO Youth Hackathon, Global Team Award 2023">
+            <span class="zoom"><i class="ph ph-magnifying-glass-plus" aria-hidden="true"></i></span>
+            <span class="thumb"><img src="assets/img/unesco.jpeg" alt="UNESCO Youth Hackathon award" loading="lazy" decoding="async" /></span>
+            <span class="cap"><h3>UNESCO Youth Hackathon</h3><div class="meta">Global Team Award, 2023</div></span>
+          </button>
         </div>
       </div>
-      <div class="footer-bottom">
-        <span>&copy; 2025 Hilux Fokou Ngoumo. All rights reserved.</span>
-        <span class="footer-social">
-          <a href="https://www.linkedin.com/in/fokou" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-          <a href="https://github.com/hiluxfnh" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
-          <a href="https://twitter.com/FOKOUHilux1" target="_blank" rel="noopener" aria-label="X / Twitter"><i class="fab fa-x-twitter"></i></a>
-          <a href="mailto:hiluxfokou33@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-        </span>
+    </section>
+
+    <section class="page-section">
+      <div class="wrap">
+        <div class="block-head io">
+          <h2>The honours in full</h2>
+        </div>
+        <div class="award-grid">
+          <div class="award-card io">
+            <div class="ic"><i class="ph ph-globe-hemisphere-west" aria-hidden="true"></i></div>
+            <h3>United Nations</h3>
+            <p>Youth speaker at the CSW68 Youth Forum opening ceremony at UN Headquarters in New York, sharing how technology can serve social transformation and advising global leaders on tech for development.</p>
+          </div>
+          <div class="award-card io">
+            <div class="ic"><i class="ph ph-graduation-cap" aria-hidden="true"></i></div>
+            <h3>Outstanding Achiever</h3>
+            <p>Awarded the Outstanding Achiever Prize at national and international levels by GITAM University, for continuous contributions across several areas.</p>
+          </div>
+          <div class="award-card io">
+            <div class="ic"><i class="ph ph-robot" aria-hidden="true"></i></div>
+            <h3>Smart India Hackathon</h3>
+            <p>Won third prize for an AI-powered remote proctored exam system using computer vision and machine learning, for a more trustworthy exam process.</p>
+          </div>
+          <div class="award-card io">
+            <div class="ic"><i class="ph ph-medal" aria-hidden="true"></i></div>
+            <h3>Open Doors Scholarship</h3>
+            <p>Selected, after a rigorous exam, for the Open Doors full Russian Government Scholarship to pursue a master's in Information Security at ITMO University.</p>
+          </div>
+          <div class="award-card io">
+            <div class="ic"><i class="ph ph-leaf" aria-hidden="true"></i></div>
+            <h3>YOUNGO Youth Representative</h3>
+            <p>Selected to represent global youth at the FWG11 UNFCCC climate negotiations, carrying minority voices into climate spaces ahead of SB60.</p>
+          </div>
+          <div class="award-card io">
+            <div class="ic"><i class="ph ph-star" aria-hidden="true"></i></div>
+            <h3>Graduation with Distinction</h3>
+            <p>Graduated with First Class Distinction from GITAM University, recognised for research and impactful projects.</p>
+          </div>
+          <div class="award-card io">
+            <div class="ic"><i class="ph ph-microphone-stage" aria-hidden="true"></i></div>
+            <h3>UN Women Youth Day Speaker</h3>
+            <p>Invited to speak on AI and gender-based-violence prevention at the 2024 International Youth Day celebration.</p>
+          </div>
+          <div class="award-card io">
+            <div class="ic"><i class="ph ph-users" aria-hidden="true"></i></div>
+            <h3>NGO CSW Youth Fellow 2024</h3>
+            <p>Selected as a global youth fellow for NGO CSW/New York, co-creating solutions for gender equality with people from many cultures.</p>
+          </div>
+          <div class="award-card io">
+            <div class="ic"><i class="ph ph-buildings" aria-hidden="true"></i></div>
+            <h3>World Bank Youth Summit 2023</h3>
+            <p>Presented tech solutions at a global youth platform, engaging directly with decision makers on real-world needs.</p>
+          </div>
+          <div class="award-card io">
+            <div class="ic"><i class="ph ph-tree" aria-hidden="true"></i></div>
+            <h3>Plant-for-the-Planet Ambassador Council</h3>
+            <p>Selected as one of 16 young climate leaders worldwide (2025 to 2027) on the Global Ambassador Council, advising on youth-led climate strategy.</p>
+          </div>
+        </div>
       </div>
+    </section>
+  </main>
+
+  <div class="lightbox" data-open="false" role="dialog" aria-modal="true" aria-label="Award preview">
+    <button class="lb-close" type="button" aria-label="Close preview"><i class="ph ph-x" aria-hidden="true"></i></button>
+    <img src="" alt="" />
+    <p class="lb-cap"></p>
+  </div>
+
+  <footer class="site-foot">
+    <div class="wrap foot-grid">
+      <div>
+        <div class="foot-brand">Hilux Fokou Ngoumo</div>
+        <div class="foot-note">Information security research, climate, and youth leadership. Bertoua, Cameroon.</div>
+      </div>
+      <nav class="foot-social" aria-label="Social and contact links">
+        <a href="https://www.linkedin.com/in/fokou" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="ph ph-linkedin-logo" aria-hidden="true"></i></a>
+        <a href="https://github.com/hiluxfnh" target="_blank" rel="noopener" aria-label="GitHub"><i class="ph ph-github-logo" aria-hidden="true"></i></a>
+        <a href="https://twitter.com/FOKOUHilux1" target="_blank" rel="noopener" aria-label="X"><i class="ph ph-x-logo" aria-hidden="true"></i></a>
+        <a href="https://orcid.org/0009-0008-8798-7851" target="_blank" rel="noopener" aria-label="ORCID"><i class="ph ph-identification-badge" aria-hidden="true"></i></a>
+        <a href="mailto:hiluxfokou33@gmail.com" aria-label="Email"><i class="ph ph-envelope-simple" aria-hidden="true"></i></a>
+      </nav>
     </div>
+    <div class="wrap"><p class="foot-copy">© 2026 Hilux Fokou Ngoumo. This site uses no trackers.</p></div>
   </footer>
 
-  <script src="assets/js/nav.js"></script>
+  <script src="assets/js/landing.js"></script>
+  <script src="assets/js/subpage.js"></script>
 </body>
 </html>
