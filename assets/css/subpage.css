@@ -184,6 +184,27 @@ main.page { padding-top: 112px; }
 .callout .lab { font-family: var(--mono); font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--accent); display: block; margin-bottom: 8px; }
 .callout p { margin: 0; color: var(--fg); font-size: 16px; line-height: 1.6; }
 
+/* ----------------------------  CASE STUDY  ---------------------------- */
+.cs-meta { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); margin: 24px 0; padding: 20px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.cs-meta .m { display: flex; flex-direction: column; gap: 4px; }
+.cs-meta .m b { font-size: 12px; font-family: var(--mono); text-transform: uppercase; letter-spacing: .03em; color: var(--accent); font-weight: 500; }
+.cs-meta .m span { font-size: 14.5px; color: var(--fg); }
+.cs-tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 24px; }
+.cs-tag { font-size: 12.5px; color: var(--muted); background: var(--surface); border: 1px solid var(--line); border-radius: 999px; padding: 5px 12px; }
+.cs-flow { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(165px, 1fr)); margin: 8px 0; }
+.cs-node { border: 1px solid var(--line); border-radius: 14px; padding: 18px; background: var(--surface); }
+.cs-node .ic { width: 38px; height: 38px; border-radius: 10px; display: grid; place-items: center; background: color-mix(in srgb, var(--accent) 14%, transparent); color: var(--accent); font-size: 19px; margin-bottom: 10px; }
+.cs-node h4 { margin: 0 0 6px; font-size: 15px; font-weight: 600; }
+.cs-node p { margin: 0; font-size: 13.5px; color: var(--muted); line-height: 1.5; }
+.cs-stats { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); margin: 8px 0; }
+.cs-stat { border: 1px solid var(--line); border-radius: 14px; padding: 20px; background: var(--surface); }
+.cs-stat b { display: block; font-size: 26px; font-weight: 600; letter-spacing: -0.02em; }
+.cs-stat span { font-size: 13px; color: var(--muted); }
+.article h3 { font-size: 18px; font-weight: 600; margin: 24px 0 10px; letter-spacing: -0.01em; }
+.article ol { color: var(--muted); font-size: 16.5px; line-height: 1.7; margin: 0 0 16px; padding-left: 20px; display: grid; gap: 8px; }
+.article code { font-family: var(--mono); font-size: 0.9em; background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 1px 6px; }
+.article em { color: var(--muted); }
+
 /* entrance reveal (shared .io hook lives in landing.js) */
 .io { opacity: 0; transform: translateY(16px); transition: opacity .6s var(--ease), transform .6s var(--ease); }
 .io.in { opacity: 1; transform: none; }
